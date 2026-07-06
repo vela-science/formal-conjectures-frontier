@@ -1,0 +1,66 @@
+{
+  "id": "vf_5751eab49ec9d684",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "Erdős #17: 97 is the least non-cluster-prime (Erdos17.isClusterPrime_97_isLeast_non_cluster). Kernel-clean Lean proof — axioms {propext, Classical.choice, Quot.sound}, no sorryAx — via a decidable reformulation (cluster_iff) + interval_cases. Produced by the prover-in-the-loop foundry; verified by the Lean kernel.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "theoretical",
+    "model_system": "",
+    "method": "manual state transition",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": []
+  },
+  "conditions": {
+    "text": "Record vrc_661a16fc01e3d0ee (signed; recorded against the current head). Caveats: Re-homed from the prover-lane frontier (vfr_b354d1ae5d88038b), where it was originally established and signed under the maintainer key; this consolidates the two kernel-verified Lean frontiers into one. | Witness not re-attached in this corpus yet: the proof lives at formal_proof linked in corpus Subsets/FC100SolvedSet1.lean, pending upstream; a fresh vlv_ will be minted via `foundry lean-run` once it merges into google-deepmind/formal-conjectures. The claim itself was foundry-verified and human-signed in prover-lane.. Artifacts: 1 hash-verified at propose.",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.3,
+    "basis": "operator-supplied frontier prior; review required",
+    "method": "expert_judgment",
+    "extraction_confidence": 1.0
+  },
+  "provenance": {
+    "source_type": "model_output",
+    "doi": null,
+    "title": "record:vrc_661a16fc01e3d0ee",
+    "authors": [
+      {
+        "name": "agent:vela-foundry-lean",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "extraction": {
+      "method": "manual_curation",
+      "model": null,
+      "model_version": null,
+      "extracted_at": "2026-07-06T20:58:15.264449+00:00",
+      "extractor_version": "vela/0.757.4"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-07-06T20:58:15.264450+00:00",
+  "updated": null
+}
