@@ -1,5 +1,5 @@
 [project]
-name = "Formal-conjectures Lean proofs (kernel-verified)"
+name = "Kernel-verified Lean theorems (prover-in-the-loop)"
 frontier_id = "vfr_97d7d25957384f80"
 compiled_at = "2026-06-03T20:43:34Z"
 description = ""
