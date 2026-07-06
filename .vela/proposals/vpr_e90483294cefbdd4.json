@@ -1,0 +1,133 @@
+{
+  "schema": "vela.proposal.v0.1",
+  "id": "vpr_e90483294cefbdd4",
+  "kind": "finding.add",
+  "target": {
+    "type": "finding",
+    "id": "vf_c03cbaf64b74017f"
+  },
+  "actor": {
+    "id": "agent:canopus-lean-2026-06-14",
+    "type": "agent"
+  },
+  "created_at": "2026-06-14T21:18:30.347755+00:00",
+  "reason": "Candidate claim vc_8e5b83b719f1b2be imported from artifact packet cap_34c4f0e25c5b7011",
+  "payload": {
+    "artifact_packet": {
+      "created_at": "2026-06-14T00:00:00.000000+00:00",
+      "packet_id": "cap_34c4f0e25c5b7011",
+      "producer": {
+        "id": "agent:canopus-lean-2026-06-14",
+        "kind": "agent",
+        "name": "Canopus formal-math prover (Opus 4.8)"
+      },
+      "schema": "carina.artifact_packet.v0.1",
+      "topic": "Kernel-verified Lean proof closing an open sorry in Erdős Problem 1150 (formal-conjectures)"
+    },
+    "candidate_claim_id": "vc_8e5b83b719f1b2be",
+    "evidence_artifact_ids": [
+      "va_115101bafeb9da86"
+    ],
+    "finding": {
+      "assertion": {
+        "direction": null,
+        "relation": null,
+        "text": "The Lean 4 theorem `erdos_1150.variants.parseval_lower_bound` is proven and kernel-verified (axioms: propext, Classical.choice, Quot.sound; no sorryAx): for every polynomial P over ℂ of degree n whose coefficients (indices 0..n) all lie in {-1, 1}, the supremum of |P(z)| over the unit circle |z| = 1 is at least √(n+1). This closes a previously-open `sorry` (category: textbook) attached to Erdős Problem 1150 in google-deepmind/formal-conjectures.",
+        "type": "theoretical"
+      },
+      "conditions": {
+        "duration": null,
+        "text": "domain:complex_analysis; verifier:lean4_kernel; category:textbook; result:lower_bound_sqrt_n_plus_1; open_sorry_closed:true"
+      },
+      "confidence": {
+        "basis": "agent-imported candidate claim; reviewer acceptance required",
+        "extraction_confidence": 0.7,
+        "kind": "frontier_epistemic",
+        "method": "expert_judgment",
+        "score": 0.99
+      },
+      "created": "2026-06-14T00:00:00.000000+00:00",
+      "evidence": {
+        "evidence_spans": [
+          {
+            "artifact_id": "va_115101bafeb9da86",
+            "artifact_packet_id": "cap_34c4f0e25c5b7011",
+            "candidate_claim_id": "vc_8e5b83b719f1b2be"
+          }
+        ],
+        "method": "ScienceClaw-shaped artifact packet import",
+        "model_system": "agent artifact packet",
+        "replicated": false,
+        "replication_count": null,
+        "type": "computational"
+      },
+      "flags": {
+        "contested": false,
+        "declining": false,
+        "gap": false,
+        "gravity_well": false,
+        "negative_space": false,
+        "retracted": false
+      },
+      "id": "vf_c03cbaf64b74017f",
+      "links": [],
+      "previous_version": null,
+      "provenance": {
+        "authors": [
+          {
+            "name": "Canopus formal-math prover (Opus 4.8)",
+            "orcid": null
+          }
+        ],
+        "doi": null,
+        "extraction": {
+          "extracted_at": "2026-06-14T00:00:00.000000+00:00",
+          "extractor_version": "vela/0.700.0",
+          "method": "artifact_to_state_import",
+          "model": "agent:canopus-lean-2026-06-14",
+          "model_version": null
+        },
+        "publisher": "artifact packet",
+        "review": {
+          "corrections": [],
+          "reviewed": false,
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        "source_type": "model_output",
+        "title": "cap_34c4f0e25c5b7011 · vc_8e5b83b719f1b2be",
+        "url": "https://www.erdosproblems.com/1150",
+        "year": null
+      },
+      "updated": null,
+      "version": 1
+    }
+  },
+  "source_refs": [
+    "artifact_packet:cap_34c4f0e25c5b7011",
+    "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1150.lean",
+    "https://www.erdosproblems.com/1150",
+    "packet_artifact:va_115101bafeb9da86"
+  ],
+  "status": "applied",
+  "reviewed_by": "reviewer:will",
+  "reviewed_at": "2026-06-14T21:29:04.688932+00:00",
+  "decision_reason": "Kernel-verified Lean proof (no sorryAx) of the Parseval sqrt(n+1) lower bound for ±1 polynomials; closes the open textbook sorry in Erdos 1150",
+  "applied_event_id": "vev_371eac62f3bd7acf",
+  "caveats": [
+    "This is the textbook Parseval lower-bound variant, not the open Erdős 1150 conjecture itself (the (1+c)√n improvement remains open).",
+    "Kernel-verified locally on lean4 v4.27.0 with no sorryAx; upstream PR to formal-conjectures is the external acceptance step and requires the maintainer's action.",
+    "Agent output is source material until reviewer acceptance."
+  ],
+  "agent_run": {
+    "agent": "agent:canopus-lean-2026-06-14",
+    "model": "external-artifact-runtime",
+    "run_id": "cap_34c4f0e25c5b7011",
+    "started_at": "2026-06-14T00:00:00.000000+00:00",
+    "context": {
+      "artifact_packet_id": "cap_34c4f0e25c5b7011",
+      "producer_name": "Canopus formal-math prover (Opus 4.8)",
+      "topic": "Kernel-verified Lean proof closing an open sorry in Erdős Problem 1150 (formal-conjectures)"
+    }
+  }
+}

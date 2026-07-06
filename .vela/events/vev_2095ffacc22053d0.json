@@ -1,0 +1,26 @@
+{
+  "schema": "vela.event.v0.1",
+  "id": "vev_2095ffacc22053d0",
+  "kind": "finding.asserted",
+  "target": {
+    "type": "finding",
+    "id": "vf_bc277af6cc7a3216"
+  },
+  "actor": {
+    "id": "reviewer:will",
+    "type": "human"
+  },
+  "timestamp": "2026-06-03T20:46:17.473385+00:00",
+  "reason": "Candidate claim vc_6c8d56f8a59a3179 imported from artifact packet cap_4af431152a035fa4",
+  "before_hash": "sha256:null",
+  "after_hash": "sha256:9976aab7331b5c26978437220de6f7edb35c76a282ffcc861e45e54b16e4cfbd",
+  "payload": {
+    "proposal_id": "vpr_46edf17cebcd34d7"
+  },
+  "caveats": [
+    "Kernel-verified Lean proof (the proof term type-checks; lake build is green).",
+    "SEED: this records an EXISTING proven theorem to exercise the Vela loop end-to-end; it is not a newly-closed `sorry`. Closing an open `sorry` is the next artifact.",
+    "Reviewer acceptance required before this becomes canonical frontier state.",
+    "Agent output is source material until reviewer acceptance."
+  ]
+}

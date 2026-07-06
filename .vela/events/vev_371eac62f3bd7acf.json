@@ -1,0 +1,26 @@
+{
+  "schema": "vela.event.v0.1",
+  "id": "vev_371eac62f3bd7acf",
+  "kind": "finding.asserted",
+  "target": {
+    "type": "finding",
+    "id": "vf_c03cbaf64b74017f"
+  },
+  "actor": {
+    "id": "reviewer:will",
+    "type": "human"
+  },
+  "timestamp": "2026-06-14T21:29:04.689031+00:00",
+  "reason": "Candidate claim vc_8e5b83b719f1b2be imported from artifact packet cap_34c4f0e25c5b7011",
+  "before_hash": "sha256:null",
+  "after_hash": "sha256:9d691bfcf20249bf49119e913b0e0acf27bf668dd9a22cc64d9b2d75969fff21",
+  "payload": {
+    "proposal_id": "vpr_e90483294cefbdd4"
+  },
+  "caveats": [
+    "This is the textbook Parseval lower-bound variant, not the open Erdős 1150 conjecture itself (the (1+c)√n improvement remains open).",
+    "Kernel-verified locally on lean4 v4.27.0 with no sorryAx; upstream PR to formal-conjectures is the external acceptance step and requires the maintainer's action.",
+    "Agent output is source material until reviewer acceptance."
+  ],
+  "signature": "763736a8a416e9d3b39ff79166bf61ccc71dbc6b3db2157f37b939640e8a838dd9bfd7cc319ed49ac5c8d6a73b2736b6f42ebc78bf36f397a302dc6bcf1cc206"
+}

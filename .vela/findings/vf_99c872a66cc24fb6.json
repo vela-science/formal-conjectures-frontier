@@ -1,0 +1,74 @@
+{
+  "id": "vf_99c872a66cc24fb6",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "The Lean 4 theorem `Erdos828.erdos_828.variants.phi_dvd_self_iff_pow2_pow3` is proven and kernel-verified (axioms: propext, Classical.choice, Quot.sound; no sorryAx): for n : ℕ, Euler's totient φ(n) divides n if and only if n ≤ 1 or n = 2^a · 3^b for some a > 0 and b ≥ 0. Closes a previously-open `sorry` (category: textbook) in google-deepmind/formal-conjectures Erdős Problem 828.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "computational",
+    "model_system": "agent artifact packet",
+    "method": "ScienceClaw-shaped artifact packet import",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": [
+      {
+        "artifact_id": "va_742c51b3b65b701b",
+        "artifact_packet_id": "cap_7a0d0ee2195e3fec",
+        "candidate_claim_id": "vc_656866803ec4c903"
+      }
+    ]
+  },
+  "conditions": {
+    "text": "domain:number_theory; verifier:lean4_kernel; category:textbook; result:totient_divides_characterization; open_sorry_closed:true",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.99,
+    "basis": "agent-imported candidate claim; reviewer acceptance required",
+    "method": "expert_judgment",
+    "extraction_confidence": 0.7
+  },
+  "provenance": {
+    "source_type": "model_output",
+    "doi": null,
+    "url": "https://www.erdosproblems.com/828",
+    "title": "cap_7a0d0ee2195e3fec · vc_656866803ec4c903",
+    "authors": [
+      {
+        "name": "Canopus formal-math prover (Opus 4.8, parallel subagent)",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "publisher": "artifact packet",
+    "extraction": {
+      "method": "artifact_to_state_import",
+      "model": "agent:canopus-lean-2026-06-14",
+      "model_version": null,
+      "extracted_at": "2026-06-14T00:00:00.000000+00:00",
+      "extractor_version": "vela/0.700.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-14T00:00:00.000000+00:00",
+  "updated": null
+}

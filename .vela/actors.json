@@ -1,0 +1,14 @@
+[
+  {
+    "id": "agent:canopus-lean-2026-06-03",
+    "public_key": "b1264a5c22d5af21b3c0f22027a352b1bab7539e737f14f50b6c01ad77a2dc8a",
+    "algorithm": "ed25519",
+    "created_at": "2026-06-03T20:45:07.864371+00:00"
+  },
+  {
+    "id": "reviewer:will-blair",
+    "public_key": "4892f93877e637b5f59af31d9ec6704814842fb278cacb0eb94704baef99455e",
+    "algorithm": "ed25519",
+    "created_at": "2026-06-10T06:16:10.593631+00:00"
+  }
+]

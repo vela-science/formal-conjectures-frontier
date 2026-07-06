@@ -1,0 +1,115 @@
+{
+  "schema": "vela.proposal.v0.1",
+  "id": "vpr_3a048ea6d174f094",
+  "kind": "artifact.assert",
+  "target": {
+    "type": "artifact",
+    "id": "va_1db5a205ac6d07e2"
+  },
+  "actor": {
+    "id": "agent:canopus-lean-2026-06-14",
+    "type": "agent"
+  },
+  "created_at": "2026-06-14T21:18:30.333458+00:00",
+  "reason": "Import artifact va_115101bafeb9da86 from artifact packet cap_34c4f0e25c5b7011",
+  "payload": {
+    "artifact": {
+      "access_tier": "public",
+      "content_hash": "sha256:115101bafeb9da868e5b83b719f1b2be34c4f0e25c5b70112f0a3916694b068a",
+      "created": "2026-06-14T00:00:00.000000+00:00",
+      "id": "va_1db5a205ac6d07e2",
+      "kind": "code",
+      "license": "public source locator; no restricted bytes deposited",
+      "locator": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1150.lean",
+      "media_type": "application/json",
+      "metadata": {
+        "artifact_packet_id": "cap_34c4f0e25c5b7011",
+        "axioms": "propext, Classical.choice, Quot.sound (no sorryAx)",
+        "declaration": "Erdos1150.erdos_1150.variants.parseval_lower_bound",
+        "exit_code": 0,
+        "external_artifact_id": "va_115101bafeb9da86",
+        "file": "FormalConjectures/ErdosProblems/1150.lean",
+        "method": "discrete Parseval via orthogonality of the (n+1)-th roots of unity: mean of |P|^2 over the roots = sum |a_k|^2 = n+1, so the max (hence the sup over the circle) is >= sqrt(n+1)",
+        "parent_artifact_ids": [],
+        "producer_agent": "agent:canopus-lean-2026-06-14",
+        "proof_lines": 126,
+        "repo": "google-deepmind/formal-conjectures",
+        "toolchain": "leanprover/lean4:v4.27.0",
+        "topic": "Kernel-verified Lean proof closing an open sorry in Erdős Problem 1150 (formal-conjectures)",
+        "verifier": "lean4 kernel (lake env lean)"
+      },
+      "name": "Lean 4 proof of erdos_1150.variants.parseval_lower_bound (Parseval lower bound for ±1 polynomials), kernel-verified",
+      "provenance": {
+        "authors": [
+          {
+            "name": "Canopus formal-math prover (Opus 4.8)",
+            "orcid": null
+          }
+        ],
+        "citation_count": null,
+        "doi": null,
+        "extraction": {
+          "extracted_at": "2026-06-14T00:00:00.000000+00:00",
+          "extractor_version": "vela/0.700.0",
+          "method": "artifact_to_state_import",
+          "model": "agent:canopus-lean-2026-06-14",
+          "model_version": null
+        },
+        "journal": null,
+        "openalex_id": null,
+        "pmc": null,
+        "pmid": null,
+        "publisher": "artifact packet",
+        "review": {
+          "corrections": [],
+          "reviewed": false,
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        "source_type": "model_output",
+        "title": "cap_34c4f0e25c5b7011 · Lean 4 proof of erdos_1150.variants.parseval_lower_bound (Parseval lower bound for ±1 polynomials), kernel-verified",
+        "url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1150.lean",
+        "year": null
+      },
+      "retracted": false,
+      "source_url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1150.lean",
+      "storage_mode": "remote",
+      "target_findings": [
+        "vf_c03cbaf64b74017f"
+      ]
+    },
+    "artifact_packet": {
+      "created_at": "2026-06-14T00:00:00.000000+00:00",
+      "packet_id": "cap_34c4f0e25c5b7011",
+      "producer": {
+        "id": "agent:canopus-lean-2026-06-14",
+        "kind": "agent",
+        "name": "Canopus formal-math prover (Opus 4.8)"
+      },
+      "schema": "carina.artifact_packet.v0.1",
+      "topic": "Kernel-verified Lean proof closing an open sorry in Erdős Problem 1150 (formal-conjectures)"
+    },
+    "external_artifact_id": "va_115101bafeb9da86",
+    "parent_artifact_ids": []
+  },
+  "source_refs": [
+    "artifact_packet:cap_34c4f0e25c5b7011",
+    "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1150.lean"
+  ],
+  "status": "rejected",
+  "reviewed_by": "reviewer:will-blair",
+  "reviewed_at": "2026-06-15T16:33:01.903288+00:00",
+  "decision_reason": "Bulk triage 2026-06-15: automated draft (watcher/extractor/ingest), not adjudicated; declining to keep the review gate meaningful. Recoverable from its Carina packet if needed.",
+  "caveats": [],
+  "agent_run": {
+    "agent": "agent:canopus-lean-2026-06-14",
+    "model": "external-artifact-runtime",
+    "run_id": "cap_34c4f0e25c5b7011",
+    "started_at": "2026-06-14T00:00:00.000000+00:00",
+    "context": {
+      "artifact_packet_id": "cap_34c4f0e25c5b7011",
+      "producer_name": "Canopus formal-math prover (Opus 4.8)",
+      "topic": "Kernel-verified Lean proof closing an open sorry in Erdős Problem 1150 (formal-conjectures)"
+    }
+  }
+}

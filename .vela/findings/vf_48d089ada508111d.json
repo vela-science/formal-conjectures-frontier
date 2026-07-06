@@ -1,0 +1,74 @@
+{
+  "id": "vf_48d089ada508111d",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "The Lean 4 theorem `Erdos829.sumRep_cubes_three` is proven and kernel-verified (axioms: propext, Classical.choice, Quot.sound; no sorryAx): the number of ordered representations of 3 as a sum of two perfect cubes is 0, i.e. 3 is not the sum of two cubes. Closes a previously-open `sorry` (category: test) in google-deepmind/formal-conjectures Erdős Problem 829.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "computational",
+    "model_system": "agent artifact packet",
+    "method": "ScienceClaw-shaped artifact packet import",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": [
+      {
+        "artifact_id": "va_5af1bc8466dbfe23",
+        "artifact_packet_id": "cap_f41de5f08328c24e",
+        "candidate_claim_id": "vc_3fe62fa30a5792b8"
+      }
+    ]
+  },
+  "conditions": {
+    "text": "domain:number_theory; verifier:lean4_kernel; category:test; result:no_representation; open_sorry_closed:true",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.99,
+    "basis": "agent-imported candidate claim; reviewer acceptance required",
+    "method": "expert_judgment",
+    "extraction_confidence": 0.7
+  },
+  "provenance": {
+    "source_type": "model_output",
+    "doi": null,
+    "url": "https://www.erdosproblems.com/829",
+    "title": "cap_f41de5f08328c24e · vc_3fe62fa30a5792b8",
+    "authors": [
+      {
+        "name": "Canopus formal-math prover (Opus 4.8, parallel subagent)",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "publisher": "artifact packet",
+    "extraction": {
+      "method": "artifact_to_state_import",
+      "model": "agent:canopus-lean-2026-06-14",
+      "model_version": null,
+      "extracted_at": "2026-06-14T00:00:00.000000+00:00",
+      "extractor_version": "vela/0.700.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-14T00:00:00.000000+00:00",
+  "updated": null
+}

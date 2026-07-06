@@ -1,0 +1,74 @@
+{
+  "id": "vf_b8e3badb634a19a0",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "The Lean 4 theorem `Erdos1054.f_undefined_at_2` — f 2 = 0  — for the Erdős-1054 function f(n) = least m such that n is a sum of the k smallest divisors of m (some k ≥ 1), f is UNDEFINED at n=2 (junk value 0). Proof: any such sum is 1 + R where the i=0 term is the least divisor 1 and every other term is 0 or a strictly larger divisor (≥ 2), so the sum is never 2. — is formally proven and kernel-verified in formal-conjectures (zero `sorry`, no extra axioms). Verifier: lean4-kernel + Mathlib v4.27.0 (lake build green; `#print axioms` = [propext, Classical.choice, Quot.sound] only — NO sorryAx).",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "computational",
+    "model_system": "agent artifact packet",
+    "method": "ScienceClaw-shaped artifact packet import",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": [
+      {
+        "artifact_id": "va_f78d5e0808a9ac34",
+        "artifact_packet_id": "cap_6fcdb44f3a2ff0c6",
+        "candidate_claim_id": "vc_c0bc8dce9a810f0b"
+      }
+    ]
+  },
+  "conditions": {
+    "text": "Agent-imported candidate claim; scope requires review.",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.99,
+    "basis": "agent-imported candidate claim; reviewer acceptance required",
+    "method": "expert_judgment",
+    "extraction_confidence": 0.7
+  },
+  "provenance": {
+    "source_type": "model_output",
+    "doi": null,
+    "url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1054.lean",
+    "title": "cap_6fcdb44f3a2ff0c6 · vc_c0bc8dce9a810f0b",
+    "authors": [
+      {
+        "name": "Canopus Lean proof-search adapter",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "publisher": "artifact packet",
+    "extraction": {
+      "method": "artifact_to_state_import",
+      "model": "agent:canopus-lean-2026-06-03",
+      "model_version": null,
+      "extracted_at": "2026-06-03T12:00:00+00:00",
+      "extractor_version": "vela/0.691.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-03T12:00:00+00:00",
+  "updated": null
+}

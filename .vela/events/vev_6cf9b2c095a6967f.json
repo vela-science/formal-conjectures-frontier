@@ -1,0 +1,81 @@
+{
+  "schema": "vela.event.v0.1",
+  "id": "vev_6cf9b2c095a6967f",
+  "kind": "artifact.asserted",
+  "target": {
+    "type": "artifact",
+    "id": "va_89b58c9bfdc58a55"
+  },
+  "actor": {
+    "id": "reviewer:will",
+    "type": "human"
+  },
+  "timestamp": "2026-06-03T21:03:43.735043+00:00",
+  "reason": "Import artifact va_f78d5e0808a9ac34 from artifact packet cap_6fcdb44f3a2ff0c6",
+  "before_hash": "sha256:null",
+  "after_hash": "sha256:null",
+  "payload": {
+    "artifact": {
+      "access_tier": "public",
+      "content_hash": "sha256:f78d5e0808a9ac341b87cb72722c93009c5f2efa37841bbf7dc8088ca9bb7815",
+      "created": "2026-06-03T12:00:00+00:00",
+      "id": "va_89b58c9bfdc58a55",
+      "kind": "code",
+      "license": "public source locator; no restricted bytes deposited",
+      "locator": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1054.lean",
+      "media_type": "application/json",
+      "metadata": {
+        "artifact_packet_id": "cap_6fcdb44f3a2ff0c6",
+        "decl": "Erdos1054.f_undefined_at_2",
+        "external_artifact_id": "va_f78d5e0808a9ac34",
+        "lake_build": "green",
+        "parent_artifact_ids": [],
+        "producer_agent": "agent:canopus-lean-2026-06-03",
+        "toolchain": "lean4 v4.27.0 + Mathlib",
+        "topic": "Formal-conjectures: kernel-verified Lean theorems",
+        "verifier": "lean4-kernel + Mathlib v4.27.0 (lake build green; `#print axioms` = [propext, Classical.choice, Quot.sound] only — NO sorryAx)"
+      },
+      "name": "Lean 4 proof witness: FormalConjectures/ErdosProblems/1054.lean (formal-conjectures @ kernel-verified)",
+      "provenance": {
+        "authors": [
+          {
+            "name": "Canopus Lean proof-search adapter",
+            "orcid": null
+          }
+        ],
+        "citation_count": null,
+        "doi": null,
+        "extraction": {
+          "extracted_at": "2026-06-03T12:00:00+00:00",
+          "extractor_version": "vela/0.691.0",
+          "method": "artifact_to_state_import",
+          "model": "agent:canopus-lean-2026-06-03",
+          "model_version": null
+        },
+        "journal": null,
+        "openalex_id": null,
+        "pmc": null,
+        "pmid": null,
+        "publisher": "artifact packet",
+        "review": {
+          "corrections": [],
+          "reviewed": false,
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        "source_type": "model_output",
+        "title": "cap_6fcdb44f3a2ff0c6 · Lean 4 proof witness: FormalConjectures/ErdosProblems/1054.lean (formal-conjectures @ kernel-verified)",
+        "url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1054.lean",
+        "year": null
+      },
+      "retracted": false,
+      "source_url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1054.lean",
+      "storage_mode": "remote",
+      "target_findings": [
+        "vf_b8e3badb634a19a0"
+      ]
+    },
+    "proposal_id": "vpr_41f23aa850426e47"
+  },
+  "caveats": []
+}

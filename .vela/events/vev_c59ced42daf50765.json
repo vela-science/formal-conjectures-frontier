@@ -1,0 +1,26 @@
+{
+  "schema": "vela.event.v0.1",
+  "id": "vev_c59ced42daf50765",
+  "kind": "finding.asserted",
+  "target": {
+    "type": "finding",
+    "id": "vf_b8e3badb634a19a0"
+  },
+  "actor": {
+    "id": "reviewer:will",
+    "type": "human"
+  },
+  "timestamp": "2026-06-03T21:03:43.756437+00:00",
+  "reason": "Candidate claim vc_c0bc8dce9a810f0b imported from artifact packet cap_6fcdb44f3a2ff0c6",
+  "before_hash": "sha256:null",
+  "after_hash": "sha256:ea17e10bf0918ac75f7422b29fef10c0ab92586739b4c03d1269578e0bda4f90",
+  "payload": {
+    "proposal_id": "vpr_46734a4a9d2acfe0"
+  },
+  "caveats": [
+    "Kernel-verified Lean proof (proof term type-checks; lake build green; no sorryAx).",
+    "GENUINE NEW RESULT: this closes a previously-OPEN `@[category textbook]` `sorry` in google-deepmind/formal-conjectures (ErdosProblems/1054.lean), proved by agent:canopus-lean. External acceptance channel = a merged PR to that repo (pending).",
+    "Modest scope: a textbook lemma, not a research-open Erdős problem. Reviewer acceptance required before this becomes canonical frontier state.",
+    "Agent output is source material until reviewer acceptance."
+  ]
+}

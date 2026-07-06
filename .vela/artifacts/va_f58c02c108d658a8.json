@@ -1,0 +1,55 @@
+{
+  "id": "va_f58c02c108d658a8",
+  "kind": "code",
+  "name": "Lean 4 proof witness: FormalConjectures/ErdosProblems/961.lean (formal-conjectures @ kernel-verified)",
+  "content_hash": "sha256:370c3b127f446b9241454294d016ae1ccd2ba13adaaf304e328eb084e1464fcb",
+  "media_type": "application/json",
+  "storage_mode": "remote",
+  "locator": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/961.lean",
+  "source_url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/961.lean",
+  "license": "public source locator; no restricted bytes deposited",
+  "target_findings": [
+    "vf_bc277af6cc7a3216"
+  ],
+  "provenance": {
+    "source_type": "model_output",
+    "doi": null,
+    "url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/961.lean",
+    "title": "cap_4af431152a035fa4 · Lean 4 proof witness: FormalConjectures/ErdosProblems/961.lean (formal-conjectures @ kernel-verified)",
+    "authors": [
+      {
+        "name": "Canopus Lean proof-search adapter",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "publisher": "artifact packet",
+    "extraction": {
+      "method": "artifact_to_state_import",
+      "model": "agent:canopus-lean-2026-06-03",
+      "model_version": null,
+      "extracted_at": "2026-06-03T12:00:00+00:00",
+      "extractor_version": "vela/0.691.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "metadata": {
+    "artifact_packet_id": "cap_4af431152a035fa4",
+    "decl": "Erdos961.erdos_961.variants.sylvester_schur_1_1",
+    "external_artifact_id": "va_370c3b127f446b92",
+    "lake_build": "green",
+    "parent_artifact_ids": [],
+    "producer_agent": "agent:canopus-lean-2026-06-03",
+    "toolchain": "lean4 v4.27.0 + Mathlib",
+    "topic": "Formal-conjectures: kernel-verified Lean theorems",
+    "verifier": "lean4-kernel + Mathlib (lake build green; the declaration's proof term carries no `sorry` and no extra axioms)"
+  },
+  "retracted": false,
+  "access_tier": "public",
+  "created": "2026-06-03T12:00:00+00:00"
+}

@@ -1,0 +1,111 @@
+{
+  "schema": "vela.proposal.v0.1",
+  "id": "vpr_0ad0eadc649d7fa3",
+  "kind": "artifact.assert",
+  "target": {
+    "type": "artifact",
+    "id": "va_f58c02c108d658a8"
+  },
+  "actor": {
+    "id": "agent:canopus-lean-2026-06-03",
+    "type": "agent"
+  },
+  "created_at": "2026-06-03T20:44:51.516668+00:00",
+  "reason": "Import artifact va_370c3b127f446b92 from artifact packet cap_4af431152a035fa4",
+  "payload": {
+    "artifact": {
+      "access_tier": "public",
+      "content_hash": "sha256:370c3b127f446b9241454294d016ae1ccd2ba13adaaf304e328eb084e1464fcb",
+      "created": "2026-06-03T12:00:00+00:00",
+      "id": "va_f58c02c108d658a8",
+      "kind": "code",
+      "license": "public source locator; no restricted bytes deposited",
+      "locator": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/961.lean",
+      "media_type": "application/json",
+      "metadata": {
+        "artifact_packet_id": "cap_4af431152a035fa4",
+        "decl": "Erdos961.erdos_961.variants.sylvester_schur_1_1",
+        "external_artifact_id": "va_370c3b127f446b92",
+        "lake_build": "green",
+        "parent_artifact_ids": [],
+        "producer_agent": "agent:canopus-lean-2026-06-03",
+        "toolchain": "lean4 v4.27.0 + Mathlib",
+        "topic": "Formal-conjectures: kernel-verified Lean theorems",
+        "verifier": "lean4-kernel + Mathlib (lake build green; the declaration's proof term carries no `sorry` and no extra axioms)"
+      },
+      "name": "Lean 4 proof witness: FormalConjectures/ErdosProblems/961.lean (formal-conjectures @ kernel-verified)",
+      "provenance": {
+        "authors": [
+          {
+            "name": "Canopus Lean proof-search adapter",
+            "orcid": null
+          }
+        ],
+        "citation_count": null,
+        "doi": null,
+        "extraction": {
+          "extracted_at": "2026-06-03T12:00:00+00:00",
+          "extractor_version": "vela/0.691.0",
+          "method": "artifact_to_state_import",
+          "model": "agent:canopus-lean-2026-06-03",
+          "model_version": null
+        },
+        "journal": null,
+        "openalex_id": null,
+        "pmc": null,
+        "pmid": null,
+        "publisher": "artifact packet",
+        "review": {
+          "corrections": [],
+          "reviewed": false,
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        "source_type": "model_output",
+        "title": "cap_4af431152a035fa4 · Lean 4 proof witness: FormalConjectures/ErdosProblems/961.lean (formal-conjectures @ kernel-verified)",
+        "url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/961.lean",
+        "year": null
+      },
+      "retracted": false,
+      "source_url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/961.lean",
+      "storage_mode": "remote",
+      "target_findings": [
+        "vf_bc277af6cc7a3216"
+      ]
+    },
+    "artifact_packet": {
+      "created_at": "2026-06-03T12:00:00+00:00",
+      "packet_id": "cap_4af431152a035fa4",
+      "producer": {
+        "id": "agent:canopus-lean-2026-06-03",
+        "kind": "agent",
+        "name": "Canopus Lean proof-search adapter"
+      },
+      "schema": "carina.artifact_packet.v0.1",
+      "topic": "Formal-conjectures: kernel-verified Lean theorems"
+    },
+    "external_artifact_id": "va_370c3b127f446b92",
+    "parent_artifact_ids": []
+  },
+  "source_refs": [
+    "artifact_packet:cap_4af431152a035fa4",
+    "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/961.lean"
+  ],
+  "status": "applied",
+  "reviewed_by": "reviewer:will",
+  "reviewed_at": "2026-06-03T20:46:17.448871+00:00",
+  "decision_reason": "witness imported",
+  "applied_event_id": "vev_d2640575ef581360",
+  "caveats": [],
+  "agent_run": {
+    "agent": "agent:canopus-lean-2026-06-03",
+    "model": "external-artifact-runtime",
+    "run_id": "cap_4af431152a035fa4",
+    "started_at": "2026-06-03T12:00:00+00:00",
+    "context": {
+      "artifact_packet_id": "cap_4af431152a035fa4",
+      "producer_name": "Canopus Lean proof-search adapter",
+      "topic": "Formal-conjectures: kernel-verified Lean theorems"
+    }
+  }
+}

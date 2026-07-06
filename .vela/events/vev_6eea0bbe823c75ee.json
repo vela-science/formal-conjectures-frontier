@@ -1,0 +1,26 @@
+{
+  "schema": "vela.event.v0.1",
+  "id": "vev_6eea0bbe823c75ee",
+  "kind": "finding.asserted",
+  "target": {
+    "type": "finding",
+    "id": "vf_2df66520d12cbb35"
+  },
+  "actor": {
+    "id": "reviewer:will-blair",
+    "type": "human"
+  },
+  "timestamp": "2026-06-15T16:33:37.912131+00:00",
+  "reason": "Candidate claim vc_d4db833b655a5bda imported from artifact packet cap_beef856ac1c8e4ce",
+  "before_hash": "sha256:null",
+  "after_hash": "sha256:3f76eb74eb41c36427c7debab13abab76df683ef72e0b47bd0ca6ce53424f3ab",
+  "payload": {
+    "proposal_id": "vpr_d908e3fdbc6248e1"
+  },
+  "caveats": [
+    "The textbook Lambert-series identity (a building block of Erdős 257), not the open Erdős 257 problem itself (irrationality), which remains sorry.",
+    "Kernel-verified locally; genuinely unclaimed upstream (no open PR/issue/annotation) so this one IS upstream-PR-worthy via the hosted-fork formal_proof route (83 lines > the 50-line inline cap).",
+    "Agent output is source material until reviewer acceptance."
+  ],
+  "signature": "fec53a1cee156cb77a2c100f9c5c9157f295b553b0562dee0b3cdc44054964a05df233c921f6bc0467b90c35c364257e6b86d2d7859c75c092d043a9c4cb1e07"
+}

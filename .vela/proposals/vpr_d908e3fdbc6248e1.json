@@ -1,0 +1,133 @@
+{
+  "schema": "vela.proposal.v0.1",
+  "id": "vpr_d908e3fdbc6248e1",
+  "kind": "finding.add",
+  "target": {
+    "type": "finding",
+    "id": "vf_2df66520d12cbb35"
+  },
+  "actor": {
+    "id": "agent:canopus-lean-2026-06-14",
+    "type": "agent"
+  },
+  "created_at": "2026-06-14T22:20:54.046715+00:00",
+  "reason": "Candidate claim vc_d4db833b655a5bda imported from artifact packet cap_beef856ac1c8e4ce",
+  "payload": {
+    "artifact_packet": {
+      "created_at": "2026-06-14T00:00:00.000000+00:00",
+      "packet_id": "cap_beef856ac1c8e4ce",
+      "producer": {
+        "id": "agent:canopus-lean-2026-06-14",
+        "kind": "agent",
+        "name": "Canopus formal-math prover (Opus 4.8, parallel subagent)"
+      },
+      "schema": "carina.artifact_packet.v0.1",
+      "topic": "Kernel-verified Lean proof closing an UNCLAIMED open sorry in Erdős Problem 257 (formal-conjectures)"
+    },
+    "candidate_claim_id": "vc_d4db833b655a5bda",
+    "evidence_artifact_ids": [
+      "va_e76262c0020bf91d"
+    ],
+    "finding": {
+      "assertion": {
+        "direction": null,
+        "relation": null,
+        "text": "The Lean 4 theorem `Erdos257.erdos_257.variants.tsum_top_eq` is proven and kernel-verified (axioms: propext, Classical.choice, Quot.sound; no sorryAx): the Lambert-series identity ∑_{n≥1} 1/(2^n - 1) = ∑_{n≥1} d(n)/2^n, where d(n) is the number of divisors of n. Closes a previously-open, UNCLAIMED `sorry` (category: textbook) in google-deepmind/formal-conjectures Erdős Problem 257.",
+        "type": "theoretical"
+      },
+      "conditions": {
+        "duration": null,
+        "text": "domain:analytic_number_theory; verifier:lean4_kernel; category:textbook; result:lambert_series_divisor_identity; open_sorry_closed:true; unclaimed_upstream:true"
+      },
+      "confidence": {
+        "basis": "agent-imported candidate claim; reviewer acceptance required",
+        "extraction_confidence": 0.7,
+        "kind": "frontier_epistemic",
+        "method": "expert_judgment",
+        "score": 0.99
+      },
+      "created": "2026-06-14T00:00:00.000000+00:00",
+      "evidence": {
+        "evidence_spans": [
+          {
+            "artifact_id": "va_e76262c0020bf91d",
+            "artifact_packet_id": "cap_beef856ac1c8e4ce",
+            "candidate_claim_id": "vc_d4db833b655a5bda"
+          }
+        ],
+        "method": "ScienceClaw-shaped artifact packet import",
+        "model_system": "agent artifact packet",
+        "replicated": false,
+        "replication_count": null,
+        "type": "computational"
+      },
+      "flags": {
+        "contested": false,
+        "declining": false,
+        "gap": false,
+        "gravity_well": false,
+        "negative_space": false,
+        "retracted": false
+      },
+      "id": "vf_2df66520d12cbb35",
+      "links": [],
+      "previous_version": null,
+      "provenance": {
+        "authors": [
+          {
+            "name": "Canopus formal-math prover (Opus 4.8, parallel subagent)",
+            "orcid": null
+          }
+        ],
+        "doi": null,
+        "extraction": {
+          "extracted_at": "2026-06-14T00:00:00.000000+00:00",
+          "extractor_version": "vela/0.700.0",
+          "method": "artifact_to_state_import",
+          "model": "agent:canopus-lean-2026-06-14",
+          "model_version": null
+        },
+        "publisher": "artifact packet",
+        "review": {
+          "corrections": [],
+          "reviewed": false,
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        "source_type": "model_output",
+        "title": "cap_beef856ac1c8e4ce · vc_d4db833b655a5bda",
+        "url": "https://www.erdosproblems.com/257",
+        "year": null
+      },
+      "updated": null,
+      "version": 1
+    }
+  },
+  "source_refs": [
+    "artifact_packet:cap_beef856ac1c8e4ce",
+    "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/257.lean",
+    "https://www.erdosproblems.com/257",
+    "packet_artifact:va_e76262c0020bf91d"
+  ],
+  "status": "applied",
+  "reviewed_by": "reviewer:will-blair",
+  "reviewed_at": "2026-06-15T16:33:37.912077+00:00",
+  "decision_reason": "Erdős #257 tsum_top_eq: genuinely novel kernel-clean close; PR #4269 open upstream.",
+  "applied_event_id": "vev_6eea0bbe823c75ee",
+  "caveats": [
+    "The textbook Lambert-series identity (a building block of Erdős 257), not the open Erdős 257 problem itself (irrationality), which remains sorry.",
+    "Kernel-verified locally; genuinely unclaimed upstream (no open PR/issue/annotation) so this one IS upstream-PR-worthy via the hosted-fork formal_proof route (83 lines > the 50-line inline cap).",
+    "Agent output is source material until reviewer acceptance."
+  ],
+  "agent_run": {
+    "agent": "agent:canopus-lean-2026-06-14",
+    "model": "external-artifact-runtime",
+    "run_id": "cap_beef856ac1c8e4ce",
+    "started_at": "2026-06-14T00:00:00.000000+00:00",
+    "context": {
+      "artifact_packet_id": "cap_beef856ac1c8e4ce",
+      "producer_name": "Canopus formal-math prover (Opus 4.8, parallel subagent)",
+      "topic": "Kernel-verified Lean proof closing an UNCLAIMED open sorry in Erdős Problem 257 (formal-conjectures)"
+    }
+  }
+}

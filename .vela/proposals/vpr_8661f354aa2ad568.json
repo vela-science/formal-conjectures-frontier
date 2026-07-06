@@ -1,0 +1,117 @@
+{
+  "schema": "vela.proposal.v0.1",
+  "id": "vpr_8661f354aa2ad568",
+  "kind": "artifact.assert",
+  "target": {
+    "type": "artifact",
+    "id": "va_417333a3e62df44a"
+  },
+  "actor": {
+    "id": "agent:canopus-lean-2026-06-14",
+    "type": "agent"
+  },
+  "created_at": "2026-06-14T22:20:54.029974+00:00",
+  "reason": "Import artifact va_e76262c0020bf91d from artifact packet cap_beef856ac1c8e4ce",
+  "payload": {
+    "artifact": {
+      "access_tier": "public",
+      "content_hash": "sha256:e76262c0020bf91dd4db833b655a5bdabeef856ac1c8e4cead11e61a00498104",
+      "created": "2026-06-14T00:00:00.000000+00:00",
+      "id": "va_417333a3e62df44a",
+      "kind": "code",
+      "license": "public source locator; no restricted bytes deposited",
+      "locator": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/257.lean",
+      "media_type": "application/json",
+      "metadata": {
+        "artifact_packet_id": "cap_beef856ac1c8e4ce",
+        "axioms": "propext, Classical.choice, Quot.sound (no sorryAx)",
+        "declaration": "Erdos257.erdos_257.variants.tsum_top_eq",
+        "exit_code": 0,
+        "external_artifact_id": "va_e76262c0020bf91d",
+        "file": "FormalConjectures/ErdosProblems/257.lean",
+        "method": "instantiate Mathlib tsum_pow_div_one_sub_eq_tsum_sigma at r=1/2,k=0; rewrite (1/2)^n/(1-(1/2)^n)=1/(2^n-1) and sigma0(n)(1/2)^n=d(n)/2^n; bridge ℕ+ to ℕ (n=0 term vanishes both sides); summability by geometric domination",
+        "parent_artifact_ids": [],
+        "producer_agent": "agent:canopus-lean-2026-06-14",
+        "proof_lines": 83,
+        "repo": "google-deepmind/formal-conjectures",
+        "toolchain": "leanprover/lean4:v4.27.0",
+        "topic": "Kernel-verified Lean proof closing an UNCLAIMED open sorry in Erdős Problem 257 (formal-conjectures)",
+        "unclaimed": "no open PR/issue, no formal_proof annotation (verified 2026-06-14)",
+        "verifier": "lean4 kernel (lake env lean)"
+      },
+      "name": "Lean 4 proof of Erdos257 tsum_top_eq (Lambert series ∑1/(2^n-1)=∑d(n)/2^n), kernel-verified",
+      "provenance": {
+        "authors": [
+          {
+            "name": "Canopus formal-math prover (Opus 4.8, parallel subagent)",
+            "orcid": null
+          }
+        ],
+        "citation_count": null,
+        "doi": null,
+        "extraction": {
+          "extracted_at": "2026-06-14T00:00:00.000000+00:00",
+          "extractor_version": "vela/0.700.0",
+          "method": "artifact_to_state_import",
+          "model": "agent:canopus-lean-2026-06-14",
+          "model_version": null
+        },
+        "journal": null,
+        "openalex_id": null,
+        "pmc": null,
+        "pmid": null,
+        "publisher": "artifact packet",
+        "review": {
+          "corrections": [],
+          "reviewed": false,
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        "source_type": "model_output",
+        "title": "cap_beef856ac1c8e4ce · Lean 4 proof of Erdos257 tsum_top_eq (Lambert series ∑1/(2^n-1)=∑d(n)/2^n), kernel-verified",
+        "url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/257.lean",
+        "year": null
+      },
+      "retracted": false,
+      "source_url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/257.lean",
+      "storage_mode": "remote",
+      "target_findings": [
+        "vf_2df66520d12cbb35"
+      ]
+    },
+    "artifact_packet": {
+      "created_at": "2026-06-14T00:00:00.000000+00:00",
+      "packet_id": "cap_beef856ac1c8e4ce",
+      "producer": {
+        "id": "agent:canopus-lean-2026-06-14",
+        "kind": "agent",
+        "name": "Canopus formal-math prover (Opus 4.8, parallel subagent)"
+      },
+      "schema": "carina.artifact_packet.v0.1",
+      "topic": "Kernel-verified Lean proof closing an UNCLAIMED open sorry in Erdős Problem 257 (formal-conjectures)"
+    },
+    "external_artifact_id": "va_e76262c0020bf91d",
+    "parent_artifact_ids": []
+  },
+  "source_refs": [
+    "artifact_packet:cap_beef856ac1c8e4ce",
+    "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/257.lean"
+  ],
+  "status": "applied",
+  "reviewed_by": "reviewer:will-blair",
+  "reviewed_at": "2026-06-15T16:33:37.885249+00:00",
+  "decision_reason": "Erdős #257 tsum_top_eq: kernel-clean Lean 4 proof artifact (no sorryAx).",
+  "applied_event_id": "vev_3992cfa969fd8c4a",
+  "caveats": [],
+  "agent_run": {
+    "agent": "agent:canopus-lean-2026-06-14",
+    "model": "external-artifact-runtime",
+    "run_id": "cap_beef856ac1c8e4ce",
+    "started_at": "2026-06-14T00:00:00.000000+00:00",
+    "context": {
+      "artifact_packet_id": "cap_beef856ac1c8e4ce",
+      "producer_name": "Canopus formal-math prover (Opus 4.8, parallel subagent)",
+      "topic": "Kernel-verified Lean proof closing an UNCLAIMED open sorry in Erdős Problem 257 (formal-conjectures)"
+    }
+  }
+}

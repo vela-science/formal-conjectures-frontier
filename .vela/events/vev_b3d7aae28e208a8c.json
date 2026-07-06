@@ -1,0 +1,26 @@
+{
+  "schema": "vela.event.v0.1",
+  "id": "vev_b3d7aae28e208a8c",
+  "kind": "finding.asserted",
+  "target": {
+    "type": "finding",
+    "id": "vf_99c872a66cc24fb6"
+  },
+  "actor": {
+    "id": "reviewer:will",
+    "type": "human"
+  },
+  "timestamp": "2026-06-14T21:59:48.279109+00:00",
+  "reason": "Candidate claim vc_656866803ec4c903 imported from artifact packet cap_7a0d0ee2195e3fec",
+  "before_hash": "sha256:null",
+  "after_hash": "sha256:a4ec4eafa4d96ad4c353912748de32fcb4d05f8d2c494bf90f81b7b64ad6f51d",
+  "payload": {
+    "proposal_id": "vpr_7edc56a44d11e310"
+  },
+  "caveats": [
+    "The textbook φ(n)∣n characterization, not the open Erdős 828 conjecture (infinitely-many-n for φ(n)∣n+a) nor Lehmer's conjecture, both of which remain sorry.",
+    "Kernel-verified locally; upstream PR (hosted-fork route, 157 lines) requires the maintainer's action.",
+    "Agent output is source material until reviewer acceptance."
+  ],
+  "signature": "7a5ef9025261b8c460dffc5d85cc982684daf5a03aa5355652ce3d3ee1082df6f533e782e20a01f7351af402f0444270fcde5570aa72a3e52573d6c7fdbf5202"
+}

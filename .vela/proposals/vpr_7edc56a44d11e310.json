@@ -1,0 +1,133 @@
+{
+  "schema": "vela.proposal.v0.1",
+  "id": "vpr_7edc56a44d11e310",
+  "kind": "finding.add",
+  "target": {
+    "type": "finding",
+    "id": "vf_99c872a66cc24fb6"
+  },
+  "actor": {
+    "id": "agent:canopus-lean-2026-06-14",
+    "type": "agent"
+  },
+  "created_at": "2026-06-14T21:56:17.466826+00:00",
+  "reason": "Candidate claim vc_656866803ec4c903 imported from artifact packet cap_7a0d0ee2195e3fec",
+  "payload": {
+    "artifact_packet": {
+      "created_at": "2026-06-14T00:00:00.000000+00:00",
+      "packet_id": "cap_7a0d0ee2195e3fec",
+      "producer": {
+        "id": "agent:canopus-lean-2026-06-14",
+        "kind": "agent",
+        "name": "Canopus formal-math prover (Opus 4.8, parallel subagent)"
+      },
+      "schema": "carina.artifact_packet.v0.1",
+      "topic": "Kernel-verified Lean proof closing an open sorry in Erdős Problem 828 (formal-conjectures)"
+    },
+    "candidate_claim_id": "vc_656866803ec4c903",
+    "evidence_artifact_ids": [
+      "va_742c51b3b65b701b"
+    ],
+    "finding": {
+      "assertion": {
+        "direction": null,
+        "relation": null,
+        "text": "The Lean 4 theorem `Erdos828.erdos_828.variants.phi_dvd_self_iff_pow2_pow3` is proven and kernel-verified (axioms: propext, Classical.choice, Quot.sound; no sorryAx): for n : ℕ, Euler's totient φ(n) divides n if and only if n ≤ 1 or n = 2^a · 3^b for some a > 0 and b ≥ 0. Closes a previously-open `sorry` (category: textbook) in google-deepmind/formal-conjectures Erdős Problem 828.",
+        "type": "theoretical"
+      },
+      "conditions": {
+        "duration": null,
+        "text": "domain:number_theory; verifier:lean4_kernel; category:textbook; result:totient_divides_characterization; open_sorry_closed:true"
+      },
+      "confidence": {
+        "basis": "agent-imported candidate claim; reviewer acceptance required",
+        "extraction_confidence": 0.7,
+        "kind": "frontier_epistemic",
+        "method": "expert_judgment",
+        "score": 0.99
+      },
+      "created": "2026-06-14T00:00:00.000000+00:00",
+      "evidence": {
+        "evidence_spans": [
+          {
+            "artifact_id": "va_742c51b3b65b701b",
+            "artifact_packet_id": "cap_7a0d0ee2195e3fec",
+            "candidate_claim_id": "vc_656866803ec4c903"
+          }
+        ],
+        "method": "ScienceClaw-shaped artifact packet import",
+        "model_system": "agent artifact packet",
+        "replicated": false,
+        "replication_count": null,
+        "type": "computational"
+      },
+      "flags": {
+        "contested": false,
+        "declining": false,
+        "gap": false,
+        "gravity_well": false,
+        "negative_space": false,
+        "retracted": false
+      },
+      "id": "vf_99c872a66cc24fb6",
+      "links": [],
+      "previous_version": null,
+      "provenance": {
+        "authors": [
+          {
+            "name": "Canopus formal-math prover (Opus 4.8, parallel subagent)",
+            "orcid": null
+          }
+        ],
+        "doi": null,
+        "extraction": {
+          "extracted_at": "2026-06-14T00:00:00.000000+00:00",
+          "extractor_version": "vela/0.700.0",
+          "method": "artifact_to_state_import",
+          "model": "agent:canopus-lean-2026-06-14",
+          "model_version": null
+        },
+        "publisher": "artifact packet",
+        "review": {
+          "corrections": [],
+          "reviewed": false,
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        "source_type": "model_output",
+        "title": "cap_7a0d0ee2195e3fec · vc_656866803ec4c903",
+        "url": "https://www.erdosproblems.com/828",
+        "year": null
+      },
+      "updated": null,
+      "version": 1
+    }
+  },
+  "source_refs": [
+    "artifact_packet:cap_7a0d0ee2195e3fec",
+    "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/828.lean",
+    "https://www.erdosproblems.com/828",
+    "packet_artifact:va_742c51b3b65b701b"
+  ],
+  "status": "applied",
+  "reviewed_by": "reviewer:will",
+  "reviewed_at": "2026-06-14T21:59:48.278804+00:00",
+  "decision_reason": "Kernel-verified Lean proof (no sorryAx): phi(n)|n iff n<=1 or n=2^a 3^b, a>0; closes the textbook sorry in Erdos 828",
+  "applied_event_id": "vev_b3d7aae28e208a8c",
+  "caveats": [
+    "The textbook φ(n)∣n characterization, not the open Erdős 828 conjecture (infinitely-many-n for φ(n)∣n+a) nor Lehmer's conjecture, both of which remain sorry.",
+    "Kernel-verified locally; upstream PR (hosted-fork route, 157 lines) requires the maintainer's action.",
+    "Agent output is source material until reviewer acceptance."
+  ],
+  "agent_run": {
+    "agent": "agent:canopus-lean-2026-06-14",
+    "model": "external-artifact-runtime",
+    "run_id": "cap_7a0d0ee2195e3fec",
+    "started_at": "2026-06-14T00:00:00.000000+00:00",
+    "context": {
+      "artifact_packet_id": "cap_7a0d0ee2195e3fec",
+      "producer_name": "Canopus formal-math prover (Opus 4.8, parallel subagent)",
+      "topic": "Kernel-verified Lean proof closing an open sorry in Erdős Problem 828 (formal-conjectures)"
+    }
+  }
+}

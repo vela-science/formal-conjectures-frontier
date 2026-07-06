@@ -1,0 +1,114 @@
+{
+  "schema": "vela.proposal.v0.1",
+  "id": "vpr_99706386ddc82e18",
+  "kind": "artifact.assert",
+  "target": {
+    "type": "artifact",
+    "id": "va_b8c1458e38337854"
+  },
+  "actor": {
+    "id": "agent:canopus-lean-2026-06-14",
+    "type": "agent"
+  },
+  "created_at": "2026-06-14T21:49:25.265431+00:00",
+  "reason": "Import artifact va_5af1bc8466dbfe23 from artifact packet cap_f41de5f08328c24e",
+  "payload": {
+    "artifact": {
+      "access_tier": "public",
+      "content_hash": "sha256:5af1bc8466dbfe233fe62fa30a5792b8f41de5f08328c24e8c3a2b225216f87b",
+      "created": "2026-06-14T00:00:00.000000+00:00",
+      "id": "va_b8c1458e38337854",
+      "kind": "code",
+      "license": "public source locator; no restricted bytes deposited",
+      "locator": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/829.lean",
+      "media_type": "application/json",
+      "metadata": {
+        "artifact_packet_id": "cap_f41de5f08328c24e",
+        "axioms": "propext, Classical.choice, Quot.sound (no sorryAx)",
+        "declaration": "Erdos829.sumRep_cubes_three",
+        "exit_code": 0,
+        "external_artifact_id": "va_5af1bc8466dbfe23",
+        "file": "FormalConjectures/ErdosProblems/829.lean",
+        "method": "sumRep as filtered-antidiagonal cardinality; k ≤ k^3 bounds rule out 2,3 as cubes; the four pairs (a,b) with a+b=3 each contain a 2 or 3",
+        "parent_artifact_ids": [],
+        "producer_agent": "agent:canopus-lean-2026-06-14",
+        "repo": "google-deepmind/formal-conjectures",
+        "toolchain": "leanprover/lean4:v4.27.0",
+        "topic": "Kernel-verified Lean proof closing an open sorry in Erdős Problem 829 (formal-conjectures)",
+        "verifier": "lean4 kernel (lake env lean)"
+      },
+      "name": "Lean 4 proof of Erdos829.sumRep_cubes_three (3 is not an ordered sum of two cubes), kernel-verified",
+      "provenance": {
+        "authors": [
+          {
+            "name": "Canopus formal-math prover (Opus 4.8, parallel subagent)",
+            "orcid": null
+          }
+        ],
+        "citation_count": null,
+        "doi": null,
+        "extraction": {
+          "extracted_at": "2026-06-14T00:00:00.000000+00:00",
+          "extractor_version": "vela/0.700.0",
+          "method": "artifact_to_state_import",
+          "model": "agent:canopus-lean-2026-06-14",
+          "model_version": null
+        },
+        "journal": null,
+        "openalex_id": null,
+        "pmc": null,
+        "pmid": null,
+        "publisher": "artifact packet",
+        "review": {
+          "corrections": [],
+          "reviewed": false,
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        "source_type": "model_output",
+        "title": "cap_f41de5f08328c24e · Lean 4 proof of Erdos829.sumRep_cubes_three (3 is not an ordered sum of two cubes), kernel-verified",
+        "url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/829.lean",
+        "year": null
+      },
+      "retracted": false,
+      "source_url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/829.lean",
+      "storage_mode": "remote",
+      "target_findings": [
+        "vf_48d089ada508111d"
+      ]
+    },
+    "artifact_packet": {
+      "created_at": "2026-06-14T00:00:00.000000+00:00",
+      "packet_id": "cap_f41de5f08328c24e",
+      "producer": {
+        "id": "agent:canopus-lean-2026-06-14",
+        "kind": "agent",
+        "name": "Canopus formal-math prover (Opus 4.8, parallel subagent)"
+      },
+      "schema": "carina.artifact_packet.v0.1",
+      "topic": "Kernel-verified Lean proof closing an open sorry in Erdős Problem 829 (formal-conjectures)"
+    },
+    "external_artifact_id": "va_5af1bc8466dbfe23",
+    "parent_artifact_ids": []
+  },
+  "source_refs": [
+    "artifact_packet:cap_f41de5f08328c24e",
+    "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/829.lean"
+  ],
+  "status": "rejected",
+  "reviewed_by": "reviewer:will-blair",
+  "reviewed_at": "2026-06-15T16:33:01.903911+00:00",
+  "decision_reason": "Bulk triage 2026-06-15: automated draft (watcher/extractor/ingest), not adjudicated; declining to keep the review gate meaningful. Recoverable from its Carina packet if needed.",
+  "caveats": [],
+  "agent_run": {
+    "agent": "agent:canopus-lean-2026-06-14",
+    "model": "external-artifact-runtime",
+    "run_id": "cap_f41de5f08328c24e",
+    "started_at": "2026-06-14T00:00:00.000000+00:00",
+    "context": {
+      "artifact_packet_id": "cap_f41de5f08328c24e",
+      "producer_name": "Canopus formal-math prover (Opus 4.8, parallel subagent)",
+      "topic": "Kernel-verified Lean proof closing an open sorry in Erdős Problem 829 (formal-conjectures)"
+    }
+  }
+}

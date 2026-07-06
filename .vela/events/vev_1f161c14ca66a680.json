@@ -1,0 +1,26 @@
+{
+  "schema": "vela.event.v0.1",
+  "id": "vev_1f161c14ca66a680",
+  "kind": "finding.asserted",
+  "target": {
+    "type": "finding",
+    "id": "vf_48d089ada508111d"
+  },
+  "actor": {
+    "id": "reviewer:will",
+    "type": "human"
+  },
+  "timestamp": "2026-06-14T21:50:06.089307+00:00",
+  "reason": "Candidate claim vc_3fe62fa30a5792b8 imported from artifact packet cap_f41de5f08328c24e",
+  "before_hash": "sha256:null",
+  "after_hash": "sha256:dd939f158ec85841754a6e93567fdb1d6dc742700d89bb16d5ec00ae2cf492d9",
+  "payload": {
+    "proposal_id": "vpr_0b5674927668851b"
+  },
+  "caveats": [
+    "A small computational fact (a `test`-category supporting lemma), not the open Erdős 829 conjecture itself.",
+    "Kernel-verified locally; upstream PR is the external acceptance step and requires the maintainer's action.",
+    "Agent output is source material until reviewer acceptance."
+  ],
+  "signature": "19f0da2f001b8c347f69738f996f4f456eff770f595b03dabfe99d6da2cd65814285b007176afbc7c9ff7ff5b688e2fbdf1b83febf7eaeeb2c5776e90b587604"
+}

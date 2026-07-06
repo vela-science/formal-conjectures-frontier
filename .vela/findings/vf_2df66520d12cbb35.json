@@ -1,0 +1,74 @@
+{
+  "id": "vf_2df66520d12cbb35",
+  "version": 1,
+  "previous_version": null,
+  "assertion": {
+    "text": "The Lean 4 theorem `Erdos257.erdos_257.variants.tsum_top_eq` is proven and kernel-verified (axioms: propext, Classical.choice, Quot.sound; no sorryAx): the Lambert-series identity ∑_{n≥1} 1/(2^n - 1) = ∑_{n≥1} d(n)/2^n, where d(n) is the number of divisors of n. Closes a previously-open, UNCLAIMED `sorry` (category: textbook) in google-deepmind/formal-conjectures Erdős Problem 257.",
+    "type": "theoretical",
+    "relation": null,
+    "direction": null
+  },
+  "evidence": {
+    "type": "computational",
+    "model_system": "agent artifact packet",
+    "method": "ScienceClaw-shaped artifact packet import",
+    "replicated": false,
+    "replication_count": null,
+    "evidence_spans": [
+      {
+        "artifact_id": "va_e76262c0020bf91d",
+        "artifact_packet_id": "cap_beef856ac1c8e4ce",
+        "candidate_claim_id": "vc_d4db833b655a5bda"
+      }
+    ]
+  },
+  "conditions": {
+    "text": "domain:analytic_number_theory; verifier:lean4_kernel; category:textbook; result:lambert_series_divisor_identity; open_sorry_closed:true; unclaimed_upstream:true",
+    "duration": null
+  },
+  "confidence": {
+    "kind": "frontier_epistemic",
+    "score": 0.99,
+    "basis": "agent-imported candidate claim; reviewer acceptance required",
+    "method": "expert_judgment",
+    "extraction_confidence": 0.7
+  },
+  "provenance": {
+    "source_type": "model_output",
+    "doi": null,
+    "url": "https://www.erdosproblems.com/257",
+    "title": "cap_beef856ac1c8e4ce · vc_d4db833b655a5bda",
+    "authors": [
+      {
+        "name": "Canopus formal-math prover (Opus 4.8, parallel subagent)",
+        "orcid": null
+      }
+    ],
+    "year": null,
+    "publisher": "artifact packet",
+    "extraction": {
+      "method": "artifact_to_state_import",
+      "model": "agent:canopus-lean-2026-06-14",
+      "model_version": null,
+      "extracted_at": "2026-06-14T00:00:00.000000+00:00",
+      "extractor_version": "vela/0.700.0"
+    },
+    "review": {
+      "reviewed": false,
+      "reviewer": null,
+      "reviewed_at": null,
+      "corrections": []
+    }
+  },
+  "flags": {
+    "gap": false,
+    "negative_space": false,
+    "contested": false,
+    "retracted": false,
+    "declining": false,
+    "gravity_well": false
+  },
+  "links": [],
+  "created": "2026-06-14T00:00:00.000000+00:00",
+  "updated": null
+}

@@ -1,0 +1,134 @@
+{
+  "schema": "vela.proposal.v0.1",
+  "id": "vpr_46734a4a9d2acfe0",
+  "kind": "finding.add",
+  "target": {
+    "type": "finding",
+    "id": "vf_b8e3badb634a19a0"
+  },
+  "actor": {
+    "id": "agent:canopus-lean-2026-06-03",
+    "type": "agent"
+  },
+  "created_at": "2026-06-03T21:03:02.269646+00:00",
+  "reason": "Candidate claim vc_c0bc8dce9a810f0b imported from artifact packet cap_6fcdb44f3a2ff0c6",
+  "payload": {
+    "artifact_packet": {
+      "created_at": "2026-06-03T12:00:00+00:00",
+      "packet_id": "cap_6fcdb44f3a2ff0c6",
+      "producer": {
+        "id": "agent:canopus-lean-2026-06-03",
+        "kind": "agent",
+        "name": "Canopus Lean proof-search adapter"
+      },
+      "schema": "carina.artifact_packet.v0.1",
+      "topic": "Formal-conjectures: kernel-verified Lean theorems"
+    },
+    "candidate_claim_id": "vc_c0bc8dce9a810f0b",
+    "evidence_artifact_ids": [
+      "va_f78d5e0808a9ac34"
+    ],
+    "finding": {
+      "assertion": {
+        "direction": null,
+        "relation": null,
+        "text": "The Lean 4 theorem `Erdos1054.f_undefined_at_2` — f 2 = 0  — for the Erdős-1054 function f(n) = least m such that n is a sum of the k smallest divisors of m (some k ≥ 1), f is UNDEFINED at n=2 (junk value 0). Proof: any such sum is 1 + R where the i=0 term is the least divisor 1 and every other term is 0 or a strictly larger divisor (≥ 2), so the sum is never 2. — is formally proven and kernel-verified in formal-conjectures (zero `sorry`, no extra axioms). Verifier: lean4-kernel + Mathlib v4.27.0 (lake build green; `#print axioms` = [propext, Classical.choice, Quot.sound] only — NO sorryAx).",
+        "type": "theoretical"
+      },
+      "conditions": {
+        "duration": null,
+        "text": "Agent-imported candidate claim; scope requires review."
+      },
+      "confidence": {
+        "basis": "agent-imported candidate claim; reviewer acceptance required",
+        "extraction_confidence": 0.7,
+        "kind": "frontier_epistemic",
+        "method": "expert_judgment",
+        "score": 0.99
+      },
+      "created": "2026-06-03T12:00:00+00:00",
+      "evidence": {
+        "evidence_spans": [
+          {
+            "artifact_id": "va_f78d5e0808a9ac34",
+            "artifact_packet_id": "cap_6fcdb44f3a2ff0c6",
+            "candidate_claim_id": "vc_c0bc8dce9a810f0b"
+          }
+        ],
+        "method": "ScienceClaw-shaped artifact packet import",
+        "model_system": "agent artifact packet",
+        "replicated": false,
+        "replication_count": null,
+        "type": "computational"
+      },
+      "flags": {
+        "contested": false,
+        "declining": false,
+        "gap": false,
+        "gravity_well": false,
+        "negative_space": false,
+        "retracted": false
+      },
+      "id": "vf_b8e3badb634a19a0",
+      "links": [],
+      "previous_version": null,
+      "provenance": {
+        "authors": [
+          {
+            "name": "Canopus Lean proof-search adapter",
+            "orcid": null
+          }
+        ],
+        "doi": null,
+        "extraction": {
+          "extracted_at": "2026-06-03T12:00:00+00:00",
+          "extractor_version": "vela/0.691.0",
+          "method": "artifact_to_state_import",
+          "model": "agent:canopus-lean-2026-06-03",
+          "model_version": null
+        },
+        "publisher": "artifact packet",
+        "review": {
+          "corrections": [],
+          "reviewed": false,
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        "source_type": "model_output",
+        "title": "cap_6fcdb44f3a2ff0c6 · vc_c0bc8dce9a810f0b",
+        "url": "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1054.lean",
+        "year": null
+      },
+      "updated": null,
+      "version": 1
+    }
+  },
+  "source_refs": [
+    "artifact_packet:cap_6fcdb44f3a2ff0c6",
+    "github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/1054.lean",
+    "https://www.erdosproblems.com/961",
+    "packet_artifact:va_f78d5e0808a9ac34"
+  ],
+  "status": "applied",
+  "reviewed_by": "reviewer:will",
+  "reviewed_at": "2026-06-03T21:03:43.756358+00:00",
+  "decision_reason": "lake green, axiom-clean, newly-closed textbook sorry",
+  "applied_event_id": "vev_c59ced42daf50765",
+  "caveats": [
+    "Kernel-verified Lean proof (proof term type-checks; lake build green; no sorryAx).",
+    "GENUINE NEW RESULT: this closes a previously-OPEN `@[category textbook]` `sorry` in google-deepmind/formal-conjectures (ErdosProblems/1054.lean), proved by agent:canopus-lean. External acceptance channel = a merged PR to that repo (pending).",
+    "Modest scope: a textbook lemma, not a research-open Erdős problem. Reviewer acceptance required before this becomes canonical frontier state.",
+    "Agent output is source material until reviewer acceptance."
+  ],
+  "agent_run": {
+    "agent": "agent:canopus-lean-2026-06-03",
+    "model": "external-artifact-runtime",
+    "run_id": "cap_6fcdb44f3a2ff0c6",
+    "started_at": "2026-06-03T12:00:00+00:00",
+    "context": {
+      "artifact_packet_id": "cap_6fcdb44f3a2ff0c6",
+      "producer_name": "Canopus Lean proof-search adapter",
+      "topic": "Formal-conjectures: kernel-verified Lean theorems"
+    }
+  }
+}
