@@ -12,7 +12,7 @@ scope:
 carina:
   kernel: carina@0.1.0
 vela:
-  reducer: vela@0.757.3
+  reducer: vela@0.757.4
 paths:
   state: frontier.json
   sources: sources/
