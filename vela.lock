@@ -15,16 +15,16 @@ verifiers:
 carina:
   kernel: carina@0.1.0
   digest: sha256:2de6244bc3c695cd83adf7d17fd9c52b6586ce060874b37814cc35aff340d5ee
-snapshot_hash: sha256:dd12faa6de73c621115f1306e0c719c6439626f705928b62d124459c5acb5cce
+snapshot_hash: sha256:ff42e9fe51e8ce0c2026d1c699cb427580efce2e3814326b8215eb896f87248b
 event_log_hash: sha256:e5adcc636f172a2e19577775aa24599edceb50bf4d06a463cb287c603e028214
-proposal_state_hash: sha256:e1a5704b287621d8bcc02f56fe9c63b967c11dc1fcd746c97bf0adfb49ac9c57
+proposal_state_hash: sha256:a8685e2cca228521121e719e69594edc22cf6b84423b1b3e317c03135e1b4b00
 sources_hash: sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 artifacts_hash: sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 review_hash: sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 proof_freshness: fresh
 proof:
   latest: proof/latest.json
-  digest: sha256:fa1fa0e71c966ebdad3793a8642e9cf79f4f3b96642fa4450b0687feb79f744a
+  digest: sha256:bd4f12e770ec9fe602b987571dd622c9d4caac3036f9970b215a9dc5bb4fa9ba
   freshness: fresh
   events_manifest: proof/events.manifest.jsonl
   replay_trace: proof/replay.trace.jsonl
