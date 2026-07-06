@@ -2,7 +2,7 @@ schema: vela.frontier_manifest.v0.1
 layout: vela.frontier_repo.v0.1
 mode: split
 frontier_id: vfr_97d7d25957384f80
-name: Formal-conjectures Lean proofs (kernel-verified)
+name: Kernel-verified Lean theorems (prover-in-the-loop)
 description: ''
 visibility: public
 scope:
