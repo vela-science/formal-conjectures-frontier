@@ -1,17 +1,19 @@
 {
-  "schema": "vela.proposal.v0.1",
-  "id": "vpr_495f488451d0512a",
-  "kind": "verifier.attach",
+  "schema": "vela.event.v0.1",
+  "id": "vev_511f23237206edda",
+  "kind": "verifier_attachment.added",
   "target": {
     "type": "finding",
     "id": "vf_f563216b028daf69"
   },
   "actor": {
-    "id": "agent:vela-foundry-lean",
-    "type": "agent"
+    "id": "reviewer:will-blair",
+    "type": "human"
   },
-  "created_at": "2026-07-07T14:50:03.708820+00:00",
+  "timestamp": "2026-07-07T14:51:13.707765+00:00",
   "reason": "Lean kernel proof (prover-in-the-loop)",
+  "before_hash": "sha256:null",
+  "after_hash": "sha256:null",
   "payload": {
     "attachment": {
       "adversarial_probes": [
@@ -37,13 +39,9 @@
       "toolchain_hash": "758ec7e70f71dbb1",
       "verifier_actor": "agent:vela-foundry-lean",
       "verifier_method": "lean_kernel"
-    }
+    },
+    "proposal_id": "vpr_495f488451d0512a"
   },
-  "source_refs": [],
-  "status": "applied",
-  "reviewed_by": "reviewer:will-blair",
-  "reviewed_at": "2026-07-07T14:51:13.707754+00:00",
-  "decision_reason": "kernel-verified witness (foundry lean-run, no sorryAx); re-homed theorem upgraded from claim to witnessed",
-  "applied_event_id": "vev_511f23237206edda",
-  "caveats": []
+  "caveats": [],
+  "signature": "v1:4abe52c4fb354730b66373bcdbcf34120ff00399aa84fce498e109c59c828177c5ab5facf9e4cf8895d70073e84f57be048f09cbb2f14e97f9eacf3202395609"
 }
