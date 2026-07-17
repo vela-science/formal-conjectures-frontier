@@ -1,0 +1,23 @@
+{
+  "against_head": "e5adcc636f172a2e19577775aa24599edceb50bf4d06a463cb287c603e028214",
+  "artifacts": [
+    {
+      "kind": "provenance",
+      "locator": "/Users/williamblair/personal/prover-lane-frontier/.vela/findings/vf_c73a2c425bf63b94.json",
+      "sha256": "0aaa60b4e29fb4770426fc694e2a0c96a76b204d2994f1a810e8a0916ef78c63"
+    }
+  ],
+  "assertion": "Erdős #12: the good example (Erdos12.isGood_example). Kernel-clean Lean proof — axioms {propext, Classical.choice, Quot.sound}, no sorryAx — ported AlphaProof reference. Produced by the vela prover-in-the-loop foundry; verified by the Lean kernel.",
+  "assertion_type": "theoretical",
+  "caveats": [
+    "Re-homed from the prover-lane frontier (vfr_b354d1ae5d88038b), where it was originally established and signed under the maintainer key; this consolidates the two kernel-verified Lean frontiers into one.",
+    "Witness not re-attached in this corpus yet: the proof lives at mo271/formal-conjectures@2663234 (AlphaProof, ErdosProblems/12.lean), pending upstream; a fresh vlv_ will be minted via `foundry lean-run` once it merges into google-deepmind/formal-conjectures. The claim itself was foundry-verified and human-signed in prover-lane."
+  ],
+  "emitted_at": "2026-07-06T20:58:15.601461+00:00",
+  "emitted_by": "agent:vela-foundry-lean",
+  "frontier_id": "vfr_97d7d25957384f80",
+  "id": "vrc_470a2f1c0ff45f95",
+  "schema": "vela.activity-record.v0.1",
+  "signature": "b494b339e4694c41255eb7d50560f66622740da4226f180c23c3d8d4d99feb1c0a18ed8cd38eee94f24ecd894f09c762000d84474d8f02c9e552b2218a45c60f",
+  "signer_pubkey_hex": "d98b48144e372242fa629e5474e7e9662b7e3042d5df3117f7a90c4c51170df1"
+}

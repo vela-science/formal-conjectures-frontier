@@ -1,0 +1,11 @@
+{
+  "schema": "vela.lean_anchor.v0.1",
+  "theorem_id": 0,
+  "title": "FormalConjectures/ErdosProblems/138.lean :: Erdos138.monoAPNumber_two_one",
+  "module": "FormalConjectures/ErdosProblems/138.lean",
+  "decl": "Erdos138.monoAPNumber_two_one",
+  "substrate_role": "formal-conjectures prover-lane target",
+  "module_sha256": "53d0f0886f5e1efe0d5b866dd3cd01b42da3f869d4a776c667a6ac9fb130ce77",
+  "anchor_id": "vla_3e99918a86f19a56",
+  "structurally_present": true
+}

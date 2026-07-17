@@ -1,0 +1,23 @@
+{
+  "against_head": "e5adcc636f172a2e19577775aa24599edceb50bf4d06a463cb287c603e028214",
+  "artifacts": [
+    {
+      "kind": "provenance",
+      "locator": "/Users/williamblair/personal/prover-lane-frontier/.vela/findings/vf_009a49becf7821af.json",
+      "sha256": "6b7e7c4d99174c86944fa3f6d9cdc7add951509d63a3d04c5baa48ae3f1e306f"
+    }
+  ],
+  "assertion": "Erdős #138: W(1) = 1 (Erdos138.monoAPNumber_two_one). Kernel-clean Lean proof — axioms {propext, Classical.choice, Quot.sound}, no sorryAx — via sInf le_antisymm. Produced by the prover-in-the-loop foundry; verified by the Lean kernel.",
+  "assertion_type": "theoretical",
+  "caveats": [
+    "Re-homed from the prover-lane frontier (vfr_b354d1ae5d88038b), where it was originally established and signed under the maintainer key; this consolidates the two kernel-verified Lean frontiers into one.",
+    "Witness not re-attached in this corpus yet: the proof lives at XC0R/formal-conjectures@6c7a16e (ErdosProblems/138.lean), pending upstream; a fresh vlv_ will be minted via `foundry lean-run` once it merges into google-deepmind/formal-conjectures. The claim itself was foundry-verified and human-signed in prover-lane."
+  ],
+  "emitted_at": "2026-07-06T20:58:14.917332+00:00",
+  "emitted_by": "agent:vela-foundry-lean",
+  "frontier_id": "vfr_97d7d25957384f80",
+  "id": "vrc_9127422084a86c07",
+  "schema": "vela.activity-record.v0.1",
+  "signature": "a15a987ba6e787910ee699060f955594ee93d66275247a65fc3fa377dc58bc5222568489b16124ca4efd3ea8aadc3d91feaacbbd3450ff50983b6c04ac9ee40f",
+  "signer_pubkey_hex": "d98b48144e372242fa629e5474e7e9662b7e3042d5df3117f7a90c4c51170df1"
+}

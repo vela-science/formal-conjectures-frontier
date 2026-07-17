@@ -1,0 +1,11 @@
+{
+  "schema": "vela.lean_anchor.v0.1",
+  "theorem_id": 0,
+  "title": "FormalConjectures/ErdosProblems/1054.lean :: Erdos1054.f_undefined_at_3",
+  "module": "FormalConjectures/ErdosProblems/1054.lean",
+  "decl": "Erdos1054.f_undefined_at_3",
+  "substrate_role": "formal-conjectures prover-lane target",
+  "module_sha256": "f853fe5e82cef6cec626079e278806eea19cc62c67b5c159cc5d6b0a9019f82b",
+  "anchor_id": "vla_d9514ca9c7cf3919",
+  "structurally_present": true
+}

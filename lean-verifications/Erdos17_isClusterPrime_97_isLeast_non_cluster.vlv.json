@@ -1,0 +1,25 @@
+{
+  "schema": "vela.lean_verification.v0.2",
+  "verification_id": "vlv_d116c11674039689",
+  "anchor_id": "vla_f7c9c7f7cb7a36cd",
+  "theorem_id": 0,
+  "module": "FormalConjectures/Subsets/FC100SolvedSet1.lean",
+  "module_sha256": "31b0a5d8cec55578ab820dcdeae43abf67a7cc43a5590c04fe0307ab8b66ce9a",
+  "lean_toolchain": "leanprover/lean4:v4.27.0",
+  "mathlib_revision": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "verifier_output_hash": "efd195335ea04550674f78a56f90cb1f46374212812523ae91984e53b00d8873",
+  "status": "verified",
+  "verified_at": "2026-07-07T14:49:55.304554+00:00",
+  "verifier_actor": "agent:vela-foundry-lean",
+  "tcb_id": "vtcb_ce406b3d14d97363",
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "axiom_verdict": "kernel_clean",
+  "kernel_recheck": "not_run",
+  "axioms_output_hash": "364e8e142fcad27d4ea286e76d823a5713caa2e1dcc8c84749d758647bef6d3e",
+  "verifier_pubkey_hex": "4892f93877e637b5f59af31d9ec6704814842fb278cacb0eb94704baef99455e",
+  "signature_hex": "2cc4ebdacb784d94aed6e31406cb10e1bb68086f4fe5b0f13c5b6650d79e6b6f24aae5272e4a3b58dfdcde473bd081637c140be93de3337761dec29e51a67b0a"
+}

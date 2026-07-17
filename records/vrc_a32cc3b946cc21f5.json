@@ -1,0 +1,31 @@
+{
+  "against_head": "e5adcc636f172a2e19577775aa24599edceb50bf4d06a463cb287c603e028214",
+  "artifacts": [
+    {
+      "kind": "witness",
+      "locator": "/Users/williamblair/personal/vela/lean-verifications/Erdos1054_f_undefined_at_3.vlv.json",
+      "sha256": "73f4f609eb82e60e0217756529d972fd46c44e1677c99424509510ee2836dcec"
+    }
+  ],
+  "assertion": "Erdős #1054: f(5) = 0 (Erdos1054.f_undefined_at_3). Kernel-clean Lean proof — axioms {propext, Classical.choice, Quot.sound}, no sorryAx. Produced by the vela prover-in-the-loop foundry; verified by the Lean kernel.",
+  "assertion_type": "theoretical",
+  "caveats": [
+    "Re-homed from the prover-lane frontier (vfr_b354d1ae5d88038b), where it was originally established and signed under the maintainer key; this consolidates the two kernel-verified Lean frontiers into one.",
+    "Fresh vlv_ witness minted in this corpus (vlv_ea36b68e1708ec5d); kernel-clean, no sorryAx — re-runnable via `vela reproduce`."
+  ],
+  "emitted_at": "2026-07-06T20:57:34.866812+00:00",
+  "emitted_by": "agent:vela-foundry-lean",
+  "frontier_id": "vfr_97d7d25957384f80",
+  "id": "vrc_a32cc3b946cc21f5",
+  "schema": "vela.activity-record.v0.1",
+  "signature": "944b5ce39046a3f04074eac00bf54334970a0b7d8886d666f2e49c4a9324775d39065710c68e4e7bf943ab3d9676bd7d1446781f3985b9852527ec3774febb0d",
+  "signer_pubkey_hex": "d98b48144e372242fa629e5474e7e9662b7e3042d5df3117f7a90c4c51170df1",
+  "verifier_runs": [
+    {
+      "method": "lean4 #print axioms (v4.27.0)",
+      "outcome": "pass",
+      "output_hash": "axioms: propext, Classical.choice, Quot.sound; no sorryAx",
+      "solver": "lean4-kernel"
+    }
+  ]
+}

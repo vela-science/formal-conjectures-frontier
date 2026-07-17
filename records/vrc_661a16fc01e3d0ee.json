@@ -1,0 +1,23 @@
+{
+  "against_head": "e5adcc636f172a2e19577775aa24599edceb50bf4d06a463cb287c603e028214",
+  "artifacts": [
+    {
+      "kind": "provenance",
+      "locator": "/Users/williamblair/personal/prover-lane-frontier/.vela/findings/vf_67ca581931309370.json",
+      "sha256": "0a15149903eaf215afc26edf99641e541187ba4bc2b813f4479a2712fa5ac536"
+    }
+  ],
+  "assertion": "Erdős #17: 97 is the least non-cluster-prime (Erdos17.isClusterPrime_97_isLeast_non_cluster). Kernel-clean Lean proof — axioms {propext, Classical.choice, Quot.sound}, no sorryAx — via a decidable reformulation (cluster_iff) + interval_cases. Produced by the prover-in-the-loop foundry; verified by the Lean kernel.",
+  "assertion_type": "theoretical",
+  "caveats": [
+    "Re-homed from the prover-lane frontier (vfr_b354d1ae5d88038b), where it was originally established and signed under the maintainer key; this consolidates the two kernel-verified Lean frontiers into one.",
+    "Witness not re-attached in this corpus yet: the proof lives at formal_proof linked in corpus Subsets/FC100SolvedSet1.lean, pending upstream; a fresh vlv_ will be minted via `foundry lean-run` once it merges into google-deepmind/formal-conjectures. The claim itself was foundry-verified and human-signed in prover-lane."
+  ],
+  "emitted_at": "2026-07-06T20:58:15.264144+00:00",
+  "emitted_by": "agent:vela-foundry-lean",
+  "frontier_id": "vfr_97d7d25957384f80",
+  "id": "vrc_661a16fc01e3d0ee",
+  "schema": "vela.activity-record.v0.1",
+  "signature": "6b75931d2a554a970416790ae794c668166609f70fa56beecbc138aa4c4715686c8e9b244d6c10e8282fcdc9499fcb828870cdab9620162c0d670e243f9c7402",
+  "signer_pubkey_hex": "d98b48144e372242fa629e5474e7e9662b7e3042d5df3117f7a90c4c51170df1"
+}

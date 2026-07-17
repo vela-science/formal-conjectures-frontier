@@ -1,0 +1,31 @@
+{
+  "against_head": "e5adcc636f172a2e19577775aa24599edceb50bf4d06a463cb287c603e028214",
+  "artifacts": [
+    {
+      "kind": "witness",
+      "locator": "/Users/williamblair/personal/vela/lean-verifications/Erdos18_practicalH_six.vlv.json",
+      "sha256": "a55e9a38756df4458f80d50326283bdb7da0dfb958fcdfca2ffafc00fcc4a02b"
+    }
+  ],
+  "assertion": "Erdős #18: 6 is a practical number (Erdos18.practicalH_six). Kernel-clean Lean proof — axioms {propext, Classical.choice, Quot.sound}, no sorryAx — via le_antisymm. Produced by the vela prover-in-the-loop foundry; verified by the Lean kernel.",
+  "assertion_type": "theoretical",
+  "caveats": [
+    "Re-homed from the prover-lane frontier (vfr_b354d1ae5d88038b), where it was originally established and signed under the maintainer key; this consolidates the two kernel-verified Lean frontiers into one.",
+    "Fresh vlv_ witness minted in this corpus (vlv_2601068f2ec10537); kernel-clean, no sorryAx — re-runnable via `vela reproduce`."
+  ],
+  "emitted_at": "2026-07-06T20:57:35.087935+00:00",
+  "emitted_by": "agent:vela-foundry-lean",
+  "frontier_id": "vfr_97d7d25957384f80",
+  "id": "vrc_84fab56701bd657d",
+  "schema": "vela.activity-record.v0.1",
+  "signature": "9d87b8fa5a6fe13d25bc03a2c79af0ce68e33cd66f1ecad190daddd0f30f0abd1c5625386a37097cce5665677e00be944bd69a68a38b799c7016085603c59e05",
+  "signer_pubkey_hex": "d98b48144e372242fa629e5474e7e9662b7e3042d5df3117f7a90c4c51170df1",
+  "verifier_runs": [
+    {
+      "method": "lean4 #print axioms (v4.27.0)",
+      "outcome": "pass",
+      "output_hash": "axioms: propext, Classical.choice, Quot.sound; no sorryAx",
+      "solver": "lean4-kernel"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "against_head": "e5adcc636f172a2e19577775aa24599edceb50bf4d06a463cb287c603e028214",
+  "artifacts": [
+    {
+      "kind": "provenance",
+      "locator": "/Users/williamblair/personal/prover-lane-frontier/.vela/findings/vf_3f957a3dcd1652c5.json",
+      "sha256": "9ea087f15b0e0bc0761de603002b20797acc68dd4c37571b14b669530c0d35e1"
+    }
+  ],
+  "assertion": "Erdős #1052 corollary: no unitary perfect number is odd (Erdos1052.not_odd_of_isUnitaryPerfect). Kernel-clean Lean proof — axioms {propext, Classical.choice, Quot.sound}, no sorryAx — whose proof INVOKES the accepted lemma even_of_isUnitaryPerfect (vf_6ccc854a9ab51bbb). A real lemma-inheritance event: an accepted verified lemma composed into a new verified theorem (Compounding B).",
+  "assertion_type": "theoretical",
+  "caveats": [
+    "Re-homed from the prover-lane frontier (vfr_b354d1ae5d88038b), where it was originally established and signed under the maintainer key; this consolidates the two kernel-verified Lean frontiers into one.",
+    "Witness not re-attached in this corpus yet: the proof lives at mzhorvath1/formal-conjectures@b70a2ddf (corollary of even_of), pending upstream; a fresh vlv_ will be minted via `foundry lean-run` once it merges into google-deepmind/formal-conjectures. The claim itself was foundry-verified and human-signed in prover-lane."
+  ],
+  "emitted_at": "2026-07-06T20:58:15.093251+00:00",
+  "emitted_by": "agent:vela-foundry-lean",
+  "frontier_id": "vfr_97d7d25957384f80",
+  "id": "vrc_c1a3454fddc9ec1f",
+  "schema": "vela.activity-record.v0.1",
+  "signature": "bf34bad67f67a1bf844054659500a693fa1284f8a35b7608b80a90c69380abb29c41e3df9ab51bc86d92a7a670f8b937f698544899e8cb7ab95e2f703a9c6d0f",
+  "signer_pubkey_hex": "d98b48144e372242fa629e5474e7e9662b7e3042d5df3117f7a90c4c51170df1"
+}

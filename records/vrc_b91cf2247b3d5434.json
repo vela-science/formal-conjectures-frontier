@@ -1,0 +1,23 @@
+{
+  "against_head": "e5adcc636f172a2e19577775aa24599edceb50bf4d06a463cb287c603e028214",
+  "artifacts": [
+    {
+      "kind": "provenance",
+      "locator": "/Users/williamblair/personal/prover-lane-frontier/.vela/findings/vf_6ccc854a9ab51bbb.json",
+      "sha256": "f31aa2589c9e2f2f1ebdd8a483ef02f210e554b5fdbd5599d030606f876243f8"
+    }
+  ],
+  "assertion": "Erdős #1052: every unitary perfect number is even (Erdos1052.even_of_isUnitaryPerfect). Kernel-clean Lean proof — axioms {propext, Classical.choice, Quot.sound}, no sorryAx — reconstructed ~168 lines. Produced by the vela prover-in-the-loop foundry; verified by the Lean kernel.",
+  "assertion_type": "theoretical",
+  "caveats": [
+    "Re-homed from the prover-lane frontier (vfr_b354d1ae5d88038b), where it was originally established and signed under the maintainer key; this consolidates the two kernel-verified Lean frontiers into one.",
+    "Witness not re-attached in this corpus yet: the proof lives at mzhorvath1/formal-conjectures@b70a2ddf (AlphaProof, ErdosProblems/1052.lean), pending upstream; a fresh vlv_ will be minted via `foundry lean-run` once it merges into google-deepmind/formal-conjectures. The claim itself was foundry-verified and human-signed in prover-lane."
+  ],
+  "emitted_at": "2026-07-06T20:58:15.434272+00:00",
+  "emitted_by": "agent:vela-foundry-lean",
+  "frontier_id": "vfr_97d7d25957384f80",
+  "id": "vrc_b91cf2247b3d5434",
+  "schema": "vela.activity-record.v0.1",
+  "signature": "19ab4c09ac5ad56591a0ef670fcbeed4706e02d495a3d0e7caa3c9800f1d87890a40b1b64c107c902cce4422c7efd2bc927120d1bf6d0ae7e587b5960d4a3f0d",
+  "signer_pubkey_hex": "d98b48144e372242fa629e5474e7e9662b7e3042d5df3117f7a90c4c51170df1"
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "vela.lean_anchor.v0.1",
+  "theorem_id": 0,
+  "title": "FormalConjectures/ErdosProblems/18.lean :: Erdos18.practicalH_six",
+  "module": "FormalConjectures/ErdosProblems/18.lean",
+  "decl": "Erdos18.practicalH_six",
+  "substrate_role": "formal-conjectures prover-lane target",
+  "module_sha256": "4cabf3283a9ce193c34ad3cda43a51614c470a30110e83bb00a254f51f9dbd85",
+  "anchor_id": "vla_7e7fddc5e741247d",
+  "structurally_present": true
+}

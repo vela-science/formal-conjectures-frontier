@@ -1,0 +1,11 @@
+{
+  "schema": "vela.lean_anchor.v0.1",
+  "theorem_id": 0,
+  "title": "FormalConjectures/Subsets/FC100SolvedSet1.lean :: Erdos17.isClusterPrime_97_isLeast_non_cluster",
+  "module": "FormalConjectures/Subsets/FC100SolvedSet1.lean",
+  "decl": "Erdos17.isClusterPrime_97_isLeast_non_cluster",
+  "substrate_role": "formal-conjectures prover-lane target",
+  "module_sha256": "31b0a5d8cec55578ab820dcdeae43abf67a7cc43a5590c04fe0307ab8b66ce9a",
+  "anchor_id": "vla_f7c9c7f7cb7a36cd",
+  "structurally_present": false
+}

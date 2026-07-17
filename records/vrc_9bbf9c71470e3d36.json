@@ -1,0 +1,32 @@
+{
+  "against_head": "44b1f48c333488a3ac2e30aa9d642660e3dc4a0414f253c183f74754d4dccd54",
+  "artifacts": [
+    {
+      "kind": "witness",
+      "locator": "/Users/williamblair/personal/vela/lean-verifications/Erdos1052_isUnitaryPerfect_146361946186458562560000.vlv.json",
+      "sha256": "5b56a07063fb48178b43abeccd8b88139ceab598b4e16810805ad83cd6536daa"
+    }
+  ],
+  "assertion": "The Lean 4 theorem `Erdos1052.isUnitaryPerfect_146361946186458562560000` is proven and kernel-verified (axioms: propext, Classical.choice, Quot.sound; no sorryAx): 146361946186458562560000 is a unitary perfect number (the sum of its unitary divisors is twice itself). Closes a previously-`sorry` decl in google-deepmind/formal-conjectures Erdős Problem 1052.",
+  "assertion_type": "theoretical",
+  "caveats": [
+    "Kernel-verified locally (Lean v4.27.0, mathlib a3a10db0); the upstream formal-conjectures PR is the external acceptance step and requires the maintainer's action.",
+    "Establishes ONE unitary-perfect witness value, NOT the open Erdős 1052 question (the existence/classification of odd or further unitary perfect numbers) itself.",
+    "Proof ported from Sanexxxx777's formal-conjectures fork; author-of-record attribution is to the original proof author, not the foundry agent."
+  ],
+  "emitted_at": "2026-07-06T19:42:25.453181+00:00",
+  "emitted_by": "agent:vela-foundry-lean",
+  "frontier_id": "vfr_97d7d25957384f80",
+  "id": "vrc_9bbf9c71470e3d36",
+  "schema": "vela.activity-record.v0.1",
+  "signature": "d401e07f350d8148f083413a4bd778368fea74f358b8b72b0042c613322f72b90e19127e98313a810f5f8c423d6388a82a0c09448ada900ed14c6d04766ea00e",
+  "signer_pubkey_hex": "d98b48144e372242fa629e5474e7e9662b7e3042d5df3117f7a90c4c51170df1",
+  "verifier_runs": [
+    {
+      "method": "lean4 `#print axioms` (leanprover/lean4:v4.27.0, mathlib a3a10db0e9d66acbebf76c5e6a135066525ac900)",
+      "outcome": "pass",
+      "output_hash": "axioms: propext, Classical.choice, Quot.sound; no sorryAx; axiom_verdict=kernel_clean",
+      "solver": "lean4-kernel"
+    }
+  ]
+}

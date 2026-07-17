@@ -1,0 +1,25 @@
+{
+  "schema": "vela.lean_verification.v0.2",
+  "verification_id": "vlv_cc34ae60a35cb685",
+  "anchor_id": "vla_70993b82bed59db1",
+  "theorem_id": 0,
+  "module": "FormalConjectures/ErdosProblems/1052.lean",
+  "module_sha256": "f77ade370f5bbaacbff8c10da0d1e419aa5ea014284794f1841627df71a4ae41",
+  "lean_toolchain": "leanprover/lean4:v4.27.0",
+  "mathlib_revision": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+  "verifier_output_hash": "a6a0ba6373251047ec8c6a92d1d02321712aa5d7674faf7f5bcd7c825151f860",
+  "status": "verified",
+  "verified_at": "2026-07-07T14:50:28.999716+00:00",
+  "verifier_actor": "agent:vela-foundry-lean",
+  "tcb_id": "vtcb_ce406b3d14d97363",
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "axiom_verdict": "kernel_clean",
+  "kernel_recheck": "not_run",
+  "axioms_output_hash": "c6aa92f21c4ac463264f38211b0a69cf3d3d15c27fbee7217cb58167bbc109c5",
+  "verifier_pubkey_hex": "4892f93877e637b5f59af31d9ec6704814842fb278cacb0eb94704baef99455e",
+  "signature_hex": "e030ce6ae7e65990b6c2e0553d73c683bdb3cb7b34f9c5f77e958f226531b6271c064d6f366f7a7e1e69f45139aaea771e5dd3068825ef19d0054e08feef480b"
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "vela.lean_anchor.v0.1",
+  "theorem_id": 0,
+  "title": "FormalConjectures/ErdosProblems/12.lean :: Erdos12.isGood_example",
+  "module": "FormalConjectures/ErdosProblems/12.lean",
+  "decl": "Erdos12.isGood_example",
+  "substrate_role": "formal-conjectures prover-lane target",
+  "module_sha256": "0445bf6eb88ad9b3da54722725bc9933838f39995323d737ecbdc4b13adeab6d",
+  "anchor_id": "vla_fe326f619a566c56",
+  "structurally_present": true
+}

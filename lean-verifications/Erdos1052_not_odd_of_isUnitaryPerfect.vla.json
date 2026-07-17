@@ -1,0 +1,11 @@
+{
+  "schema": "vela.lean_anchor.v0.1",
+  "theorem_id": 0,
+  "title": "FormalConjectures/ErdosProblems/1052.lean :: Erdos1052.not_odd_of_isUnitaryPerfect",
+  "module": "FormalConjectures/ErdosProblems/1052.lean",
+  "decl": "Erdos1052.not_odd_of_isUnitaryPerfect",
+  "substrate_role": "formal-conjectures prover-lane target",
+  "module_sha256": "f77ade370f5bbaacbff8c10da0d1e419aa5ea014284794f1841627df71a4ae41",
+  "anchor_id": "vla_70993b82bed59db1",
+  "structurally_present": true
+}
