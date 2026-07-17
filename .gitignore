@@ -21,3 +21,6 @@ __pycache__/
 
 # transient sign-session answers (resume state) — never part of published state
 .vela/sign-session.json
+
+# Vela operational recovery and frontier locks (non-authoritative).
+/.vela/operation-journals/
