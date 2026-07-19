@@ -1,0 +1,89 @@
+{
+  "schema": "formal-conjectures.lean-proof-work.v1",
+  "target": "formal:erdos-505-test-dim-one",
+  "objective": "Produce a sorry-free Lean proof of the exact theorem statement Erdos505.erdos_505.test_dim_one from the frozen upstream source. The proof artifact supplies only the proof term; the verifier owns the imports, theorem statement, and axiom audit.",
+  "selection": {
+    "method": "First low-numbered category-test hole on frozen upstream main that is not semantically covered by an open pull request, is not already represented by a frontier finding, and has an explicit tractability signal from the primary problem record.",
+    "official_problem": "https://www.erdosproblems.com/505",
+    "official_problem_observed_at": "2026-07-19T01:58:00Z",
+    "official_status": "disproved with a Lean-verified general counterexample",
+    "tractability_signal": "The primary problem record states that the n=1 case is trivial.",
+    "open_pr_search": {
+      "repository": "google-deepmind/formal-conjectures",
+      "state": "open",
+      "query": "505",
+      "matches": []
+    },
+    "excluded_earlier_candidates": [
+      {
+        "problem": 23,
+        "reason": "The source file is touched by open pull request 4003 and prior proof work is already recorded outside this mission."
+      },
+      {
+        "problem": 36,
+        "reason": "Open pull requests 4362 and 4363 already target the small M values."
+      },
+      {
+        "problem": 91,
+        "reason": "The remaining Euclidean optimality holes require a substantial geometry development and have no bounded low-dimensional decision procedure."
+      },
+      {
+        "problem": 138,
+        "reason": "The first small case is already a frontier finding and the source file is touched by open pull request 4004."
+      },
+      {
+        "problem": 359,
+        "reason": "The source file is touched by open pull request 4004."
+      }
+    ]
+  },
+  "source": {
+    "repository": "https://github.com/google-deepmind/formal-conjectures.git",
+    "git_commit": "c252a41054125b5fd9c8356e2137cd9b55337657",
+    "git_tree": "a3eb8cb29f72a7ec1e7534955a5af0f6f72775c3",
+    "path": "FormalConjectures/ErdosProblems/505.lean",
+    "sha256": "sha256:085b536fb121ff3ed0c13a390e0e3b72b3be7e4f5dec7a5702efd5884e8d93eb",
+    "declaration": "Erdos505.erdos_505.test_dim_one",
+    "statement": "(S : Set (EuclideanSpace ℝ (Fin 1))) (hS : Bornology.IsBounded S) (hd : 0 < diam S) : ∃ (F : Fin 2 → Set (EuclideanSpace ℝ (Fin 1))), S ⊆ ⋃ i, F i ∧ ∀ i, diam (F i) < diam S"
+  },
+  "environment": {
+    "lean_toolchain": "leanprover/lean4:v4.27.0",
+    "lean_toolchain_sha256": "sha256:e695e6e5d8e7a8be4d6cf159dfb995847993d26c6cc450353a86f387279025b9",
+    "lake_manifest_sha256": "sha256:5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+    "lakefile_sha256": "sha256:0d765c3a61564476afccfd0489729033725789f00eb0f1510ba89abe848e35e9",
+    "mathlib_git_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900"
+  },
+  "output_contract": {
+    "schema": "canopus.lean-proof.v1",
+    "path": "artifacts/erdos505-test-dim-one-proof.json",
+    "kind": "lean-proof",
+    "required_fields": {
+      "schema": "canopus.lean-proof.v1",
+      "target": "formal:erdos-505-test-dim-one",
+      "source_commit": "c252a41054125b5fd9c8356e2137cd9b55337657",
+      "declaration": "Erdos505.erdos_505.test_dim_one",
+      "proof": "A UTF-8 Lean term beginning with by and containing no sorry, admit, axiom declaration, or unsafe declaration."
+    }
+  },
+  "verification": {
+    "statement_fidelity": "The verifier supplies the exact frozen theorem signature; the producer cannot weaken or replace it.",
+    "kernel": "Lean 4.27.0 elaborates the candidate against the frozen formal-conjectures and Mathlib environment.",
+    "axioms": {
+      "allowed": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "forbidden": [
+        "sorryAx"
+      ]
+    },
+    "replay": "A network-denied, read-only verifier image rechecks the same proof bytes and emits the audited declaration and axiom set."
+  },
+  "authority": {
+    "producer_ceiling": "receipt_only",
+    "landing_ceiling": "defer",
+    "kernel_verification": "mechanical evidence, not statement fidelity or scientific acceptance",
+    "human_key_access": "forbidden"
+  }
+}

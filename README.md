@@ -1,25 +1,30 @@
-# Kernel-verified Lean theorems (prover-in-the-loop)
+# Kernel-verified Lean theorems
 
-The single Vela frontier for kernel-verified Lean theorems closed by the
-**prover-in-the-loop foundry**. Known proved lemmas compose into proofs of open
-theorems: `vela foundry lean-targets` selects a target, a Claude proof-subagent
-produces a candidate proof, the **Lean kernel** verifies it (`vela foundry
-lean-run`, `#print axioms` fail-closed on `sorryAx`), and a human signs the
-result into state under the maintainer key. No model is in the trust path — the
-kernel is the verifier, the human key is the accept.
+The Vela frontier for sorry-free Lean proofs of exact statements from
+`google-deepmind/formal-conjectures`. A derived, content-addressed target index
+selects one collision-checked theorem. Canopus is a removable producer: it may
+request a proof, but a separate frozen Lean capsule owns the statement, checks
+the candidate with the kernel, and audits `#print axioms` for `sorryAx`.
 
-This frontier consolidates the two former Lean frontiers (the earlier
-`formal-conjectures-lean` and `prover-lane`); prover-lane is deprecated and its
-routes redirect here.
+Verifier success is evidence, not acceptance. `vela land` records a Receipt and
+routes it under the signed policy; with no matching policy, the proposal stays
+at Defer for an exact human decision. Neither Canopus nor a model sees a human
+key or enters the trust path.
+
+This frontier is the maintained successor to the historical
+`formal-conjectures-lean` and `prover-lane` frontiers. Their audit history is
+preserved, but they are not active product surfaces.
 
 - State entrypoint: `frontier.json`
 - Manifest: `frontier.yaml`
 - Lockfile: `vela.lock`
 
 ```bash
+vela status . --json
+vela next . --limit 1 --json
+vela work <target> --frontier . --as agent:<you> --json
 vela check . --strict --json
-vela integrity . --json
-vela reproduce .            # re-verify witnesses from scratch
+vela reproduce .
 ```
 
 Each finding records the fully-qualified decl, its axiom set (`{propext,

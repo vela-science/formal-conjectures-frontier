@@ -1,0 +1,36 @@
+{
+  "schema": "vela.target-index.v1",
+  "frontier_id": "vfr_97d7d25957384f80",
+  "as_of": {
+    "snapshot_hash": "sha256:48ec4e84bb4640fa54023db58d7eabc6a713a46b053b6ccc3050414ab18520ec",
+    "event_log_hash": "sha256:5e229c038131e2eaad0e66ec8961ebcca6ccf07c6e92837a7a2b8d6408cfe609",
+    "proposal_state_hash": "sha256:60af75a900ea8f46509ae3decb681597f1c4c7788e79c7a42548e7ff0377cfe6"
+  },
+  "claim_boundary": {
+    "derived": true,
+    "authoritative": false,
+    "deletable": true
+  },
+  "targets": [
+    {
+      "id": "formal:erdos-505-test-dim-one",
+      "title": "Prove the one-dimensional test case of Erdős 505 in Lean",
+      "why": "Frozen upstream main leaves the exact category-test theorem sorry-backed; the primary Erdős record calls the one-dimensional case trivial, and no open pull request claims problem 505.",
+      "state": "open",
+      "rank": 1,
+      "objective": "Produce one sorry-free proof term that the frozen Lean kernel accepts for the exact upstream theorem statement.",
+      "labels": [
+        "formal-conjectures",
+        "lean4",
+        "kernel-check",
+        "collision-checked",
+        "upstream-sorry"
+      ],
+      "packet": {
+        "path": "targets/formal-erdos-505-test-dim-one.json",
+        "sha256": "sha256:e556b14b05b525c7557f9a3978247084ac76e96cb66487b3f54c0ca964f78676",
+        "schema": "formal-conjectures.lean-proof-work.v1"
+      }
+    }
+  ]
+}
