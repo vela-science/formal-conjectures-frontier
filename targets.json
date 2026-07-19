@@ -28,7 +28,7 @@
       ],
       "packet": {
         "path": "targets/formal-erdos-505-test-dim-one.json",
-        "sha256": "sha256:e556b14b05b525c7557f9a3978247084ac76e96cb66487b3f54c0ca964f78676",
+        "sha256": "sha256:93b21f9d39e3c62b08102e99214f50d9dcf26d1a142d42a1d165011593317b33",
         "schema": "formal-conjectures.lean-proof-work.v1"
       }
     }

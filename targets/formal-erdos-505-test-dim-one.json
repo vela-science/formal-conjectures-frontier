@@ -1,7 +1,7 @@
 {
   "schema": "formal-conjectures.lean-proof-work.v1",
   "target": "formal:erdos-505-test-dim-one",
-  "objective": "Produce a sorry-free Lean proof of the exact theorem statement Erdos505.erdos_505.test_dim_one from the frozen upstream source. The proof artifact supplies only the proof term; the verifier owns the imports, theorem statement, and axiom audit.",
+  "objective": "Produce a sorry-free Lean proof of the exact theorem statement Erdos505.erdos_505.test_dim_one from the frozen upstream source. The artifact is only the raw proof term beginning with by; the verifier owns the imports, theorem statement, and axiom audit.",
   "selection": {
     "method": "First low-numbered category-test hole on frozen upstream main that is not semantically covered by an open pull request, is not already represented by a frontier finding, and has an explicit tractability signal from the primary problem record.",
     "official_problem": "https://www.erdosproblems.com/505",
@@ -54,16 +54,11 @@
     "mathlib_git_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900"
   },
   "output_contract": {
-    "schema": "canopus.lean-proof.v1",
-    "path": "artifacts/erdos505-test-dim-one-proof.json",
+    "schema": "canopus.lean-proof-term.v1",
+    "path": "artifacts/erdos505-test-dim-one-proof.lean",
     "kind": "lean-proof",
-    "required_fields": {
-      "schema": "canopus.lean-proof.v1",
-      "target": "formal:erdos-505-test-dim-one",
-      "source_commit": "c252a41054125b5fd9c8356e2137cd9b55337657",
-      "declaration": "Erdos505.erdos_505.test_dim_one",
-      "proof": "A UTF-8 Lean term beginning with by and containing no sorry, admit, axiom declaration, or unsafe declaration."
-    }
+    "format": "One UTF-8 Lean term beginning with by and containing no sorry, admit, axiom declaration, or unsafe declaration. No imports, theorem statement, JSON envelope, markdown fence, or surrounding prose is permitted.",
+    "maximum_bytes": 131072
   },
   "verification": {
     "statement_fidelity": "The verifier supplies the exact frozen theorem signature; the producer cannot weaken or replace it.",
