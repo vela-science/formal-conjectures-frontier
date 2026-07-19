@@ -1,0 +1,110 @@
+{
+  "schema": "vela.proposal.v0.1",
+  "id": "vpr_f4380d0b90a35799",
+  "kind": "finding.add",
+  "target": {
+    "type": "finding",
+    "id": "vf_a19755327eb3afd7"
+  },
+  "actor": {
+    "id": "agent:codex-formal",
+    "type": "agent"
+  },
+  "created_at": "2026-07-19T05:13:19.532593+00:00",
+  "reason": "Manual finding added to frontier state",
+  "payload": {
+    "finding": {
+      "assertion": {
+        "direction": null,
+        "relation": null,
+        "text": "The frozen Lean 4.27.0 capsule elaborates the exact theorem Erdos505.erdos_505.test_dim_one from this proof term and reports only propext, Classical.choice, and Quot.sound, with no sorryAx.",
+        "type": "theoretical"
+      },
+      "conditions": {
+        "duration": null,
+        "text": "Record vrc_929aed60c76b3d8f (signed; recorded against the current head). Receipt: sha256:aeede68ff2bccec34a350e688abd036468bc63b471883fbbc7bf47e5366d2e6a. Caveats: Kernel verification establishes exact elaboration and axiom closure for the frozen one-dimensional statement; it does not establish statement fidelity, novelty, the general Erdős 505 claim, or scientific acceptance.. Artifacts: 1 hash-verified at propose."
+      },
+      "confidence": {
+        "basis": "operator-supplied frontier prior; review required",
+        "extraction_confidence": 1.0,
+        "kind": "frontier_epistemic",
+        "method": "expert_judgment",
+        "score": 0.3
+      },
+      "created": "2026-07-19T05:13:19.532932+00:00",
+      "evidence": {
+        "evidence_spans": [
+          {
+            "artifact_kind": "lean-proof",
+            "artifact_locator": "records/artifacts/sha256/bdde952ea9fc909fc247303bbecce850d0f74a9f9d01c47e7c0f11580e788dd3",
+            "artifact_sha256": "bdde952ea9fc909fc247303bbecce850d0f74a9f9d01c47e7c0f11580e788dd3",
+            "section": "artifacts[0]",
+            "source": "records/receipts/sha256/aeede68ff2bccec34a350e688abd036468bc63b471883fbbc7bf47e5366d2e6a.json",
+            "text": "The frozen Lean 4.27.0 capsule elaborates the exact theorem Erdos505.erdos_505.test_dim_one from this proof term and reports only propext, Classical.choice, and Quot.sound, with no sorryAx."
+          }
+        ],
+        "method": "manual state transition",
+        "model_system": "",
+        "replicated": false,
+        "replication_count": null,
+        "type": "theoretical"
+      },
+      "flags": {
+        "contested": false,
+        "declining": false,
+        "gap": false,
+        "gravity_well": false,
+        "negative_space": false,
+        "retracted": false
+      },
+      "id": "vf_a19755327eb3afd7",
+      "links": [],
+      "previous_version": null,
+      "provenance": {
+        "authors": [
+          {
+            "name": "agent:codex-formal",
+            "orcid": null
+          }
+        ],
+        "doi": null,
+        "extraction": {
+          "extracted_at": "2026-07-19T05:13:19.532593+00:00",
+          "extractor_version": "vela/0.901.0",
+          "method": "manual_curation",
+          "model": null,
+          "model_version": null
+        },
+        "review": {
+          "corrections": [],
+          "reviewed": false,
+          "reviewed_at": null,
+          "reviewer": null
+        },
+        "source_type": "model_output",
+        "title": "record:vrc_929aed60c76b3d8f",
+        "year": null
+      },
+      "updated": null,
+      "version": 1
+    },
+    "vela_submission": {
+      "operation_id": "vop_f88f18c5e90bf0ac7434d829ead5308ad18d8b7876b099306e89f6d31d727aa7",
+      "receipt_path": "records/receipts/sha256/aeede68ff2bccec34a350e688abd036468bc63b471883fbbc7bf47e5366d2e6a.json",
+      "receipt_root": "sha256:aeede68ff2bccec34a350e688abd036468bc63b471883fbbc7bf47e5366d2e6a",
+      "record_id": "vrc_929aed60c76b3d8f",
+      "review_material_path": "records/review/sha256/aeede68ff2bccec34a350e688abd036468bc63b471883fbbc7bf47e5366d2e6a.json",
+      "schema": "vela.submission-links.internal.v1"
+    }
+  },
+  "source_refs": [
+    "record:vrc_929aed60c76b3d8f",
+    "records/receipts/sha256/aeede68ff2bccec34a350e688abd036468bc63b471883fbbc7bf47e5366d2e6a.json",
+    "records/review/sha256/aeede68ff2bccec34a350e688abd036468bc63b471883fbbc7bf47e5366d2e6a.json",
+    "sha256:aeede68ff2bccec34a350e688abd036468bc63b471883fbbc7bf47e5366d2e6a"
+  ],
+  "status": "pending_review",
+  "caveats": [
+    "Manual findings require evidence review before scientific use."
+  ]
+}

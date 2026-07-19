@@ -1,0 +1,39 @@
+{
+  "schema": "vela.activity-record.v0.1",
+  "id": "vrc_929aed60c76b3d8f",
+  "frontier_id": "vfr_97d7d25957384f80",
+  "against_head": "c4a00883ab7468dcce59c368b81fd09e45366b21af8e34979d7a639d73a8d32c",
+  "assertion": "The frozen Lean 4.27.0 capsule elaborates the exact theorem Erdos505.erdos_505.test_dim_one from this proof term and reports only propext, Classical.choice, and Quot.sound, with no sorryAx.",
+  "assertion_type": "theoretical",
+  "artifacts": [
+    {
+      "kind": "lean-proof",
+      "locator": "records/artifacts/sha256/bdde952ea9fc909fc247303bbecce850d0f74a9f9d01c47e7c0f11580e788dd3",
+      "sha256": "bdde952ea9fc909fc247303bbecce850d0f74a9f9d01c47e7c0f11580e788dd3",
+      "size_bytes": 1885,
+      "media_type": "application/octet-stream",
+      "disclosure": "public",
+      "locator_integrity": "immutable",
+      "availability": "available",
+      "note": "copied from Receipt v1 artifact 0"
+    }
+  ],
+  "caveats": [
+    "Kernel verification establishes exact elaboration and axiom closure for the frozen one-dimensional statement; it does not establish statement fidelity, novelty, the general Erdős 505 claim, or scientific acceptance."
+  ],
+  "receipt_digest": "sha256:aeede68ff2bccec34a350e688abd036468bc63b471883fbbc7bf47e5366d2e6a",
+  "receipt_path": "records/receipts/sha256/aeede68ff2bccec34a350e688abd036468bc63b471883fbbc7bf47e5366d2e6a.json",
+  "operation_id": "vop_f88f18c5e90bf0ac7434d829ead5308ad18d8b7876b099306e89f6d31d727aa7",
+  "lineage": {
+    "parents": [],
+    "derived_from": [],
+    "source_refs": [],
+    "supersedes": [],
+    "producer_run_id": null,
+    "frontier": null
+  },
+  "emitted_by": "agent:codex-formal",
+  "emitted_at": "2026-07-19T05:13:19.532593+00:00",
+  "signature": "4c03e0f4282d1fdd55f549776893eb2baf9cc1e7d19a69955900e0028be9f42bcaf600929affd64c19fc0662725b92af78397050c3a2798315acc2684accd30b",
+  "signer_pubkey_hex": "ecd104bc853097da541281a24d6a6ceb8439ca846011285dae34cb291620f038"
+}
