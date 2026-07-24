@@ -44,10 +44,10 @@ TARGET = {
         "for the exact upstream theorem statement."
     ),
     "labels": [
-        "formal-conjectures",
-        "lean4",
-        "kernel-check",
         "collision-checked",
+        "formal-conjectures",
+        "kernel-check",
+        "lean4",
         "upstream-sorry",
     ],
     "packet": {
