@@ -1,9 +1,11 @@
 {
+  "dependency_root": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "event_count": 35,
-  "event_log_hash": "sha256:b9df87525e7f4313eedeb0b65ba29b21009e04e404aa25bcb5e29bfc9cd6d3f7",
+  "event_log_root": "sha256:b9df87525e7f4313eedeb0b65ba29b21009e04e404aa25bcb5e29bfc9cd6d3f7",
   "freshness": "fresh",
-  "frontier_hash": "sha256:45fa712bd6d9a8d4c8514a7cba107e7f814f2c1368805abd577e762ccb6123a4",
   "frontier_id": "vfr_97d7d25957384f80",
+  "identity_root": "sha256:841f38525cf2f4862c5fdc2217247a189ab8a0414418b8b782a88c9dd0206731",
+  "legacy_snapshot_root": "sha256:43580c58c0a7e80476b0aa21562577ab78173d04d3d6829684dfec7642222f02",
   "materialized_at": "2026-07-24T01:42:46Z",
   "paths": {
     "events_authority": ".vela/events/",
@@ -12,13 +14,15 @@
     "lockfile": "vela.lock",
     "replay_trace": "proof/replay.trace.jsonl"
   },
-  "proposal_state_hash": "sha256:ba47ddf5c16ed567ddf835385066e3fc294b447bc0eabd3f9820f5e707efb39e",
+  "profile_root": "sha256:298827e3a7fbf4a34590f0df40f56acae45e4d1803cac29836539f5ae7202f5c",
+  "proposal_root": "sha256:ba47ddf5c16ed567ddf835385066e3fc294b447bc0eabd3f9820f5e707efb39e",
   "reducer": {
-    "digest": "sha256:035e121878fbe65da0cdbfef9da4308d90c67b607a822dde065fd6a4490aca7a",
+    "digest": "sha256:d50d017ba1c25a991c7057241419184d90174b891120dd5906cff76ce2f843f0",
     "name": "vela",
-    "package": "vela@0.914.0",
-    "version": "0.914.0"
+    "package": "vela@0.914.2",
+    "version": "0.914.2"
   },
-  "schema": "vela.frontier_repo_proof.v0.1",
-  "warning": "Do not edit frontier.json directly. Use Vela's task-first receipt, signing, materialization, and proof commands."
+  "schema": "vela.frontier_repo_proof.v1",
+  "scientific_state_root": "sha256:4924adbbea6dfe288d14af03cf3d544f73c511df6b6ef8b938c8291685101444",
+  "warning": "Generated integrity evidence. Scientific acceptance remains event-derived."
 }
