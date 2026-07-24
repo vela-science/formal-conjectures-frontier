@@ -1,12 +1,12 @@
 schema: vela.frontier_lock.v1
 generated_at: 2026-07-24T01:42:46Z
-vela_version: 0.914.2
+vela_version: 0.915.1
 frontier_id: vfr_97d7d25957384f80
 profile_root: sha256:298827e3a7fbf4a34590f0df40f56acae45e4d1803cac29836539f5ae7202f5c
 identity_root: sha256:841f38525cf2f4862c5fdc2217247a189ab8a0414418b8b782a88c9dd0206731
 dependency_root: sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 scientific_state_root: sha256:4924adbbea6dfe288d14af03cf3d544f73c511df6b6ef8b938c8291685101444
-legacy_snapshot_root: sha256:43580c58c0a7e80476b0aa21562577ab78173d04d3d6829684dfec7642222f02
+legacy_snapshot_root: sha256:cfa197e3b9efd6649eed05495a003649e258974f4e3a553977e75d19775e7f2a
 event_log_root: sha256:b9df87525e7f4313eedeb0b65ba29b21009e04e404aa25bcb5e29bfc9cd6d3f7
 event_count: 35
 proposal_root: sha256:ba47ddf5c16ed567ddf835385066e3fc294b447bc0eabd3f9820f5e707efb39e
@@ -14,18 +14,18 @@ canonicalization:
   json: vela-canonical-json-v0.1
   yaml: vela-yaml-v0.1
 reducer:
-  package: vela@0.914.2
-  digest: sha256:d50d017ba1c25a991c7057241419184d90174b891120dd5906cff76ce2f843f0
+  package: vela@0.915.1
+  digest: sha256:899180e33040c904949e6c2edb29a22ea50e202c472c44ea27426bb3ff9e169f
 verifiers:
-  package: vela-verify@0.914.2
-  digest: sha256:29e23ea58fc1f252085f3ae4e9e643d720ed91054f844b2451c4a0aaa97ae7fb
+  package: vela-verify@0.915.1
+  digest: sha256:59e4ebef086b7a9029537e4e3641c65b2420ef2bb8ffcfc6d19b75d7a18fcabc
 sources_hash: sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 artifacts_hash: sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 review_hash: sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 proof_freshness: fresh
 proof:
   latest: proof/latest.json
-  digest: sha256:4a90004fe78c4be059f01803840cb84715231e86466e13c107b618e57479fea3
+  digest: sha256:d44c37641a79934b3833e2da0e4609b15be1dd4771d0ca56f423f8d9d41c7154
   freshness: fresh
   events_manifest: proof/events.manifest.jsonl
   replay_trace: proof/replay.trace.jsonl
