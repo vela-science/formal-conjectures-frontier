@@ -1,6 +1,6 @@
 name: Verify the signed frontier
 
-# On every change to the signed frontier, constellate-science/vela re-derives it
+# On every change to the signed frontier, vela-science/vela re-derives it
 # from a clean checkout and proves the working tree IS the signed state (replay +
 # signatures + hash parity). A witness-bearing frontier also re-runs every frozen
 # verifier on every stored witness. It NEVER signs and NEVER merges.
@@ -56,7 +56,7 @@ jobs:
           test -n "${VELA_REPOSITORY_TRUST_ANCHOR_B64:-}"
           trust_dir="$HOME/.vela/trust/frontiers"
           trust_file="$trust_dir/vfr_97d7d25957384f80.json"
-          install -d -m 700 "$trust_dir"
+          install -d -m 700 "$HOME/.vela" "$HOME/.vela/trust" "$trust_dir"
           printf '%s' "$VELA_REPOSITORY_TRUST_ANCHOR_B64" | base64 --decode > "$trust_file"
           chmod 600 "$trust_file"
           echo "${VELA_TRUST_ANCHOR_SHA256}  $trust_file" | sha256sum -c -
