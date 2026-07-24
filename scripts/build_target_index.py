@@ -117,6 +117,15 @@ def check() -> list[str]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
+    parser.add_argument(
+        "--output",
+        type=pathlib.Path,
+        default=CANDIDATE_PATH,
+        help=(
+            "candidate path; repository migration requires a path outside "
+            "the frontier checkout"
+        ),
+    )
     args = parser.parse_args()
     if args.check:
         failures = check()
@@ -125,9 +134,14 @@ def main() -> int:
             return 1
         print("Target Index v2 is current.")
         return 0
-    CANDIDATE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    CANDIDATE_PATH.write_bytes(canonical_bytes(candidate()))
-    print(f"Wrote {CANDIDATE_PATH.relative_to(ROOT)}")
+    output = args.output.expanduser().resolve()
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_bytes(canonical_bytes(candidate()))
+    try:
+        display = output.relative_to(ROOT)
+    except ValueError:
+        display = output
+    print(f"Wrote {display}")
     return 0
 
 
