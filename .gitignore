@@ -15,6 +15,7 @@
 /.vela/source-inbox/
 /.vela/artifact-blobs/
 /.vela/sign-session.json
+/.vela/tmp/
 
 # Tooling scratch
 __pycache__/
