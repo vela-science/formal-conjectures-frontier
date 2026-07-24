@@ -19,6 +19,7 @@ env:
   VELA_VERSION: v0.914.2
   VELA_LINUX_ARCHIVE_SHA256: 3224c4b421ee94d2b28f957972d57a538a51b6eee9534ada59ea7ef3758da957
   VELA_LINUX_SHA256: 36a4f1ac0c29ee0cf7f7d8d87a2468d787135d7212e38fd0da878d1765f012bf
+  VELA_TRUST_ANCHOR_SHA256: d2fb4f0783f666dde7bbbc864993e785a45718d09d11d5c362461c8a3d44c2f6
 
 jobs:
   verify:
@@ -46,6 +47,19 @@ jobs:
           install "$extracted/vela" "$HOME/.local/bin/vela"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
           "$HOME/.local/bin/vela" --version
+      - name: Install the independently provisioned repository trust anchor
+        env:
+          VELA_REPOSITORY_TRUST_ANCHOR_B64: ${{ vars.VELA_REPOSITORY_TRUST_ANCHOR_B64 }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${VELA_REPOSITORY_TRUST_ANCHOR_B64:-}"
+          trust_dir="$HOME/.vela/trust/frontiers"
+          trust_file="$trust_dir/vfr_97d7d25957384f80.json"
+          install -d -m 700 "$trust_dir"
+          printf '%s' "$VELA_REPOSITORY_TRUST_ANCHOR_B64" | base64 --decode > "$trust_file"
+          chmod 600 "$trust_file"
+          echo "${VELA_TRUST_ANCHOR_SHA256}  $trust_file" | sha256sum -c -
       - name: Re-derive and prove the working tree is the signed state
         run: vela check . --strict
       - name: Reproduce every stored witness from scratch
