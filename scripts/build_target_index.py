@@ -26,7 +26,6 @@ INPUT_PATHS = [
     "STATEMENT.md",
     "frontier.json",
     "scripts/build_target_index.py",
-    "targets/formal-erdos-505-test-dim-one.json",
     "vela.lock",
 ]
 TARGET = {
