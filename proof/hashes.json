@@ -1,14 +1,14 @@
 {
-  "artifacts_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "dependency_root": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-  "event_log_root": "sha256:b9df87525e7f4313eedeb0b65ba29b21009e04e404aa25bcb5e29bfc9cd6d3f7",
-  "frontier_id": "vfr_97d7d25957384f80",
-  "identity_root": "sha256:841f38525cf2f4862c5fdc2217247a189ab8a0414418b8b782a88c9dd0206731",
-  "legacy_snapshot_root": "sha256:cfa197e3b9efd6649eed05495a003649e258974f4e3a553977e75d19775e7f2a",
-  "profile_root": "sha256:298827e3a7fbf4a34590f0df40f56acae45e4d1803cac29836539f5ae7202f5c",
-  "proposal_root": "sha256:ba47ddf5c16ed567ddf835385066e3fc294b447bc0eabd3f9820f5e707efb39e",
-  "review_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "schema": "vela.frontier_repo_hashes.v1",
+  "frontier_id": "vfr_97d7d25957384f80",
+  "profile_root": "sha256:298827e3a7fbf4a34590f0df40f56acae45e4d1803cac29836539f5ae7202f5c",
+  "identity_root": "sha256:841f38525cf2f4862c5fdc2217247a189ab8a0414418b8b782a88c9dd0206731",
+  "dependency_root": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "scientific_state_root": "sha256:4924adbbea6dfe288d14af03cf3d544f73c511df6b6ef8b938c8291685101444",
-  "sources_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  "legacy_snapshot_root": "sha256:779c285be3b78db759a249852660f4dbd6fec96f3d005c888755c80415a69b54",
+  "event_log_root": "sha256:b9df87525e7f4313eedeb0b65ba29b21009e04e404aa25bcb5e29bfc9cd6d3f7",
+  "proposal_root": "sha256:ba47ddf5c16ed567ddf835385066e3fc294b447bc0eabd3f9820f5e707efb39e",
+  "sources_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "artifacts_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "review_hash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
 }
