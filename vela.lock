@@ -1,12 +1,12 @@
 schema: vela.frontier_lock.v1
 generated_at: 2026-07-24T01:42:46Z
-vela_version: 0.930.0-rc.2
+vela_version: 0.930.0-rc.3
 frontier_id: vfr_97d7d25957384f80
 profile_root: sha256:298827e3a7fbf4a34590f0df40f56acae45e4d1803cac29836539f5ae7202f5c
 identity_root: sha256:841f38525cf2f4862c5fdc2217247a189ab8a0414418b8b782a88c9dd0206731
 dependency_root: sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 scientific_state_root: sha256:4924adbbea6dfe288d14af03cf3d544f73c511df6b6ef8b938c8291685101444
-legacy_snapshot_root: sha256:779c285be3b78db759a249852660f4dbd6fec96f3d005c888755c80415a69b54
+legacy_snapshot_root: sha256:02a1cedd97356943f02d68f241fc3f93c7acf52bcd8d8a7914c2fb417facacee
 event_log_root: sha256:b9df87525e7f4313eedeb0b65ba29b21009e04e404aa25bcb5e29bfc9cd6d3f7
 event_count: 35
 proposal_root: sha256:ba47ddf5c16ed567ddf835385066e3fc294b447bc0eabd3f9820f5e707efb39e
@@ -14,18 +14,18 @@ canonicalization:
   json: vela-canonical-json-v0.1
   yaml: vela-yaml-v0.1
 reducer:
-  package: vela@0.930.0-rc.2
-  digest: sha256:2ae049f4faa64be857152f8aa6b7dc00fc7dafb8e20c9dbfa315b5c4e571e543
+  package: vela@0.930.0-rc.3
+  digest: sha256:d1c07a83305ff42c2764f83e5d8394a35085a92ca59515af4261665d8d14ae20
 verifiers:
-  package: vela-verify@0.930.0-rc.2
-  digest: sha256:a026d8af797ae91174597a1e4449a53dca798e0914e47735d3bb5e38b73cebf8
+  package: vela-verify@0.930.0-rc.3
+  digest: sha256:fbdad6c52a84224a43d94053f22ad1bac54a956217ffe6d126ba028135503458
 sources_hash: sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 artifacts_hash: sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 review_hash: sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
 proof_freshness: fresh
 proof:
   latest: proof/latest.json
-  digest: sha256:7e7a2fc3ec86ab1f0e0ea51f3eb913a5300065b1565dec0d99fd0d5079f53d95
+  digest: sha256:3b33f4a9208bfbacffa4fd0921f1a6fc09969e470beabab9ef259fdbc593f382
   freshness: fresh
   events_manifest: proof/events.manifest.jsonl
   replay_trace: proof/replay.trace.jsonl
