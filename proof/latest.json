@@ -5,18 +5,18 @@
   "identity_root": "sha256:841f38525cf2f4862c5fdc2217247a189ab8a0414418b8b782a88c9dd0206731",
   "dependency_root": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "scientific_state_root": "sha256:4924adbbea6dfe288d14af03cf3d544f73c511df6b6ef8b938c8291685101444",
-  "legacy_snapshot_root": "sha256:02a1cedd97356943f02d68f241fc3f93c7acf52bcd8d8a7914c2fb417facacee",
-  "event_log_root": "sha256:b9df87525e7f4313eedeb0b65ba29b21009e04e404aa25bcb5e29bfc9cd6d3f7",
+  "legacy_snapshot_root": "sha256:d9b94d963ab61e33c93ae86ef7e4e815e4a2b4135ef069e15db01730f9bb4d32",
+  "event_log_root": "sha256:3514fbe88560719ebc4f5c7e63522f99373cd4e457ab586f839597122c8fc8e3",
   "proposal_root": "sha256:ba47ddf5c16ed567ddf835385066e3fc294b447bc0eabd3f9820f5e707efb39e",
   "reducer": {
     "name": "vela",
-    "version": "0.930.0-rc.3",
-    "package": "vela@0.930.0-rc.3",
-    "digest": "sha256:d1c07a83305ff42c2764f83e5d8394a35085a92ca59515af4261665d8d14ae20"
+    "version": "0.930.0-rc.6",
+    "package": "vela@0.930.0-rc.6",
+    "digest": "sha256:309cd56d753436ce8d8d6fc928c38b9d973602df47812967f4c2fa4afb05c39c"
   },
-  "materialized_at": "2026-07-24T01:42:46Z",
+  "materialized_at": "2026-07-25T16:00:42Z",
   "freshness": "fresh",
-  "event_count": 35,
+  "event_count": 36,
   "paths": {
     "frontier": "frontier.json",
     "lockfile": "vela.lock",
