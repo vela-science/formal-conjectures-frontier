@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the domain-owned Target Index v2 candidate.
+"""Build and check the domain-owned current Target Index candidate.
 
 The candidate carries only Formal Conjectures target semantics. Vela derives
 Git identities, roots, packet sizes and packet digests when it seals the
@@ -89,8 +89,8 @@ def packet_root() -> str:
 def check() -> list[str]:
     failures: list[str] = []
     sealed = json.loads(INDEX_PATH.read_text())
-    if sealed.get("schema") != "vela.target-index.v2":
-        return ["targets.json is not a sealed vela.target-index.v2"]
+    if sealed.get("schema") != "vela.target-index.v3":
+        return ["targets.json is not a sealed vela.target-index.v3"]
     actual = sealed.get("targets", [])
     if len(actual) != 1:
         return [f"targets.json has {len(actual)} targets; expected 1"]
@@ -129,7 +129,7 @@ def main() -> int:
         if failures:
             print("\n".join(failures), file=sys.stderr)
             return 1
-        print("Target Index v2 is current.")
+        print("Target Index v3 is current.")
         return 0
     output = args.output.expanduser().resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
