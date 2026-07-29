@@ -91,8 +91,8 @@ def packet_root() -> str:
 def check() -> list[str]:
     failures: list[str] = []
     sealed = json.loads(INDEX_PATH.read_text())
-    if sealed.get("schema") != "vela.target-index.v3":
-        return ["targets.json is not a sealed vela.target-index.v3"]
+    if sealed.get("schema") != "vela.target-index.v4":
+        return ["targets.json is not a sealed vela.target-index.v4"]
     actual = sealed.get("targets", [])
     if len(actual) != 1:
         return [f"targets.json has {len(actual)} targets; expected 1"]
@@ -131,7 +131,7 @@ def main() -> int:
         if failures:
             print("\n".join(failures), file=sys.stderr)
             return 1
-        print("Target Index v3 is current.")
+        print("Target Index v4 is current.")
         return 0
     output = args.output.expanduser().resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
