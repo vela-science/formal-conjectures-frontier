@@ -12,15 +12,16 @@ Agents may:
 
 - inspect status, the current offer, exact records, and provenance
 - start the first offered Target with an explicit `agent:` identity
-- use the frozen packet, Lean version, dependencies, and axioms policy
-- run the named kernel verifier
+- use the frozen packet and its exact source, environment, and authority limits
+- run only the named verifier
 - register one signed, bounded Submission from the active Attempt
 
 Agents may not:
 
 - invoke repository-authority decisions or use authority credentials
 - treat a kernel pass, Git commit, Submission, or model answer as acceptance
-- change the frozen statement, dependencies, or axioms policy after starting
+- change the frozen statement, package, dependencies, or authority limits after
+  starting
 - hand-edit `.vela/authority/`, `.vela/repository.json`, or retained records
 - publish an upstream contribution in a human's name
 

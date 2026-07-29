@@ -1,11 +1,13 @@
 # Kernel-verified Lean theorems
 
-The current Vela repository for sorry-free Lean proofs of exact statements from
+The current Vela repository for exact formal statements, sorry-free Lean
+proofs, and source-bound evidence from
 [`google-deepmind/formal-conjectures`](https://github.com/google-deepmind/formal-conjectures).
-A content-addressed Target Index selects one collision-checked theorem. Canopus
-is removable producer scaffolding; a separate frozen Lean capsule owns the
-statement, checks the candidate with the kernel, and audits `#print axioms` for
-`sorryAx`.
+A content-addressed Target Index selects one bounded task. Lean tasks use a
+separate frozen capsule that owns the statement, checks the candidate with the
+kernel, and audits `#print axioms` for `sorryAx`. Cross-Frontier reference
+tasks retain exact attributed evidence without importing source Standing.
+Canopus remains removable producer scaffolding.
 
 Verifier success is evidence, not acceptance. A producer Submission, an
 independent Verification Record, and a repository-authority Decision are
@@ -27,18 +29,18 @@ preserved, but they are not active product surfaces.
 ```bash
 vela status . --json
 vela next . --limit 1 --json
-vela start formal:erdos-505-test-dim-one \
+vela start formal:retain-erdos-424-correction \
   --frontier . --as agent:<you> --json
 vela check . --strict --json
 ```
 
-After producing and kernel-checking the exact target:
+After producing and checking the exact target:
 
 ```bash
 vela submit --frontier . --attempt <vat_id> \
-  --claim "<exact theorem result>" --type theoretical \
-  --replayability exact --artifact <path>:lean-proof \
-  --caveat "<statement-fidelity limits>" --as agent:<you> --json
+  --claim "<bounded result>" --type computational \
+  --replayability exact --artifact <path>:<kind> \
+  --caveat "<scope and authority limits>" --as agent:<you> --json
 ```
 
 Each accepted Claim records the fully qualified declaration and its exact

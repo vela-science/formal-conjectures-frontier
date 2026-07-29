@@ -1,0 +1,65 @@
+{
+  "schema": "vela.foreign-reference-retention-work.v1",
+  "target": "formal:retain-erdos-424-correction",
+  "objective": "Retain one complete, exact Erdős 424 foreign-reference archive as bounded evidence in Formal Conjectures, verify its semantic and repository-authority chain, and leave local accepted Standing unchanged.",
+  "source": {
+    "frontier_id": "vfr_0a25edabc16db143",
+    "repository": "https://github.com/vela-science/erdos-frontier.git",
+    "current_git_commit": "81e79f008b4fc653888efda810dd8eb48e50cffa",
+    "current_git_tree": "b968e7fde1207fe1ade42347c112b977888ac1da",
+    "current_repository_root": "sha256:8a98ff1c632232c7b227d87a0f1015aaa3429d38c83592ca66f8e465b06b0ee5",
+    "transition_git_commit": "c25e11d332cfbc12b048c314880662d507df53e0",
+    "transition_git_tree": "d00cf978ae450d04d698247959d831a5b1bd2e37",
+    "transition_repository_root": "sha256:391c2acb12ea1251b6614803d973fd7785826977b664bebcd7091d261133d8fc",
+    "claim_id": "vcl_4bc14401b203218cb7b9de0141747e0c17cea3a6b0cc522639323ab13e432eaf",
+    "claim_root": "sha256:bec914998ce614508cd013f796e3e6e3f2d4950e87ee95858ebbf418bbc85624",
+    "standing": "accepted"
+  },
+  "package": {
+    "schema": "vela.foreign-reference.v1",
+    "reference_root": "sha256:b7b330ae6ea4915d5bac218233f0a272ee961060682be6d22f6a8ea1b78c4ed6",
+    "object_set_root": "sha256:f9cc936b42f7ee624d98583332454dbb46b68c00fa2819d990cea4d6d7daec8a",
+    "object_count": 11,
+    "archive_sha256": "sha256:3a1f083e55ead5818b3dad5eca163155cab1f8d8905be2b61ab58e3823a2b26c",
+    "maximum_bytes": 1048576
+  },
+  "implementation": {
+    "repository": "https://github.com/vela-science/vela.git",
+    "git_commit": "13aac475f13bfb023ddf17a8c75159a23bcf7bc4",
+    "git_tree": "66ba95c41a20027e211de49b1a503204903469d0",
+    "clean_room_verifier": "conformance/verify_foreign_reference.py",
+    "clean_room_verifier_sha256": "sha256:16496a61e256c8173d125b5f51f9dd4206d2790806c17da596bdc3993150bdd4",
+    "archive_verifier": "paper/artifacts/transfer/verify_archive.py",
+    "archive_verifier_sha256": "sha256:6d156aa81597cf9a9829f55a57bc13b8f40ca1c01089ee80522faea804464db7"
+  },
+  "output_contract": {
+    "path": "artifacts/erdos-424-reference.tar.gz",
+    "kind": "foreign-reference",
+    "format": "Deterministic gzip-compressed tar containing reference.v1.json and the exact 11 objects only.",
+    "sha256": "sha256:3a1f083e55ead5818b3dad5eca163155cab1f8d8905be2b61ab58e3823a2b26c",
+    "maximum_bytes": 1048576
+  },
+  "verification": {
+    "command": "python3 paper/artifacts/transfer/verify_archive.py --archive <artifact> --expected-root sha256:b7b330ae6ea4915d5bac218233f0a272ee961060682be6d22f6a8ea1b78c4ed6 --json",
+    "required": [
+      "All retained object bytes match their full SHA-256 roots.",
+      "The compacted repository origin links to the exact predecessor transition.",
+      "Claim, Submission, Proposal, Verification, applied Event, Decision Event, authority record, and keyset form one exact semantic chain.",
+      "Producer, verifier, and repository-authority signatures verify.",
+      "The reference declares local Standing effect none."
+    ]
+  },
+  "authority": {
+    "producer_ceiling": "pending_review",
+    "verification_ceiling": "evidence_only",
+    "source_standing": "attributed_foreign_state",
+    "local_standing_effect": "none",
+    "requires_local_decision": true
+  },
+  "does_not_establish": [
+    "The accepted Erdős Claim is accepted in Formal Conjectures.",
+    "The mathematical interpretation of the Formal Conjectures source is correct.",
+    "Cross-Frontier transfer outperforms a plain rooted Git package.",
+    "External adoption, a Registry, or an Atlas has been earned."
+  ]
+}

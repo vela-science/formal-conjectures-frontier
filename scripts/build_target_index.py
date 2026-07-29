@@ -19,37 +19,39 @@ from typing import Any
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CANDIDATE_PATH = ROOT / ".vela" / "tmp" / "target-index-candidate.json"
 INDEX_PATH = ROOT / "targets.json"
-PACKET_PATH = ROOT / "targets" / "formal-erdos-505-test-dim-one.json"
+PACKET_PATH = ROOT / "targets" / "formal-retain-erdos-424-correction.json"
 INPUT_PATHS = [
     "README.md",
     "SCOPE.md",
     "STATEMENT.md",
+    "VELA.md",
     "scripts/build_target_index.py",
 ]
 TARGET = {
-    "id": "formal:erdos-505-test-dim-one",
-    "title": "Prove the one-dimensional test case of Erdős 505 in Lean",
+    "id": "formal:retain-erdos-424-correction",
+    "title": "Retain the exact Erdős 424 correction without importing authority",
     "why": (
-        "Frozen upstream main leaves the exact category-test theorem "
-        "sorry-backed; the primary Erdős record calls the one-dimensional "
-        "case trivial, and no open pull request claims problem 505."
+        "Formal Conjectures owns the referenced Lean source, and the registered "
+        "B8 experiment requires one second Frontier to retain the accepted "
+        "source transition without importing its Standing."
     ),
     "state": "open",
     "rank": 1,
     "objective": (
-        "Produce one sorry-free proof term that the frozen Lean kernel accepts "
-        "for the exact upstream theorem statement."
+        "Register one complete portable foreign-reference archive as bounded "
+        "evidence, verify every retained byte and the source authority chain, "
+        "and leave local accepted Standing unchanged."
     ),
     "labels": [
-        "collision-checked",
+        "authority-contained",
+        "cross-frontier",
+        "exact-reference",
         "formal-conjectures",
-        "kernel-check",
-        "lean4",
-        "upstream-sorry",
+        "non-authoritative",
     ],
     "packet": {
-        "path": "targets/formal-erdos-505-test-dim-one.json",
-        "schema": "formal-conjectures.lean-proof-work.v1",
+        "path": "targets/formal-retain-erdos-424-correction.json",
+        "schema": "vela.foreign-reference-retention-work.v1",
     },
 }
 
