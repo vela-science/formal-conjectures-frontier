@@ -64,12 +64,17 @@ class TargetClosureTests(unittest.TestCase):
         )
 
     def test_completed_target_cannot_remain_exposed(self) -> None:
+        validate_index(self.frontier)
+        index = self.read("targets.json")
+        index["targets"] = [
+            {
+                "id": "formal:retain-erdos-424-correction",
+                "state": "open",
+            }
+        ]
+        self.write("targets.json", index)
         with self.assertRaisesRegex(TargetClosureError, "remains exposed"):
             validate_index(self.frontier)
-        index = self.read("targets.json")
-        index["targets"] = []
-        self.write("targets.json", index)
-        validate_index(self.frontier)
 
     def test_malformed_completion_contract_is_rejected(self) -> None:
         relative = "targets/closures/formal-retain-erdos-424-correction.json"
