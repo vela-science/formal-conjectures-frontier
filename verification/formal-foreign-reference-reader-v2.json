@@ -1,0 +1,58 @@
+{
+  "schema": "vela.foreign-reference-verification-method.v1",
+  "profile": "formal-foreign-reference-reader-v2",
+  "observed_at": {
+    "archive_reader_started": "2026-07-30T22:44:55Z",
+    "archive_reader_completed": "2026-07-30T22:44:58Z",
+    "rust_reader_started": "2026-07-30T22:45:05Z",
+    "rust_reader_completed": "2026-07-30T22:45:23Z"
+  },
+  "subject": {
+    "proposal_id": "vpr_7aba66544ffefd99",
+    "claim_id": "vcl_1b3e297c552170bc608ac84bc7e19d1ec234125aa77be7959708f18566d7bb45",
+    "submission_id": "vsb_bb9b64f5d93b8cad",
+    "submission_root": "sha256:7db8d8e15229be98ced55e4d9e70d80a4da5c6b7a7eafbbfa85f4a400d268a03",
+    "archive_root": "sha256:3a1f083e55ead5818b3dad5eca163155cab1f8d8905be2b61ab58e3823a2b26c",
+    "reference_root": "sha256:b7b330ae6ea4915d5bac218233f0a272ee961060682be6d22f6a8ea1b78c4ed6",
+    "object_set_root": "sha256:f9cc936b42f7ee624d98583332454dbb46b68c00fa2819d990cea4d6d7daec8a",
+    "object_count": 11
+  },
+  "implementation": {
+    "repository": "https://github.com/vela-science/vela.git",
+    "commit": "13aac475f13bfb023ddf17a8c75159a23bcf7bc4",
+    "tree": "66ba95c41a20027e211de49b1a503204903469d0",
+    "archive_reader_sha256": "sha256:6d156aa81597cf9a9829f55a57bc13b8f40ca1c01089ee80522faea804464db7",
+    "clean_room_reader_sha256": "sha256:16496a61e256c8173d125b5f51f9dd4206d2790806c17da596bdc3993150bdd4",
+    "canonical_json_reader_sha256": "sha256:1d6b8a6bf6bb4f523ec05948f5578618a76f24aa420b2291703d899fdc5f1ac6",
+    "rust_reader_sha256": "sha256:430c321c53c72669b92e3484f27405c675b8b944be5d6a9ce248317660d6df76",
+    "rust_test_sha256": "sha256:61262c35a486ad71b9dc7dec6a021ceaeff83cbe8fb89f7277844c9505ffa542"
+  },
+  "execution": {
+    "network": "denied by macOS sandbox-exec",
+    "platform": "macOS 27.0 arm64",
+    "python": "Python 3.9.6 sha256:31ec19f3253cc0044133c892bf65183a9fdb0cca36dfe04074a46d7201417da5",
+    "rust": "rustc 1.91.1 ed61e7d7e242494fb7057f2657300d9e77bb4fcb",
+    "archive_reader": {
+      "exit_code": 0,
+      "semantic_chain": "verified",
+      "authority_signature": "verified",
+      "local_standing_effect": "none",
+      "stderr_root": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "rust_reader": {
+      "exit_code": 0,
+      "tests_passed": 9,
+      "tests_failed": 0
+    },
+    "intake_binary": {
+      "version": "vela 0.950.1",
+      "source_commit": "f0577863940517020a86e7fed10eb5f9b23e7d26",
+      "sha256": "sha256:185ae32a82bc765023bdad4f570f82738b5d3fd2ac08a839ef1041abe0bf8d90"
+    }
+  },
+  "limitations": [
+    "The verifier execution is separate from the producer execution and uses a distinct signing identity, but shares the same human operator, local machine, OpenAI Codex model family, retained archive, and Vela implementation.",
+    "This is first-party scoped replication, not external, organizational, hardware, or implementation independence.",
+    "A passing reader result is evidence only; it does not accept the Claim or change Formal Conjectures Standing."
+  ]
+}
