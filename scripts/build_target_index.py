@@ -9,6 +9,7 @@ candidate during repository migration or later maintenance.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import pathlib
 import subprocess
@@ -23,7 +24,29 @@ from validate_target_closure import (
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CANDIDATE_PATH = ROOT / ".vela" / "tmp" / "target-index-candidate.json"
 INDEX_PATH = ROOT / "targets.json"
+REPOSITORY_PATH = ROOT / ".vela" / "repository.json"
+PACKET_PATH = (
+    ROOT / "targets" / "formal-erdos-835-property-iff-chromatic-number.json"
+)
+TARGET_ID = "formal:erdos-835-property-iff-chromatic-number"
+PACKET_SCHEMA = "formal-conjectures.lean-proof-work.v1"
+UPSTREAM_COMMIT = "85f863718beeec7b58a3a1926ee92e3472bc2020"
+UPSTREAM_TREE = "e14c3d6b1b1fc5e378e72398cb9a402dd981db63"
+SOURCE_FILE_ROOT = (
+    "sha256:f163f1f5a6fead133f3a66ae400305fcb40c6019321ce21e869ce5b3c0ab89a0"
+)
+DECLARATION_SPAN_ROOT = (
+    "sha256:82ecd5e20d93c83d348f3b473e55375fca272b380fe9259f68e7796c3b0b09ff"
+)
+TOOLCHAIN_ROOT = (
+    "sha256:e695e6e5d8e7a8be4d6cf159dfb995847993d26c6cc450353a86f387279025b9"
+)
+MANIFEST_ROOT = (
+    "sha256:5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26"
+)
+MATHLIB_COMMIT = "a3a10db0e9d66acbebf76c5e6a135066525ac900"
 INPUT_PATHS = [
+    ".vela/repository.json",
     "README.md",
     "SCOPE.md",
     "STATEMENT.md",
@@ -32,7 +55,35 @@ INPUT_PATHS = [
     "scripts/validate_target_closure.py",
     "targets/closures/formal-retain-erdos-424-correction.json",
     "targets/formal-retain-erdos-424-correction.json",
+    "tests/test_target_closure.py",
+    "tests/test_target_index.py",
 ]
+TARGET = {
+    "id": TARGET_ID,
+    "title": "Prove the Erdős 835 property/chromatic-number equivalence",
+    "why": (
+        "The exact category-test declaration remains sorry-backed at the "
+        "frozen official source revision, has a bounded kernel verifier, and "
+        "had no exact solution or semantic pull-request collision at freeze."
+    ),
+    "state": "open",
+    "rank": 1,
+    "objective": (
+        "Produce one sorry-free Lean proof term for the exact frozen "
+        "Erdos835.property_iff_chromaticNumber declaration."
+    ),
+    "labels": [
+        "collision-checked",
+        "formal-conjectures",
+        "kernel-check",
+        "lean4",
+        "no-answer-leak",
+    ],
+    "packet": {
+        "path": "targets/formal-erdos-835-property-iff-chromatic-number.json",
+        "schema": PACKET_SCHEMA,
+    },
+}
 
 
 def git_head() -> str:
@@ -51,8 +102,127 @@ def canonical_bytes(value: Any) -> bytes:
     ).encode()
 
 
+def sha256_root(data: bytes) -> str:
+    return "sha256:" + hashlib.sha256(data).hexdigest()
+
+
+def file_root(path: pathlib.Path) -> str:
+    return sha256_root(path.read_bytes())
+
+
+def validate_packet(packet: dict[str, Any] | None = None) -> None:
+    if packet is None:
+        packet = json.loads(PACKET_PATH.read_text())
+    repository = json.loads(REPOSITORY_PATH.read_text())
+    expected_fields = {
+        "authority",
+        "budget",
+        "environment",
+        "frontier",
+        "input_policy",
+        "limitations",
+        "output_contract",
+        "schema",
+        "selection",
+        "source",
+        "target",
+        "verification",
+    }
+    if set(packet) != expected_fields:
+        raise ValueError("formal proof packet fields are not the closed mission set")
+    if packet["schema"] != PACKET_SCHEMA:
+        raise ValueError("formal proof packet schema differs from the Target")
+    if packet["frontier"] != {
+        "frontier_id": repository["frontier_id"],
+        "repository_root": file_root(REPOSITORY_PATH),
+    }:
+        raise ValueError("formal proof packet is stale for the current Frontier")
+    if packet["target"] != {
+        "id": TARGET_ID,
+        "state": "open",
+        "objective": TARGET["objective"],
+    }:
+        raise ValueError("formal proof packet target semantics differ")
+
+    source = packet["source"]
+    if source["git_commit"] != UPSTREAM_COMMIT or source["git_tree"] != UPSTREAM_TREE:
+        raise ValueError("formal proof packet upstream revision differs")
+    if source["file_sha256"] != SOURCE_FILE_ROOT:
+        raise ValueError("formal proof packet source-file root differs")
+    if source["declaration"] != "Erdos835.property_iff_chromaticNumber":
+        raise ValueError("formal proof packet declaration differs")
+    if (
+        source["declaration_span_sha256"] != DECLARATION_SPAN_ROOT
+        or sha256_root(source["declaration_span"].encode()) != DECLARATION_SPAN_ROOT
+    ):
+        raise ValueError("formal proof packet declaration-span root differs")
+
+    environment = packet["environment"]
+    if environment != {
+        "lean_version": "4.27.0",
+        "lean_toolchain": "leanprover/lean4:v4.27.0",
+        "lean_toolchain_sha256": TOOLCHAIN_ROOT,
+        "lake_manifest_sha256": MANIFEST_ROOT,
+        "mathlib_git_commit": MATHLIB_COMMIT,
+    }:
+        raise ValueError("formal proof packet environment differs")
+    if sha256_root(environment["lean_toolchain"].encode()) != TOOLCHAIN_ROOT:
+        raise ValueError("formal proof packet Lean toolchain root differs")
+    if packet["budget"] != {
+        "compute": "cpu_only",
+        "network": "denied",
+        "maximum_wall_time_seconds": 3600,
+    }:
+        raise ValueError("formal proof packet budget differs")
+
+    output = packet["output_contract"]
+    if (
+        output["schema"] != "canopus.lean-proof-term.v1"
+        or output["kind"] != "lean-proof"
+        or output["path"]
+        != "artifacts/erdos835-property-iff-chromatic-number-proof.lean"
+        or output["maximum_bytes"] != 131072
+    ):
+        raise ValueError("formal proof packet output contract differs")
+    excluded = "\n".join(packet["input_policy"]["excluded_answer_sources"])
+    for required in ("golden", "candidate proofs", "Pull-request", "network"):
+        if required not in excluded:
+            raise ValueError("formal proof packet answer-leak exclusions differ")
+
+    axioms = packet["verification"]["axioms"]
+    if axioms != {
+        "allowed": ["propext", "Classical.choice", "Quot.sound"],
+        "forbidden": ["sorryAx"],
+    }:
+        raise ValueError("formal proof packet axiom policy differs")
+    if packet["authority"] != {
+        "producer_ceiling": "pending_review",
+        "verification_ceiling": "evidence_only",
+        "accepted_standing_effect": "none",
+        "requires_human_decision": True,
+        "human_key_access": "forbidden",
+    }:
+        raise ValueError("formal proof packet authority ceiling differs")
+    if len(packet["limitations"]) != 4:
+        raise ValueError("formal proof packet limitations differ")
+
+    collision = packet["selection"]["live_collision_check"]
+    if collision["remote_head"] != UPSTREAM_COMMIT:
+        raise ValueError("formal proof packet collision check observed another HEAD")
+    if collision["exact_solution_matches"] or collision["exact_declaration_open_pr_matches"]:
+        raise ValueError("formal proof packet records an exact solution collision")
+    source_pr = collision["source_file_open_pr"]
+    if (
+        source_pr["number"] != 4631
+        or source_pr["disposition"] != "non_semantic_module_migration"
+        or source_pr["declaration_span_changed"] is not False
+    ):
+        raise ValueError("formal proof packet source-file PR disposition differs")
+
+
 def candidate() -> dict[str, Any]:
     validate_target_closure(ROOT)
+    validate_packet()
     return {
         "schema": "vela.target-index-candidate.v1",
         "frontier_id": "vfr_97d7d25957384f80",
@@ -60,7 +230,7 @@ def candidate() -> dict[str, Any]:
             "git_commit": git_head(),
             "input_paths": INPUT_PATHS,
         },
-        "targets": [],
+        "targets": [TARGET],
     }
 
 
@@ -68,8 +238,28 @@ def check() -> list[str]:
     try:
         validate_target_closure(ROOT)
         validate_closed_target_index(ROOT)
+        validate_packet()
     except ValueError as error:
         return [str(error)]
+    sealed = json.loads(INDEX_PATH.read_text())
+    targets = sealed.get("targets", [])
+    if len(targets) != 1:
+        return [f"targets.json has {len(targets)} targets; expected 1"]
+    row = targets[0]
+    for key, expected in TARGET.items():
+        if key == "packet":
+            continue
+        if row.get(key) != expected:
+            return [f"targets.json differs at {key}"]
+    packet = row.get("packet", {})
+    if packet.get("path") != TARGET["packet"]["path"]:
+        return ["targets.json packet path differs"]
+    if packet.get("schema") != PACKET_SCHEMA:
+        return ["targets.json packet schema differs"]
+    if packet.get("size") != PACKET_PATH.stat().st_size:
+        return ["targets.json packet size differs"]
+    if packet.get("sha256") != file_root(PACKET_PATH):
+        return ["targets.json packet root differs"]
     return []
 
 

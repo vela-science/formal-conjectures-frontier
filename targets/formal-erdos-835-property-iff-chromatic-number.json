@@ -1,0 +1,111 @@
+{
+  "schema": "formal-conjectures.lean-proof-work.v1",
+  "frontier": {
+    "frontier_id": "vfr_97d7d25957384f80",
+    "repository_root": "sha256:5e59e05a5639ac0ec4331ec40fec9f50229b795a1a08d983ba96834d4777b58a"
+  },
+  "target": {
+    "id": "formal:erdos-835-property-iff-chromatic-number",
+    "state": "open",
+    "objective": "Produce one sorry-free Lean proof term for the exact frozen Erdos835.property_iff_chromaticNumber declaration."
+  },
+  "selection": {
+    "source_adapter": {
+      "adapter_root": "sha256:3d75d0807f71be83e4a87003d8971f2b81f2f1ddb58f7cab7f14b6d15bab2592",
+      "bundle_root": "sha256:f92031b1bf5b33054c3fef87365dff5f4dd00d205d4b017d1a9174cfc05d64b0",
+      "native_record_root": "sha256:3889fcef1f8c4c85ad8a5bbb7bff57c6b00245ade8b1e0d486dc1dd0ec52ff0a"
+    },
+    "basis": "One exact category-test declaration remains sorry-backed in the official source, has a bounded kernel verifier, and had no exact open solution or semantic pull-request collision at freeze.",
+    "live_collision_check": {
+      "observed_at": "2026-07-30T18:37:51Z",
+      "remote_head": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+      "exact_solution_matches": [],
+      "exact_declaration_open_pr_matches": [],
+      "source_file_open_pr": {
+        "number": 4631,
+        "head_commit": "0a789bb3adc31b158966ef3b84e9b82fb703575e",
+        "url": "https://github.com/google-deepmind/formal-conjectures/pull/4631",
+        "disposition": "non_semantic_module_migration",
+        "declaration_span_changed": false
+      }
+    }
+  },
+  "source": {
+    "repository": "https://github.com/google-deepmind/formal-conjectures.git",
+    "git_commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+    "git_tree": "e14c3d6b1b1fc5e378e72398cb9a402dd981db63",
+    "path": "FormalConjectures/ErdosProblems/835.lean",
+    "git_blob": "948ac76c6dacca85e312edfb8d550d9b5f8d768f",
+    "file_sha256": "sha256:f163f1f5a6fead133f3a66ae400305fcb40c6019321ce21e869ce5b3c0ab89a0",
+    "declaration": "Erdos835.property_iff_chromaticNumber",
+    "declaration_span": "@[category test, AMS 5]\ntheorem property_iff_chromaticNumber (k : ℕ) (hk : 0 < k) :\n    (J(2 * k, k).chromaticNumber = k + 1) ↔\n    Property k := by\n  sorry\n",
+    "declaration_span_sha256": "sha256:82ecd5e20d93c83d348f3b473e55375fca272b380fe9259f68e7796c3b0b09ff",
+    "statement": "(k : ℕ) (hk : 0 < k) : (J(2 * k, k).chromaticNumber = k + 1) ↔ Property k"
+  },
+  "environment": {
+    "lean_version": "4.27.0",
+    "lean_toolchain": "leanprover/lean4:v4.27.0",
+    "lean_toolchain_sha256": "sha256:e695e6e5d8e7a8be4d6cf159dfb995847993d26c6cc450353a86f387279025b9",
+    "lake_manifest_sha256": "sha256:5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+    "mathlib_git_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900"
+  },
+  "budget": {
+    "compute": "cpu_only",
+    "network": "denied",
+    "maximum_wall_time_seconds": 3600
+  },
+  "input_policy": {
+    "allowed": [
+      "The exact frozen Formal Conjectures checkout and its imported source.",
+      "The exact Mathlib checkout named by the frozen lake manifest.",
+      "Lean diagnostics produced locally while checking the candidate proof term."
+    ],
+    "excluded_answer_sources": [
+      "Third-party copies of the task or declaration.",
+      "Benchmark checker, golden-environment, solution, or answer files.",
+      "Prior agent transcripts, candidate proofs, proof caches, or retained solution artifacts.",
+      "Pull-request branches or diffs other than the recorded collision check.",
+      "Live network retrieval during execution or verification."
+    ]
+  },
+  "output_contract": {
+    "schema": "canopus.lean-proof-term.v1",
+    "path": "artifacts/erdos835-property-iff-chromatic-number-proof.lean",
+    "kind": "lean-proof",
+    "format": "One UTF-8 Lean term beginning with by and containing no sorry, admit, axiom declaration, or unsafe declaration. No imports, theorem statement, JSON envelope, Markdown fence, or surrounding prose.",
+    "maximum_bytes": 131072
+  },
+  "verification": {
+    "statement_fidelity": "The verifier supplies the exact declaration span and frozen source checkout; the producer cannot weaken, rename, or replace the theorem.",
+    "kernel": "Lean 4.27.0 elaborates the proof term in the exact frozen Formal Conjectures and Mathlib environment.",
+    "axioms": {
+      "allowed": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "forbidden": [
+        "sorryAx"
+      ]
+    },
+    "required_checks": [
+      "The candidate is the exact output path and kind and satisfies the byte ceiling.",
+      "The theorem elaborates without sorry, admit, unsafe declarations, or new axioms.",
+      "#print axioms Erdos835.property_iff_chromaticNumber reports only the allowed axiom set.",
+      "A second network-denied replay over the same proof bytes produces the same result."
+    ]
+  },
+  "authority": {
+    "producer_ceiling": "pending_review",
+    "verification_ceiling": "evidence_only",
+    "accepted_standing_effect": "none",
+    "requires_human_decision": true,
+    "human_key_access": "forbidden"
+  },
+  "limitations": [
+    "A kernel-clean proof establishes only this exact category-test equivalence at the frozen source revision.",
+    "It does not prove Erdos835.erdos_835, answer Erdős problem 835, or establish source-to-informal-statement fidelity.",
+    "It does not establish novelty, independent-participant replication, upstream acceptance, or scientific Standing.",
+    "Verification remains evidence; only a separate authorized human Decision may change local Standing."
+  ]
+}
