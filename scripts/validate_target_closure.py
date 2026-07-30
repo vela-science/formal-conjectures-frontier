@@ -150,8 +150,13 @@ def validate(
         raise TargetClosureError("completed Target is not marked closed")
     if closure.get("successor_packet") is not None:
         raise TargetClosureError("closed retention Target invents a successor")
-    if closure.get("repository_root") != file_root(repository_path):
-        raise TargetClosureError("Target closure repository root drifted")
+    closed_at_repository_root = closure.get("repository_root", "")
+    if (
+        not isinstance(closed_at_repository_root, str)
+        or not closed_at_repository_root.startswith("sha256:")
+        or len(closed_at_repository_root) != 71
+    ):
+        raise TargetClosureError("Target closure has no exact closure-time repository root")
     if canonical_root(closure.get("completion_contract")) != closure.get(
         "completion_contract_root"
     ):

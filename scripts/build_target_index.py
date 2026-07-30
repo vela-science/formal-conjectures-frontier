@@ -24,7 +24,6 @@ from validate_target_closure import (
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CANDIDATE_PATH = ROOT / ".vela" / "tmp" / "target-index-candidate.json"
 INDEX_PATH = ROOT / "targets.json"
-REPOSITORY_PATH = ROOT / ".vela" / "repository.json"
 PACKET_PATH = (
     ROOT / "targets" / "formal-erdos-835-property-iff-chromatic-number.json"
 )
@@ -45,8 +44,10 @@ MANIFEST_ROOT = (
     "sha256:5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26"
 )
 MATHLIB_COMMIT = "a3a10db0e9d66acbebf76c5e6a135066525ac900"
+FROZEN_REPOSITORY_ROOT = (
+    "sha256:5e59e05a5639ac0ec4331ec40fec9f50229b795a1a08d983ba96834d4777b58a"
+)
 INPUT_PATHS = [
-    ".vela/repository.json",
     "README.md",
     "SCOPE.md",
     "STATEMENT.md",
@@ -113,7 +114,6 @@ def file_root(path: pathlib.Path) -> str:
 def validate_packet(packet: dict[str, Any] | None = None) -> None:
     if packet is None:
         packet = json.loads(PACKET_PATH.read_text())
-    repository = json.loads(REPOSITORY_PATH.read_text())
     expected_fields = {
         "authority",
         "budget",
@@ -133,10 +133,10 @@ def validate_packet(packet: dict[str, Any] | None = None) -> None:
     if packet["schema"] != PACKET_SCHEMA:
         raise ValueError("formal proof packet schema differs from the Target")
     if packet["frontier"] != {
-        "frontier_id": repository["frontier_id"],
-        "repository_root": file_root(REPOSITORY_PATH),
+        "frontier_id": "vfr_97d7d25957384f80",
+        "repository_root": FROZEN_REPOSITORY_ROOT,
     }:
-        raise ValueError("formal proof packet is stale for the current Frontier")
+        raise ValueError("formal proof packet differs from its frozen Frontier context")
     if packet["target"] != {
         "id": TARGET_ID,
         "state": "open",

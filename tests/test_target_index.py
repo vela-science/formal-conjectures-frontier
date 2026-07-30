@@ -41,6 +41,10 @@ class TargetIndexTests(unittest.TestCase):
             "targets/formal-erdos-835-property-iff-chromatic-number.json",
             value["source"]["input_paths"],
         )
+        self.assertNotIn(
+            ".vela/repository.json",
+            value["source"]["input_paths"],
+        )
         self.assertEqual(len(value["targets"]), 1)
         self.assertEqual(
             value["targets"][0]["id"],
