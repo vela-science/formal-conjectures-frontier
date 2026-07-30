@@ -112,6 +112,23 @@ class TargetIndexTests(unittest.TestCase):
             packet["limitations"][1],
         )
 
+    def test_collision_gate_records_every_open_source_file_pr(self) -> None:
+        packet = json.loads(PACKET.read_text())
+        source_prs = packet["selection"]["live_collision_check"][
+            "source_file_open_prs"
+        ]
+        self.assertEqual([row["number"] for row in source_prs], [4004, 4631])
+        self.assertEqual(
+            [row["disposition"] for row in source_prs],
+            [
+                "non_semantic_docstring_markup",
+                "non_semantic_module_migration",
+            ],
+        )
+        self.assertTrue(
+            all(row["declaration_span_changed"] is False for row in source_prs)
+        )
+
     def test_generator_rejects_semantic_tampering(self) -> None:
         packet = json.loads(PACKET.read_text())
         tampered = copy.deepcopy(packet)

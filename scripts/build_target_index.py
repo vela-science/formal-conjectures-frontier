@@ -211,12 +211,23 @@ def validate_packet(packet: dict[str, Any] | None = None) -> None:
         raise ValueError("formal proof packet collision check observed another HEAD")
     if collision["exact_solution_matches"] or collision["exact_declaration_open_pr_matches"]:
         raise ValueError("formal proof packet records an exact solution collision")
-    source_pr = collision["source_file_open_pr"]
-    if (
-        source_pr["number"] != 4631
-        or source_pr["disposition"] != "non_semantic_module_migration"
-        or source_pr["declaration_span_changed"] is not False
-    ):
+    source_prs = collision["source_file_open_prs"]
+    if source_prs != [
+        {
+            "number": 4004,
+            "head_commit": "a77dee7db6b14ceb53aeb86bfedde832148f7ee5",
+            "url": "https://github.com/google-deepmind/formal-conjectures/pull/4004",
+            "disposition": "non_semantic_docstring_markup",
+            "declaration_span_changed": False,
+        },
+        {
+            "number": 4631,
+            "head_commit": "0a789bb3adc31b158966ef3b84e9b82fb703575e",
+            "url": "https://github.com/google-deepmind/formal-conjectures/pull/4631",
+            "disposition": "non_semantic_module_migration",
+            "declaration_span_changed": False,
+        },
+    ]:
         raise ValueError("formal proof packet source-file PR disposition differs")
 
 
