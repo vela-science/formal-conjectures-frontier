@@ -1,0 +1,67 @@
+{
+  "schema": "canopus.formal-attempt-report.v1",
+  "result_class": "verified_proof_artifact",
+  "verifier_passing_artifact": true,
+  "elapsed_seconds": 954,
+  "frontier": {
+    "commit": "410528e49cff7fff528bd46cfc80062df5e40ea8",
+    "target_id": "formal:erdos-835-property-iff-chromatic-number",
+    "packet_sha256": "sha256:dce5cc1e49c8417ebd433e26ebc909249db7f0ef6c4b8a7ba3ccab420f05438c"
+  },
+  "source": {
+    "repository": "https://github.com/google-deepmind/formal-conjectures.git",
+    "commit": "85f863718beeec7b58a3a1926ee92e3472bc2020",
+    "tree": "e14c3d6b1b1fc5e378e72398cb9a402dd981db63",
+    "file_sha256": "sha256:f163f1f5a6fead133f3a66ae400305fcb40c6019321ce21e869ce5b3c0ab89a0",
+    "declaration_span_sha256": "sha256:82ecd5e20d93c83d348f3b473e55375fca272b380fe9259f68e7796c3b0b09ff"
+  },
+  "environment": {
+    "lean_version": "4.27.0",
+    "lean_toolchain_sha256": "sha256:e695e6e5d8e7a8be4d6cf159dfb995847993d26c6cc450353a86f387279025b9",
+    "lake_manifest_sha256": "sha256:5b99b5f4f807cbba67bbcd22e5e486c17d6a8d970ea218de08d05830ab350c26",
+    "mathlib_commit": "a3a10db0e9d66acbebf76c5e6a135066525ac900",
+    "package_count": 9,
+    "all_package_commits_match_manifest": true,
+    "compute": "cpu_only"
+  },
+  "artifact": {
+    "path": "proof.lean",
+    "kind": "lean-proof",
+    "bytes": 4456,
+    "sha256": "sha256:565309675bb0acbef3ad11b367c29f85eede2b1981d6f6395ca72f51c495b270",
+    "forbidden_token_scan": "pass"
+  },
+  "verification": {
+    "exact_statement_splice": true,
+    "verification_source_sha256": "sha256:7accfd66f645d8d64b37653b69ef09c0d598ea765508fec9392cffa5765e9d84",
+    "kernel_exit_code": 0,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "sorryAx_present": false,
+    "ordinary_replays": 2,
+    "network_denied_replays": 1,
+    "all_replay_results_byte_identical": true,
+    "verification_result_sha256": "sha256:58e52771e894fed57aa8a42ee79652ff5113f68d71799e1ea7fe7496f58266d9"
+  },
+  "commands": {
+    "checkout": "git clone --no-tags --filter=blob:none https://github.com/google-deepmind/formal-conjectures.git <source> && git -C <source> checkout --detach 85f863718beeec7b58a3a1926ee92e3472bc2020",
+    "kernel": "env -u http_proxy -u https_proxy -u ALL_PROXY -u HTTPS_PROXY -u HTTP_PROXY lake env lean Verify835.lean",
+    "network_denied_replay": "/usr/bin/sandbox-exec -p '(version 1) (allow default) (deny network*)' /usr/bin/python3 verify.py"
+  },
+  "authority": {
+    "frontier_writes": false,
+    "canonical_commits": false,
+    "submission_created": false,
+    "human_key_access": false,
+    "standing_effect": "none"
+  },
+  "limitations": [
+    "The proof establishes only the exact category-test equivalence at the frozen source revision.",
+    "It does not prove Erdos835.erdos_835 or answer Erdős problem 835.",
+    "It does not establish source-to-informal-statement fidelity, novelty, independent-participant replication, upstream acceptance, or scientific Standing.",
+    "Other declarations in the frozen source file remain sorry-backed; the audited target declaration itself has no sorryAx dependency."
+  ]
+}

@@ -1,0 +1,105 @@
+by
+  classical
+  let K := {s : Finset (Fin (2 * k)) // s.card = k}
+  let localEquiv (k : ℕ) (A : Finset (Fin (2 * k))) (hA : A.card = k + 1) :
+      {s : {s : Finset (Fin (2 * k)) // s.card = k} // s.val ⊂ A} ≃
+        {s : Finset (Fin (2 * k)) // s ∈ A.powersetCard k} :=
+    { toFun := fun s =>
+        ⟨s.val.val, Finset.mem_powersetCard.mpr ⟨s.property.subset, s.val.property⟩⟩
+      invFun := fun s =>
+        ⟨⟨s.val, (Finset.mem_powersetCard.mp s.property).2⟩,
+          Finset.ssubset_iff_subset_ne.mpr
+            ⟨(Finset.mem_powersetCard.mp s.property).1, by
+              intro h
+              have hc := (Finset.mem_powersetCard.mp s.property).2
+              rw [h, hA] at hc
+              omega⟩⟩
+      left_inv := by intro s; rfl
+      right_inv := by intro s; rfl }
+  have localVertices_card (k : ℕ) (A : Finset (Fin (2 * k))) (hA : A.card = k + 1) :
+      ({s : {s : Finset (Fin (2 * k)) // s.card = k} | s.val ⊂ A} : Finset _).card =
+        k + 1 := by
+    rw [← Fintype.card_subtype]
+    rw [Fintype.card_congr (localEquiv k A hA), Fintype.card_coe,
+      Finset.card_powersetCard, hA, Nat.choose_succ_self_right]
+  have localVertices_isClique (k : ℕ) (A : Finset (Fin (2 * k)))
+      (hA : A.card = k + 1) :
+      J(2 * k, k).IsClique
+        {s : {s : Finset (Fin (2 * k)) // s.card = k} | s.val ⊂ A} := by
+    intro s hs t ht hst
+    rw [SimpleGraph.johnson_adj_iff_ge]
+    refine ⟨hst, ?_⟩
+    have hu : (s.val ∪ t.val).card ≤ A.card :=
+      Finset.card_le_card (Finset.union_subset hs.subset ht.subset)
+    have hcard := Finset.card_union_add_card_inter s.val t.val
+    rw [s.property, t.property] at hcard
+    rw [hA] at hu
+    omega
+  have hexA : ∃ A : Finset (Fin (2 * k)), A.card = k + 1 := by
+    have hle : k + 1 ≤ Fintype.card (Fin (2 * k)) := by
+      simp
+      omega
+    obtain ⟨A, hA⟩ := Finset.powersetCard_nonempty.mpr hle
+    exact ⟨A, (Finset.mem_powersetCard.mp hA).2⟩
+  constructor
+  · intro hχ
+    obtain ⟨C⟩ := (SimpleGraph.chromaticNumber_eq_iff_colorable_not_colorable.mp hχ).1
+    refine ⟨C, ?_⟩
+    intro A hA
+    let L : Finset K := {s : K | s.val ⊂ A}
+    have hLcard : L.card = k + 1 := localVertices_card k A hA
+    have hclique : J(2 * k, k).IsClique L := by
+      simpa [L] using localVertices_isClique k A hA
+    have hinj : Set.InjOn C (↑L : Set K) := by
+      intro s hs t ht heq
+      by_contra hst
+      exact C.valid (hclique hs ht hst) heq
+    apply Finset.eq_of_subset_of_card_le (Finset.subset_univ _)
+    rw [Finset.card_image_of_injOn hinj, hLcard]
+    simp
+  · rintro ⟨c, hc⟩
+    let C : J(2 * k, k).Coloring (Fin (k + 1)) :=
+      SimpleGraph.Coloring.mk c (by
+        intro s t hst
+        let A := s.val ∪ t.val
+        have hA : A.card = k + 1 := by
+          change (s.val ∪ t.val).card = k + 1
+          have hi := hst
+          rw [SimpleGraph.johnson_adj] at hi
+          have hcard := Finset.card_union_add_card_inter s.val t.val
+          rw [s.property, t.property] at hcard
+          omega
+        have hs : s.val ⊂ A :=
+          Finset.ssubset_iff_subset_ne.mpr
+            ⟨Finset.subset_union_left, by
+              intro heq
+              have hsCard := congrArg Finset.card heq
+              rw [s.property, hA] at hsCard
+              omega⟩
+        have ht : t.val ⊂ A :=
+          Finset.ssubset_iff_subset_ne.mpr
+            ⟨Finset.subset_union_right, by
+              intro heq
+              have htCard := congrArg Finset.card heq
+              rw [t.property, hA] at htCard
+              omega⟩
+        let L : Finset K := {u : K | u.val ⊂ A}
+        have hLcard : L.card = k + 1 := localVertices_card k A hA
+        have himage := hc A hA
+        have himageCard : (L.image c).card = L.card := by
+          rw [himage, hLcard]
+          simp
+        have hinj : Set.InjOn c (↑L : Set K) := Finset.card_image_iff.mp himageCard
+        intro heq
+        exact hst.ne (hinj (by simpa [L] using hs) (by simpa [L] using ht) heq))
+    rw [SimpleGraph.chromaticNumber_eq_iff_colorable_not_colorable]
+    refine ⟨⟨C⟩, ?_⟩
+    intro hcolor
+    obtain ⟨A, hA⟩ := hexA
+    let L : Finset K := {s : K | s.val ⊂ A}
+    have hLcard : L.card = k + 1 := localVertices_card k A hA
+    have hclique : J(2 * k, k).IsClique L := by
+      simpa [L] using localVertices_isClique k A hA
+    have hle := hclique.card_le_of_colorable hcolor
+    rw [hLcard] at hle
+    omega
