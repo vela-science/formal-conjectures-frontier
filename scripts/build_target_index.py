@@ -9,51 +9,30 @@ candidate during repository migration or later maintenance.
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import pathlib
 import subprocess
 import sys
 from typing import Any
 
+from validate_target_closure import (
+    validate as validate_target_closure,
+    validate_index as validate_closed_target_index,
+)
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CANDIDATE_PATH = ROOT / ".vela" / "tmp" / "target-index-candidate.json"
 INDEX_PATH = ROOT / "targets.json"
-PACKET_PATH = ROOT / "targets" / "formal-retain-erdos-424-correction.json"
 INPUT_PATHS = [
     "README.md",
     "SCOPE.md",
     "STATEMENT.md",
     "VELA.md",
     "scripts/build_target_index.py",
+    "scripts/validate_target_closure.py",
+    "targets/closures/formal-retain-erdos-424-correction.json",
+    "targets/formal-retain-erdos-424-correction.json",
 ]
-TARGET = {
-    "id": "formal:retain-erdos-424-correction",
-    "title": "Retain the exact Erdős 424 correction without importing authority",
-    "why": (
-        "Formal Conjectures owns the referenced Lean source, and the registered "
-        "B8 experiment requires one second Frontier to retain the accepted "
-        "source transition without importing its Standing."
-    ),
-    "state": "open",
-    "rank": 1,
-    "objective": (
-        "Register one complete portable foreign-reference archive as bounded "
-        "evidence, verify every retained byte and the source authority chain, "
-        "and leave local accepted Standing unchanged."
-    ),
-    "labels": [
-        "authority-contained",
-        "cross-frontier",
-        "exact-reference",
-        "formal-conjectures",
-        "non-authoritative",
-    ],
-    "packet": {
-        "path": "targets/formal-retain-erdos-424-correction.json",
-        "schema": "vela.foreign-reference-retention-work.v1",
-    },
-}
 
 
 def git_head() -> str:
@@ -73,6 +52,7 @@ def canonical_bytes(value: Any) -> bytes:
 
 
 def candidate() -> dict[str, Any]:
+    validate_target_closure(ROOT)
     return {
         "schema": "vela.target-index-candidate.v1",
         "frontier_id": "vfr_97d7d25957384f80",
@@ -80,37 +60,17 @@ def candidate() -> dict[str, Any]:
             "git_commit": git_head(),
             "input_paths": INPUT_PATHS,
         },
-        "targets": [TARGET],
+        "targets": [],
     }
 
 
-def packet_root() -> str:
-    return "sha256:" + hashlib.sha256(PACKET_PATH.read_bytes()).hexdigest()
-
-
 def check() -> list[str]:
-    failures: list[str] = []
-    sealed = json.loads(INDEX_PATH.read_text())
-    if sealed.get("schema") != "vela.target-index.v4":
-        return ["targets.json is not a sealed vela.target-index.v4"]
-    actual = sealed.get("targets", [])
-    if len(actual) != 1:
-        return [f"targets.json has {len(actual)} targets; expected 1"]
-    expected = TARGET
-    row = actual[0]
-    for key, value in expected.items():
-        if key != "packet" and row.get(key) != value:
-            failures.append(f"targets.json differs at {key}")
-    packet = row.get("packet", {})
-    if packet.get("path") != expected["packet"]["path"]:
-        failures.append("targets.json packet path differs")
-    if packet.get("schema") != expected["packet"]["schema"]:
-        failures.append("targets.json packet schema differs")
-    if packet.get("size") != PACKET_PATH.stat().st_size:
-        failures.append("targets.json packet size differs")
-    if packet.get("sha256") != packet_root():
-        failures.append("targets.json packet digest differs")
-    return failures
+    try:
+        validate_target_closure(ROOT)
+        validate_closed_target_index(ROOT)
+    except ValueError as error:
+        return [str(error)]
+    return []
 
 
 def main() -> int:
