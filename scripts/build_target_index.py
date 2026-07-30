@@ -17,7 +17,7 @@ import sys
 from typing import Any
 
 from validate_target_closure import (
-    validate as validate_target_closure,
+    validate_all as validate_target_closures,
     validate_index as validate_closed_target_index,
 )
 
@@ -54,6 +54,7 @@ INPUT_PATHS = [
     "VELA.md",
     "scripts/build_target_index.py",
     "scripts/validate_target_closure.py",
+    "targets/closures/formal-erdos-835-property-iff-chromatic-number.json",
     "targets/closures/formal-retain-erdos-424-correction.json",
     "targets/formal-retain-erdos-424-correction.json",
     "tests/test_target_closure.py",
@@ -232,7 +233,7 @@ def validate_packet(packet: dict[str, Any] | None = None) -> None:
 
 
 def candidate() -> dict[str, Any]:
-    validate_target_closure(ROOT)
+    validate_target_closures(ROOT)
     validate_packet()
     return {
         "schema": "vela.target-index-candidate.v1",
@@ -241,36 +242,21 @@ def candidate() -> dict[str, Any]:
             "git_commit": git_head(),
             "input_paths": INPUT_PATHS,
         },
-        "targets": [TARGET],
+        "targets": [],
     }
 
 
 def check() -> list[str]:
     try:
-        validate_target_closure(ROOT)
+        validate_target_closures(ROOT)
         validate_closed_target_index(ROOT)
         validate_packet()
     except ValueError as error:
         return [str(error)]
     sealed = json.loads(INDEX_PATH.read_text())
     targets = sealed.get("targets", [])
-    if len(targets) != 1:
-        return [f"targets.json has {len(targets)} targets; expected 1"]
-    row = targets[0]
-    for key, expected in TARGET.items():
-        if key == "packet":
-            continue
-        if row.get(key) != expected:
-            return [f"targets.json differs at {key}"]
-    packet = row.get("packet", {})
-    if packet.get("path") != TARGET["packet"]["path"]:
-        return ["targets.json packet path differs"]
-    if packet.get("schema") != PACKET_SCHEMA:
-        return ["targets.json packet schema differs"]
-    if packet.get("size") != PACKET_PATH.stat().st_size:
-        return ["targets.json packet size differs"]
-    if packet.get("sha256") != file_root(PACKET_PATH):
-        return ["targets.json packet root differs"]
+    if targets:
+        return [f"targets.json has {len(targets)} targets; expected 0"]
     return []
 
 

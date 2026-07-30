@@ -20,6 +20,12 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 CLOSURE_PATH = (
     ROOT / "targets" / "closures" / "formal-retain-erdos-424-correction.json"
 )
+LEAN_CLOSURE_PATH = (
+    ROOT
+    / "targets"
+    / "closures"
+    / "formal-erdos-835-property-iff-chromatic-number.json"
+)
 INDEX_PATH = ROOT / "targets.json"
 REPOSITORY_PATH = ROOT / ".vela" / "repository.json"
 SHA256_RE = re.compile(r"^sha256:[0-9a-f]{64}$")
@@ -242,6 +248,191 @@ def validate(
     }
 
 
+def validate_lean_proof(
+    root: pathlib.Path = ROOT,
+    closure_path: pathlib.Path | None = None,
+) -> dict[str, Any]:
+    root = root.resolve()
+    closure_path = (
+        closure_path or root / LEAN_CLOSURE_PATH.relative_to(ROOT)
+    ).resolve()
+    repository_path = root / REPOSITORY_PATH.relative_to(ROOT)
+    require_tracked(root, closure_path)
+    require_tracked(root, repository_path)
+    closure = read_json(closure_path)
+    repository = read_json(repository_path)
+
+    target_id = "formal:erdos-835-property-iff-chromatic-number"
+    if closure.get("schema") != "vela.target-closure.v1":
+        raise TargetClosureError("unsupported Lean Target closure schema")
+    if closure.get("frontier_id") != repository.get("frontier_id"):
+        raise TargetClosureError("Lean Target closure names another Frontier")
+    if closure.get("target_id") != target_id:
+        raise TargetClosureError("Lean Target closure names another Target")
+    if closure.get("status") != "closed":
+        raise TargetClosureError("completed Lean Target is not marked closed")
+    if closure.get("successor_packet") is not None:
+        raise TargetClosureError("closed Lean Target invents a successor")
+    if not SHA256_RE.fullmatch(closure.get("repository_root", "")):
+        raise TargetClosureError("Lean Target closure has no exact closure-time root")
+    contract = closure.get("completion_contract")
+    if canonical_root(contract) != closure.get("completion_contract_root"):
+        raise TargetClosureError("Lean Target completion-contract root drifted")
+
+    completed_packet = closure.get("completed_packet") or {}
+    packet = bound_json(
+        root, completed_packet.get("path", ""), completed_packet.get("sha256", "")
+    )
+    if packet.get("schema") != completed_packet.get("schema"):
+        raise TargetClosureError("completed Lean packet schema drifted")
+    if packet.get("target", {}).get("id") != target_id:
+        raise TargetClosureError("completed Lean packet names another Target")
+
+    evidence = evidence_by_kind_for(
+        closure,
+        {
+            "claim",
+            "proposal",
+            "submission",
+            "registration",
+            "verification",
+            "proof_artifact",
+            "report_artifact",
+        },
+    )
+    claim = load_evidence(root, evidence["claim"], "claim_id")
+    proposal = load_evidence(root, evidence["proposal"], "proposal_id")
+    submission = load_evidence(root, evidence["submission"], "submission_id")
+    registration = load_evidence(
+        root, evidence["registration"], "registration_record_id"
+    )
+    verification = load_evidence(
+        root, evidence["verification"], "verification_record_id"
+    )
+    for kind in ("proof_artifact", "report_artifact"):
+        row = evidence[kind]
+        path = relative_path(root, row.get("path", ""))
+        require_tracked(root, path)
+        if file_root(path) != row.get("root"):
+            raise TargetClosureError(f"{kind} root drifted")
+        if row.get("id") != row.get("root", "").removeprefix("sha256:"):
+            raise TargetClosureError(f"{kind} ID differs from its content root")
+
+    claim_id = evidence["claim"]["id"]
+    proposal_id = evidence["proposal"]["id"]
+    submission_id = evidence["submission"]["id"]
+    submission_root = evidence["submission"]["root"]
+    if proposal.get("subject") != {
+        "id": claim_id,
+        "kind": "claim",
+        "root": evidence["claim"]["root"],
+    }:
+        raise TargetClosureError("Lean Proposal does not bind the retained Claim")
+    if proposal.get("producer_package") != {
+        "id": submission_id,
+        "kind": "submission_v1",
+        "path": evidence["submission"]["path"],
+        "root": submission_root,
+    }:
+        raise TargetClosureError("Lean Proposal does not bind the retained Submission")
+    if registration.get("proposal_id") != proposal_id:
+        raise TargetClosureError("Lean Registration does not bind the Proposal")
+    if (
+        registration.get("submission_id") != submission_id
+        or registration.get("submission_root") != submission_root
+        or registration.get("route") != "pending_review"
+        or registration.get("accepted_state_changed") is not False
+    ):
+        raise TargetClosureError("Lean Registration changes or misbinds scientific state")
+
+    subject = verification.get("subject") or {}
+    if verification.get("outcome") != "pass":
+        raise TargetClosureError("Lean Target Verification did not pass")
+    if subject.get("claim_id") != claim_id:
+        raise TargetClosureError("Lean Verification does not bind the Claim")
+    if subject.get("proposal_id") != proposal_id:
+        raise TargetClosureError("Lean Verification does not bind the Proposal")
+    if (
+        subject.get("submission_id") != submission_id
+        or subject.get("submission_root") != submission_root
+    ):
+        raise TargetClosureError("Lean Verification does not bind the Submission")
+    artifact_ids = set(subject.get("artifact_ids", []))
+    expected_artifacts = {
+        evidence["proof_artifact"]["id"],
+        evidence["report_artifact"]["id"],
+    }
+    if artifact_ids != expected_artifacts:
+        raise TargetClosureError("Lean Verification artifact set differs")
+    if verification.get("method", {}).get("profile") != contract.get(
+        "verification_profile"
+    ):
+        raise TargetClosureError("Lean Verification profile differs")
+    if contract.get("proof_sha256") != evidence["proof_artifact"]["root"]:
+        raise TargetClosureError("Lean completion contract binds another proof")
+    if contract.get("report_sha256") != evidence["report_artifact"]["root"]:
+        raise TargetClosureError("Lean completion contract binds another report")
+    if contract.get("producer_work_effect") != "closed":
+        raise TargetClosureError("Lean completion contract leaves completed work open")
+    if contract.get("accepted_state_change") != (
+        "none until a separate authorized human Decision"
+    ):
+        raise TargetClosureError("Lean completion contract claims scientific authority")
+
+    accepted_ids = {
+        row.get("claim_id")
+        for row in repository.get("accepted_claims", [])
+        if isinstance(row, dict)
+    }
+    pending_ids = {
+        row.get("claim_id")
+        for row in repository.get("pending_claims", [])
+        if isinstance(row, dict)
+    }
+    if claim_id in accepted_ids or claim_id not in pending_ids:
+        raise TargetClosureError("Lean closure does not preserve pending review")
+    if submission.get("claim", {}).get("assertion") != (
+        (claim.get("assertion") or {}).get("text")
+    ):
+        raise TargetClosureError("Lean Submission and Claim assertions differ")
+    return {
+        "schema": "formal-conjectures.target-closure-check.v1",
+        "ok": True,
+        "closed_target": target_id,
+        "claim_root": evidence["claim"]["root"],
+        "submission_root": submission_root,
+        "verification_root": evidence["verification"]["root"],
+        "artifact_root": evidence["proof_artifact"]["root"],
+        "local_standing_effect": "none",
+    }
+
+
+def evidence_by_kind_for(
+    closure: dict[str, Any], required: set[str]
+) -> dict[str, dict[str, Any]]:
+    rows = closure.get("evidence")
+    if not isinstance(rows, list):
+        raise TargetClosureError("Target closure evidence is not a list")
+    by_kind: dict[str, dict[str, Any]] = {}
+    for row in rows:
+        if not isinstance(row, dict) or not isinstance(row.get("kind"), str):
+            raise TargetClosureError("Target closure contains malformed evidence")
+        kind = row["kind"]
+        if kind in by_kind:
+            raise TargetClosureError(f"duplicate Target closure evidence kind: {kind}")
+        by_kind[kind] = row
+    if set(by_kind) != required:
+        raise TargetClosureError(
+            "Target closure evidence kinds differ: "
+            f"expected {sorted(required)}, observed {sorted(by_kind)}"
+        )
+    return by_kind
+
+
+def validate_all(root: pathlib.Path = ROOT) -> list[dict[str, Any]]:
+    return [validate(root), validate_lean_proof(root)]
+
+
 def validate_index(
     root: pathlib.Path = ROOT, index_path: pathlib.Path | None = None
 ) -> None:
@@ -251,10 +442,16 @@ def validate_index(
     index = read_json(index_path)
     if index.get("schema") != "vela.target-index.v4":
         raise TargetClosureError("targets.json is not a sealed Target Index v4")
-    completed = "formal:retain-erdos-424-correction"
-    if any(row.get("id") == completed for row in index.get("targets", [])):
+    completed = {
+        "formal:retain-erdos-424-correction",
+        "formal:erdos-835-property-iff-chromatic-number",
+    }
+    exposed = {
+        row.get("id") for row in index.get("targets", []) if row.get("id") in completed
+    }
+    if exposed:
         raise TargetClosureError(
-            "completed formal:retain-erdos-424-correction remains exposed"
+            f"completed Target remains exposed: {sorted(exposed)}"
         )
 
 
@@ -264,7 +461,7 @@ def main() -> int:
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     try:
-        result = validate()
+        results = validate_all()
         if args.check_index:
             validate_index()
     except TargetClosureError as error:
@@ -283,11 +480,20 @@ def main() -> int:
             print(f"Target closure invalid: {error}")
         return 1
     if args.json:
-        print(json.dumps(result, sort_keys=True))
+        print(
+            json.dumps(
+                {
+                    "schema": "formal-conjectures.target-closure-set-check.v1",
+                    "ok": True,
+                    "closures": results,
+                },
+                sort_keys=True,
+            )
+        )
     else:
         print(
-            "Target closure valid: "
-            f"{result['closed_target']} (local Standing effect none)"
+            "Target closures valid: "
+            + ", ".join(result["closed_target"] for result in results)
         )
     return 0
 

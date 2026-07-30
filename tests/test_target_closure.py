@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from validate_target_closure import (  # noqa: E402
     TargetClosureError,
     validate,
+    validate_lean_proof,
     validate_index,
 )
 
@@ -105,6 +106,74 @@ class TargetClosureTests(unittest.TestCase):
         path.write_bytes(path.read_bytes() + b" ")
         with self.assertRaisesRegex(TargetClosureError, "root drift"):
             validate(self.frontier)
+
+
+class LeanTargetClosureTests(unittest.TestCase):
+    def setUp(self) -> None:
+        import tempfile
+
+        self._temporary = tempfile.TemporaryDirectory()
+        self.frontier = pathlib.Path(self._temporary.name)
+        closure = json.loads(
+            (
+                ROOT
+                / "targets/closures/formal-erdos-835-property-iff-chromatic-number.json"
+            ).read_text()
+        )
+        paths = {
+            ".vela/repository.json",
+            closure["completed_packet"]["path"],
+            "targets/closures/formal-erdos-835-property-iff-chromatic-number.json",
+            *(row["path"] for row in closure["evidence"]),
+        }
+        for relative in sorted(paths):
+            source = ROOT / relative
+            destination = self.frontier / relative
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, destination)
+        subprocess.run(["git", "init", "-q", str(self.frontier)], check=True)
+        subprocess.run(["git", "-C", str(self.frontier), "add", "."], check=True)
+
+    def tearDown(self) -> None:
+        self._temporary.cleanup()
+
+    def read(self, relative: str) -> dict:
+        return json.loads((self.frontier / relative).read_text())
+
+    def write(self, relative: str, value: dict) -> None:
+        (self.frontier / relative).write_text(
+            json.dumps(value, sort_keys=True, separators=(",", ":")) + "\n"
+        )
+
+    def test_exact_lean_closure_preserves_pending_review(self) -> None:
+        result = validate_lean_proof(self.frontier)
+        self.assertEqual(result["local_standing_effect"], "none")
+        self.assertEqual(
+            result["verification_root"],
+            "sha256:381f947da552c37341030e4c5ef28e0222d40aa42de9066e74fc69d8f75fdb3d",
+        )
+
+    def test_lean_verification_cannot_be_recast_as_acceptance(self) -> None:
+        relative = (
+            "targets/closures/formal-erdos-835-property-iff-chromatic-number.json"
+        )
+        closure = self.read(relative)
+        closure["completion_contract"]["accepted_state_change"] = "accepted"
+        self.write(relative, closure)
+        with self.assertRaisesRegex(
+            TargetClosureError, "completion-contract root drifted"
+        ):
+            validate_lean_proof(self.frontier)
+
+    def test_lean_artifact_drift_is_rejected(self) -> None:
+        relative = (
+            "records/artifacts/sha256/"
+            "565309675bb0acbef3ad11b367c29f85eede2b1981d6f6395ca72f51c495b270"
+        )
+        path = self.frontier / relative
+        path.write_bytes(path.read_bytes() + b" ")
+        with self.assertRaisesRegex(TargetClosureError, "proof_artifact root drifted"):
+            validate_lean_proof(self.frontier)
 
 
 if __name__ == "__main__":

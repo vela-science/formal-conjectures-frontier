@@ -45,12 +45,7 @@ class TargetIndexTests(unittest.TestCase):
             ".vela/repository.json",
             value["source"]["input_paths"],
         )
-        self.assertEqual(len(value["targets"]), 1)
-        self.assertEqual(
-            value["targets"][0]["id"],
-            "formal:erdos-835-property-iff-chromatic-number",
-        )
-        self.assertEqual(value["targets"][0]["rank"], 1)
+        self.assertEqual(value["targets"], [])
 
     def test_cli_output_is_byte_deterministic(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

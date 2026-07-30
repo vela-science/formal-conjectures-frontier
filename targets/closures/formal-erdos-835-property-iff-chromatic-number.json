@@ -1,0 +1,66 @@
+{
+  "schema": "vela.target-closure.v1",
+  "frontier_id": "vfr_97d7d25957384f80",
+  "target_id": "formal:erdos-835-property-iff-chromatic-number",
+  "status": "closed",
+  "reason": "The exact proof and report are retained by one registered Submission and one passing scoped Verification. This closes the bounded producer Target without accepting the Claim or proving Erdős problem 835.",
+  "repository_root": "sha256:d4972f8db52e5f74b33c2e45b78d2195ef0d21b4789e58b388adc8b2bf6cf4ab",
+  "completed_packet": {
+    "path": "targets/formal-erdos-835-property-iff-chromatic-number.json",
+    "schema": "formal-conjectures.lean-proof-work.v1",
+    "sha256": "sha256:dce5cc1e49c8417ebd433e26ebc909249db7f0ef6c4b8a7ba3ccab420f05438c"
+  },
+  "completion_contract": {
+    "proof_sha256": "sha256:565309675bb0acbef3ad11b367c29f85eede2b1981d6f6395ca72f51c495b270",
+    "report_sha256": "sha256:f76e2f5be1f6f5c0c50a63ce0d8349047a6d88423f2dbdcb1244987fad34617e",
+    "verification_profile": "formal-erdos-835-lean-kernel-v1",
+    "producer_work_effect": "closed",
+    "accepted_state_change": "none until a separate authorized human Decision"
+  },
+  "completion_contract_root": "sha256:835f9431c0480a43996d34c2097c666ffcfd75f539497951599605e0ad614606",
+  "evidence": [
+    {
+      "kind": "claim",
+      "id": "vcl_2bf962fb9af6780e2055a196e81d8cc7d8cbdfc8d648233df4398a600bb048e0",
+      "path": "records/claims/sha256/734ce0debd40a4551aafa0aee2916d33d5d6e51e7204d522894fb82dd4cf1a17.json",
+      "root": "sha256:734ce0debd40a4551aafa0aee2916d33d5d6e51e7204d522894fb82dd4cf1a17"
+    },
+    {
+      "kind": "proposal",
+      "id": "vpr_08a91ee1b770f5cb",
+      "path": "records/proposals/sha256/fe6e9d260447cb50b4f0dc95293e2a945705a3c5ddeb5549cdf627c39cacace7.json",
+      "root": "sha256:fe6e9d260447cb50b4f0dc95293e2a945705a3c5ddeb5549cdf627c39cacace7"
+    },
+    {
+      "kind": "submission",
+      "id": "vsb_b47c353dd4a5409f",
+      "path": "records/submissions/sha256/f11653febc13eb46c752767cd1f142cb9407c3340fbf0cd14fb0f32101502597.json",
+      "root": "sha256:f11653febc13eb46c752767cd1f142cb9407c3340fbf0cd14fb0f32101502597"
+    },
+    {
+      "kind": "registration",
+      "id": "vrr_97fc406a48823ca5",
+      "path": "records/registrations/sha256/cb540d41265d3c7f5cdec514aa796214cfa90f6ed9e8c075ba2117df8a527fa7.json",
+      "root": "sha256:cb540d41265d3c7f5cdec514aa796214cfa90f6ed9e8c075ba2117df8a527fa7"
+    },
+    {
+      "kind": "verification",
+      "id": "vvr_1f13018fb140c3c2",
+      "path": "records/verifications/sha256/381f947da552c37341030e4c5ef28e0222d40aa42de9066e74fc69d8f75fdb3d.json",
+      "root": "sha256:381f947da552c37341030e4c5ef28e0222d40aa42de9066e74fc69d8f75fdb3d"
+    },
+    {
+      "kind": "proof_artifact",
+      "id": "565309675bb0acbef3ad11b367c29f85eede2b1981d6f6395ca72f51c495b270",
+      "path": "records/artifacts/sha256/565309675bb0acbef3ad11b367c29f85eede2b1981d6f6395ca72f51c495b270",
+      "root": "sha256:565309675bb0acbef3ad11b367c29f85eede2b1981d6f6395ca72f51c495b270"
+    },
+    {
+      "kind": "report_artifact",
+      "id": "f76e2f5be1f6f5c0c50a63ce0d8349047a6d88423f2dbdcb1244987fad34617e",
+      "path": "records/artifacts/sha256/f76e2f5be1f6f5c0c50a63ce0d8349047a6d88423f2dbdcb1244987fad34617e",
+      "root": "sha256:f76e2f5be1f6f5c0c50a63ce0d8349047a6d88423f2dbdcb1244987fad34617e"
+    }
+  ],
+  "successor_packet": null
+}
