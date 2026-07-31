@@ -3,11 +3,10 @@
 The current Vela repository for exact formal statements, sorry-free Lean
 proofs, and source-bound evidence from
 [`google-deepmind/formal-conjectures`](https://github.com/google-deepmind/formal-conjectures).
-A content-addressed Target Index selects one bounded task. Lean tasks use a
-separate frozen capsule that owns the statement, checks the candidate with the
-kernel, and audits `#print axioms` for `sorryAx`. Cross-Frontier reference
+When a current Target Index exists, it selects one bounded task. Lean tasks use
+a separate frozen capsule that owns the statement, checks the candidate with
+the kernel, and audits `#print axioms` for `sorryAx`. Cross-Frontier reference
 tasks retain exact attributed evidence without importing source Standing.
-Canopus remains removable producer scaffolding.
 
 Verifier success is evidence, not acceptance. A producer Submission, an
 independent Verification Record, and a repository-authority Decision are
@@ -23,18 +22,23 @@ preserved, but they are not active product surfaces.
 - Current object index: [`.vela/repository.json`](.vela/repository.json)
 - Repository authority: [`.vela/authority/`](.vela/authority/)
 - Scientific records: [`records/`](records/)
-- Target packet: [`targets/`](targets/)
+- Current and closed Target packets: [`targets/`](targets/)
 - Signed predecessor: `pre-current-epoch/1e40ffada7ef`
 
 ```bash
 vela status . --json
 vela next . --limit 1 --json
-vela start formal:retain-erdos-424-correction \
-  --frontier . --as agent:<you> --json
 vela check . --strict --json
 ```
 
-After producing and checking the exact target:
+There is currently no offered Target. Do not revive completed work from a
+packet left outside the index. The completed Erdős 505 task remains exactly
+recoverable at tag `pre-compaction/84d3064cd7d9`: Submission
+`vsb_c50dc7e85cb76684` (`sha256:9adecb4649fa99a7b0945e99f3197cb72489e17b4bd08fe2bfcdff7d0f1c67d3`)
+and Verification `vvr_a898f5218acb57e9`
+(`sha256:70a2f95366d1f9e55fa46c84d3ffa61f54d957427cdf0bf282017a5d26b324a4`).
+
+When `vela next` exposes a new exact Target, start it before submitting:
 
 ```bash
 vela submit --frontier . --attempt <vat_id> \

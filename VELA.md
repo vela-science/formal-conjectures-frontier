@@ -49,6 +49,8 @@ vela check . --strict --json
 ```
 
 Use only the first ranked Target unless the canonical ranking facts change.
+No Target is currently offered. Completed packets outside the current Target
+Index are historical evidence, not work invitations.
 External Lean runs are limited to a named Lean mission and its frozen capsule.
 Foreign references remain attributed evidence with local Standing effect
 `none` unless a separate human Decision says otherwise.
