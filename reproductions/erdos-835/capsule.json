@@ -8,7 +8,6 @@
     "proposal_id": "vpr_08a91ee1b770f5cb",
     "claim_id": "vcl_2bf962fb9af6780e2055a196e81d8cc7d8cbdfc8d648233df4398a600bb048e0",
     "submission_id": "vsb_b47c353dd4a5409f",
-    "registration_record_id": "vrr_97fc406a48823ca5",
     "verification_record_id": "vvr_96dcaefef0617952"
   },
   "inputs": {
@@ -24,10 +23,6 @@
       "path": "records/submissions/sha256/f11653febc13eb46c752767cd1f142cb9407c3340fbf0cd14fb0f32101502597.json",
       "sha256": "sha256:f11653febc13eb46c752767cd1f142cb9407c3340fbf0cd14fb0f32101502597"
     },
-    "registration": {
-      "path": "records/registrations/sha256/cb540d41265d3c7f5cdec514aa796214cfa90f6ed9e8c075ba2117df8a527fa7.json",
-      "sha256": "sha256:cb540d41265d3c7f5cdec514aa796214cfa90f6ed9e8c075ba2117df8a527fa7"
-    },
     "verification": {
       "path": "records/verifications/sha256/a2e3bd681cbb37e211fbf10de9be96f6b564443b5b64180f445af1b5289c207b.json",
       "sha256": "sha256:a2e3bd681cbb37e211fbf10de9be96f6b564443b5b64180f445af1b5289c207b"
@@ -38,7 +33,7 @@
     },
     "target_closure": {
       "path": "targets/closures/formal-erdos-835-property-iff-chromatic-number.json",
-      "sha256": "sha256:58fdfc70c45b561f741b289183c17253c5e52fa8921420edb764e0b8cffe97ec"
+      "sha256": "sha256:e93f128373a53bf79a15a59c27354ddb73f3ab64b1da9c90534569bcb5be8fae"
     },
     "proof": {
       "path": "records/artifacts/sha256/565309675bb0acbef3ad11b367c29f85eede2b1981d6f6395ca72f51c495b270",
@@ -50,7 +45,7 @@
     },
     "implementation": {
       "path": "reproductions/erdos-835/replay.py",
-      "sha256": "sha256:c407e3a15cb4fae527e34a624da42cb28dd9c3f81bc16ee9976caa2bc2824e23"
+      "sha256": "sha256:f8939c232ccb838eb06159c7a49c0722daac109700b7f32e2ce03213727ec04c"
     }
   },
   "source": {

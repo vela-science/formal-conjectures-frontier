@@ -28,7 +28,7 @@ preserved, but they are not active product surfaces.
 ```bash
 vela status . --json
 vela next . --limit 1 --json
-vela check . --strict --json
+vela check . --json
 ```
 
 There is currently no offered Target. Do not revive completed work from a

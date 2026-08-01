@@ -25,8 +25,8 @@ support.
 
 The replay:
 
-1. verifies every retained Proposal, Claim, Submission, Registration,
-   Verification, Target, proof, report, and implementation root;
+1. verifies every retained Proposal, Claim, signed Submission, Verification,
+   Target, proof, report, and implementation root;
 2. materializes source commit
    `85f863718beeec7b58a3a1926ee92e3472bc2020` in a temporary directory;
 3. reconstructs the exact declaration splice from the retained proof bytes;

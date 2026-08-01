@@ -294,7 +294,6 @@ def validate_lean_proof(
             "claim",
             "proposal",
             "submission",
-            "registration",
             "verification",
             "proof_artifact",
             "report_artifact",
@@ -303,9 +302,6 @@ def validate_lean_proof(
     claim = load_evidence(root, evidence["claim"], "claim_id")
     proposal = load_evidence(root, evidence["proposal"], "proposal_id")
     submission = load_evidence(root, evidence["submission"], "submission_id")
-    registration = load_evidence(
-        root, evidence["registration"], "registration_record_id"
-    )
     verification = load_evidence(
         root, evidence["verification"], "verification_record_id"
     )
@@ -335,16 +331,6 @@ def validate_lean_proof(
         "root": submission_root,
     }:
         raise TargetClosureError("Lean Proposal does not bind the retained Submission")
-    if registration.get("proposal_id") != proposal_id:
-        raise TargetClosureError("Lean Registration does not bind the Proposal")
-    if (
-        registration.get("submission_id") != submission_id
-        or registration.get("submission_root") != submission_root
-        or registration.get("route") != "pending_review"
-        or registration.get("accepted_state_changed") is not False
-    ):
-        raise TargetClosureError("Lean Registration changes or misbinds scientific state")
-
     subject = verification.get("subject") or {}
     if verification.get("outcome") != "pass":
         raise TargetClosureError("Lean Target Verification did not pass")

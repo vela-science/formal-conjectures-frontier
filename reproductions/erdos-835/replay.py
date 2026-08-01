@@ -94,7 +94,6 @@ def validate_capsule(frontier: Path) -> tuple[dict[str, Any], dict[str, Path]]:
         "proposal",
         "claim",
         "submission",
-        "registration",
         "verification",
         "target_packet",
         "target_closure",
@@ -107,7 +106,6 @@ def validate_capsule(frontier: Path) -> tuple[dict[str, Any], dict[str, Path]]:
     proposal = load_json(paths["proposal"])
     claim = load_json(paths["claim"])
     submission = load_json(paths["submission"])
-    registration = load_json(paths["registration"])
     verification = load_json(paths["verification"])
     packet = load_json(paths["target_packet"])
     closure = load_json(paths["target_closure"])
@@ -136,19 +134,6 @@ def validate_capsule(frontier: Path) -> tuple[dict[str, Any], dict[str, Path]]:
     require_equal(claim["claim_id"], identity["claim_id"], "Claim id")
     require_equal(
         submission["submission_id"], identity["submission_id"], "Submission id"
-    )
-    require_equal(
-        registration["registration_record_id"],
-        identity["registration_record_id"],
-        "Registration id",
-    )
-    require_equal(
-        registration["proposal_id"], identity["proposal_id"], "Registration Proposal"
-    )
-    require_equal(
-        registration["submission_id"],
-        identity["submission_id"],
-        "Registration Submission",
     )
     require_equal(
         verification["verification_record_id"],

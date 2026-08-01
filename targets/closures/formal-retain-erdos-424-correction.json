@@ -3,7 +3,7 @@
   "frontier_id": "vfr_97d7d25957384f80",
   "target_id": "formal:retain-erdos-424-correction",
   "status": "closed",
-  "reason": "The exact 11-object foreign-reference archive is retained by a registered Submission and a passing scoped Verification with declared local Standing effect none. Closing this producer Target is not a scientific Decision and imports no Erdős authority.",
+  "reason": "The exact foreign-reference archive is retained by a signed Submission, its direct Proposal, and a passing scoped Verification with declared local Standing effect none. Closing this producer Target is not a scientific Decision and imports no Erdős authority.",
   "repository_root": "sha256:5e59e05a5639ac0ec4331ec40fec9f50229b795a1a08d983ba96834d4777b58a",
   "completed_packet": {
     "path": "targets/formal-retain-erdos-424-correction.json",
