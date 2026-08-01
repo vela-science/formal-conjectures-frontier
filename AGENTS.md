@@ -9,10 +9,10 @@ vendor-specific instruction copies are intentionally not used.
 Agents may:
 
 - inspect status, the current offer, exact records, and provenance
-- start the first offered Target with an explicit `agent:` identity
+- inspect the first offered Target with the write-free `vela start` briefing
 - use the frozen packet and its exact source, environment, and authority limits
 - run only the named verifier
-- retain one signed, bounded Submission from the active Attempt
+- retain one signed, bounded Submission binding the exact packet and verifier
 
 Agents may not:
 
@@ -28,11 +28,16 @@ Agents may not:
 ```bash
 vela status . --json
 vela next . --limit 1 --json
-vela start <target> --frontier . --as agent:<name> --json
-vela submit --frontier . --attempt <vat_id> \
+vela start <target> --frontier . --json
+vela submit --frontier . \
   --claim "<bounded result>" --type <type> \
   --replayability exact --artifact <path>:<kind> \
-  --caveat "<scope and authority limits>" --as agent:<name> --json
+  --caveat "<scope and authority limits>" \
+  --packet-root <packet_sha256> --profile-root <profile_sha256> \
+  --verifier-capsule-root <capsule_sha256> \
+  --result-contract-root <contract_sha256> \
+  --as agent:<name> --json
+vela verification import . <verification.json> --as verifier:<name> --json
 vela review list . --json
 vela show . <object_id> --json
 vela why . <claim_id> --json

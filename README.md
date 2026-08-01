@@ -18,12 +18,12 @@ preserved, but they are not active product surfaces.
 
 ## Repository contract
 
-- Epoch: [`.vela/epoch.json`](.vela/epoch.json)
+- Current origin and compacted predecessor: [`.vela/origin.json`](.vela/origin.json)
 - Current object index: [`.vela/repository.json`](.vela/repository.json)
 - Repository authority: [`.vela/authority/`](.vela/authority/)
 - Scientific records: [`records/`](records/)
 - Current and closed Target packets: [`targets/`](targets/)
-- Signed predecessor: `pre-current-epoch/1e40ffada7ef`
+- Compacted predecessor: `pre-compaction/c2719d14aae9`
 
 ```bash
 vela status . --json
@@ -40,11 +40,19 @@ and Verification `vvr_a898f5218acb57e9`
 When `vela next` exposes a new exact Target, start it before submitting:
 
 ```bash
-vela submit --frontier . --attempt <vat_id> \
+vela start <target> --frontier . --json
+vela submit --frontier . \
   --claim "<bounded result>" --type computational \
   --replayability exact --artifact <path>:<kind> \
-  --caveat "<scope and authority limits>" --as agent:<you> --json
+  --caveat "<scope and authority limits>" \
+  --packet-root <packet_sha256> --profile-root <profile_sha256> \
+  --verifier-capsule-root <capsule_sha256> \
+  --result-contract-root <contract_sha256> \
+  --as agent:<you> --json
 ```
+
+`vela start` is a write-free briefing. It creates no Attempt, lease, or
+approval step and prints the exact roots required by the Submission.
 
 Each accepted Claim records the fully qualified declaration and its exact
 axiom set. A clean kernel check does not establish statement fidelity or
