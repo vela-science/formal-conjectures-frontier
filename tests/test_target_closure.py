@@ -14,7 +14,6 @@ from validate_target_closure import (  # noqa: E402
     TargetClosureError,
     validate,
     validate_lean_proof,
-    validate_index,
 )
 
 
@@ -32,7 +31,6 @@ class TargetClosureTests(unittest.TestCase):
         )
         paths = {
             ".vela/repository.json",
-            "targets.json",
             closure["completed_packet"]["path"],
             "targets/closures/formal-retain-erdos-424-correction.json",
             *(row["path"] for row in closure["evidence"]),
@@ -63,19 +61,6 @@ class TargetClosureTests(unittest.TestCase):
             result["verification_root"],
             "sha256:4fe6e7d6dd361ec4ebe70cb9aba2d4570da27a0a4b10fe0f42f59cbf14b92200",
         )
-
-    def test_completed_target_cannot_remain_exposed(self) -> None:
-        validate_index(self.frontier)
-        index = self.read("targets.json")
-        index["targets"] = [
-            {
-                "id": "formal:retain-erdos-424-correction",
-                "state": "open",
-            }
-        ]
-        self.write("targets.json", index)
-        with self.assertRaisesRegex(TargetClosureError, "remains exposed"):
-            validate_index(self.frontier)
 
     def test_malformed_completion_contract_is_rejected(self) -> None:
         relative = "targets/closures/formal-retain-erdos-424-correction.json"

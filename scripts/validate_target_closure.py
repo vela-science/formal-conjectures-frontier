@@ -26,7 +26,6 @@ LEAN_CLOSURE_PATH = (
     / "closures"
     / "formal-erdos-835-property-iff-chromatic-number.json"
 )
-INDEX_PATH = ROOT / "targets.json"
 REPOSITORY_PATH = ROOT / ".vela" / "repository.json"
 SHA256_RE = re.compile(r"^sha256:[0-9a-f]{64}$")
 
@@ -419,37 +418,12 @@ def validate_all(root: pathlib.Path = ROOT) -> list[dict[str, Any]]:
     return [validate(root), validate_lean_proof(root)]
 
 
-def validate_index(
-    root: pathlib.Path = ROOT, index_path: pathlib.Path | None = None
-) -> None:
-    root = root.resolve()
-    index_path = (index_path or root / INDEX_PATH.relative_to(ROOT)).resolve()
-    require_tracked(root, index_path)
-    index = read_json(index_path)
-    if index.get("schema") != "vela.target-index.v4":
-        raise TargetClosureError("targets.json is not a sealed Target Index v4")
-    completed = {
-        "formal:retain-erdos-424-correction",
-        "formal:erdos-835-property-iff-chromatic-number",
-    }
-    exposed = {
-        row.get("id") for row in index.get("targets", []) if row.get("id") in completed
-    }
-    if exposed:
-        raise TargetClosureError(
-            f"completed Target remains exposed: {sorted(exposed)}"
-        )
-
-
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--check-index", action="store_true")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     try:
         results = validate_all()
-        if args.check_index:
-            validate_index()
     except TargetClosureError as error:
         if args.json:
             print(

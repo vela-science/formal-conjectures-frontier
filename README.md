@@ -3,7 +3,7 @@
 The current Vela repository for exact formal statements, sorry-free Lean
 proofs, and source-bound evidence from
 [`google-deepmind/formal-conjectures`](https://github.com/google-deepmind/formal-conjectures).
-When a current Target Index exists, it selects one bounded task. Lean tasks use
+Open work is offered only when this Frontier has a real bounded task. Lean tasks use
 a separate frozen capsule that owns the statement, checks the candidate with
 the kernel, and audits `#print axioms` for `sorryAx`. Cross-Frontier reference
 tasks retain exact attributed evidence without importing source Standing.
@@ -27,12 +27,11 @@ preserved, but they are not active product surfaces.
 
 ```bash
 vela status . --json
-vela next . --limit 1 --json
 vela check . --json
 ```
 
-There is currently no offered Target. Do not revive completed work from a
-packet left outside the index. The completed Erdős 505 task remains exactly
+There is currently no offered Target, so this repository has no `targets.json`.
+Do not revive completed work from a retained packet. The completed Erdős 505 task remains exactly
 recoverable at tag `pre-compaction/84d3064cd7d9`: Submission
 `vsb_c50dc7e85cb76684` (`sha256:9adecb4649fa99a7b0945e99f3197cb72489e17b4bd08fe2bfcdff7d0f1c67d3`)
 and Verification `vvr_a898f5218acb57e9`
