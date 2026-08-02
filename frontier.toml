@@ -1,0 +1,21 @@
+schema = "vela.frontier-profile.v2"
+frontier_id = "vfr_97d7d25957384f80"
+name = "Kernel-verified Lean theorems"
+summary = "Sorry-free Lean proofs of exact statements from the formal-conjectures corpus, with kernel evidence kept distinct from statement fidelity and scientific acceptance."
+maintainers = ["williamjblair"]
+
+[scope]
+question = "Which exact formal-conjectures statements have sorry-free Lean proofs under their pinned environments?"
+includes = [
+  "Exact theorem statements, proof terms, frozen Lean environments, kernel-verification evidence, and axiom audits.",
+  "Human statement-fidelity attestations when available.",
+]
+excludes = [
+  "Treating kernel acceptance as proof that the formal statement matches the intended mathematical question.",
+  "Treating verifier success or Git publication as scientific acceptance.",
+]
+
+[license]
+content = "CC-BY-4.0"
+code = "Apache-2.0"
+data = "varies"
