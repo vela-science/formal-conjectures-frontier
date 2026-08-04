@@ -1,0 +1,103 @@
+{
+  "schema": "formal-conjectures.erdos-521-qualification.v1",
+  "case_id": "erdos-521",
+  "observed_at": "2026-08-04T19:09:31Z",
+  "summary": "The exact Formal Conjectures PR #4578 statement for Erdős 521 is equivalent to the Claim refuted by the pinned lean-proofs corpus, and Lean accepts the negative theorem with only the standard Mathlib axiom set.",
+  "official_source": {
+    "problem_url": "https://www.erdosproblems.com/521",
+    "latex_url": "https://www.erdosproblems.com/latex/521",
+    "status": "open",
+    "discussion_status": "claimed_solution_posted",
+    "formalised_statement": "no",
+    "last_edited": "2025-10-19",
+    "statement": "Let (epsilon_k)_{k >= 0} be independently uniformly chosen at random from {-1,1}. If R_n counts the number of real roots of f_n(z) = sum_{0 <= k <= n} epsilon_k z^k, is it true that almost surely lim_{n -> infinity} R_n / log n = 2 / pi?",
+    "snapshot": {
+      "path": "reproductions/erdos-521/source-observation.md",
+      "sha256": "sha256:513b38117418a0fba1e35f31191258457682d10eee218e0cc40365ed353b8c0b",
+      "problem_html_sha256": "sha256:ed5f5407ec802b12448225081b1abe9794e966fa16544960178db66fb758d9bf",
+      "latex_html_sha256": "sha256:3393a0aa3afec230af727adf363a39ed889752b6082f79e3e959d74ce3294b9e"
+    }
+  },
+  "formal_conjectures": {
+    "repository": "https://github.com/google-deepmind/formal-conjectures.git",
+    "pull_request": "https://github.com/google-deepmind/formal-conjectures/pull/4578",
+    "upstream_state": "open_awaiting_review",
+    "commit": "a3b9c2fef2e5c6dbe1652642c7429abdfbd21c5b",
+    "path": "FormalConjectures/ErdosProblems/521.lean",
+    "git_blob": "b1b346fc31d9332afcd1681630b85196e5cd289a",
+    "file_sha256": "sha256:d165750c9a5168f432f945f57cc9e58daf4d656e489c79c9744e55aec422b9e3",
+    "declaration": "Erdos521.erdos_521",
+    "statement": "answer(False) ↔ Erdos521.Claim",
+    "proof_body": "sorry",
+    "formal_proof_link": "https://github.com/williamjblair/lean-proofs/blob/4f915a323443bfb1709a6805a013812016dca88a/starfleet/erdos-521/Research/LateFourthFinal.lean"
+  },
+  "lean_proof": {
+    "repository": "https://github.com/williamjblair/lean-proofs.git",
+    "commit": "4f915a323443bfb1709a6805a013812016dca88a",
+    "subtree": "1ce5783dcf0c167eb521996dafa48a7b50a44a57",
+    "file_count": 154,
+    "lean_file_count": 151,
+    "byte_count": 1017855,
+    "terminal_path": "starfleet/erdos-521/Research/LateFourthFinal.lean",
+    "terminal_git_blob": "57b8c520a1dd85f022dac1c36bc6da8a7ea6b967",
+    "terminal_sha256": "sha256:67273dbbf2ba4ee594919e985626627cc605934a7450aee585724ea5fcaa5688",
+    "stable_entry_path": "starfleet/erdos-521/Research/Erdos521.lean",
+    "stable_entry_git_blob": "d2a445bdae025b8a3741a7e8a5832fe9e34e6896",
+    "stable_entry_sha256": "sha256:8fbb1222c6af95bed96b9a56373513eee060048a5c4f075da1ddb3f43d47cea4",
+    "terminal_theorem": "Erdos521.erdos_521_negative : ¬ Erdos521.Claim",
+    "lean_toolchain": "leanprover/lean4:v4.31.0",
+    "lean_toolchain_sha256": "sha256:e0a7032ab1976a37a3e1e823816b4f490d462c1e864b21e1999c33cdac76e263",
+    "lake_manifest_sha256": "sha256:da89c5063fc0119d0de810b25fdaaa2ca8123238f88e3fe48311113fd87cad53",
+    "mathlib_commit": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "max_heartbeats": 2000000,
+    "placeholder_hits": [],
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "statement_fidelity": {
+    "bridge_path": "reproductions/erdos-521/StatementBridge.lean",
+    "bridge_sha256": "sha256:06d0dda57bb071cd3ffff738a05186336dd71b826689264fd46d3cc79bc7c745",
+    "proved_equivalences": [
+      "The Formal Conjectures scaled sum of two Dirac measures equals the proof corpus Bernoulli(1/2) measure on Bool.",
+      "The induced infinite product Rademacher measures are equal.",
+      "The sign, Littlewood polynomial, distinct real-root count, and almost-sure limit Claims are equal.",
+      "The proof corpus negative theorem therefore refutes the exact Formal Conjectures Claim."
+    ],
+    "interpretive_caveat": "The official source says number of real roots without specifying multiplicity. Both formalizations count distinct roots using Polynomial.rootSet. This local qualification accepts that explicit interpretation only."
+  },
+  "verification": {
+    "verifier_path": "reproductions/erdos-521/verify.py",
+    "verifier_sha256": "sha256:54d364647465b5acefcf3ea118e5e5aa5e8a3c16b13b9fd8ed2aa85a50992de9",
+    "report_path": "reproductions/erdos-521/verification-report.v1.json",
+    "report_stdout_sha256": "sha256:74ba919ec22b99a003497528ce3a9dfb94d5d498f1e13ad934b5d31bffdeb4b2",
+    "commands": [
+      "cd /Users/williamblair/personal/lean-proofs/starfleet/erdos-521 && lake exe cache get",
+      "cd /Users/williamblair/personal/formal-conjectures-frontier && python3 reproductions/erdos-521/verify.py"
+    ],
+    "result": "pass"
+  },
+  "independence": {
+    "source_owner": "Erdős Problems website",
+    "formal_statement_repository": "google-deepmind/formal-conjectures",
+    "proof_repository": "williamjblair/lean-proofs",
+    "shared_operator": true,
+    "shared_machine": true,
+    "shared_proof_bytes": true,
+    "shared_lean_kernel": true,
+    "shared_mathlib": true,
+    "external_mathematical_review": false,
+    "external_replication": false
+  },
+  "nonclaims": [
+    "This does not change the official Erdős Problems status, which remains open.",
+    "This does not claim novelty or priority; the official page already records a claimed solution and the Formal Conjectures text credits others.",
+    "This does not claim upstream Formal Conjectures acceptance; PR #4578 remains open and awaiting review.",
+    "This does not resolve the alternative {0,1}-coefficient interpretation mentioned by the source.",
+    "This does not establish an externally reviewed mathematical result or independent replication.",
+    "This does not establish a general statement-fidelity method, Vela productivity lift, or scientific discovery claim."
+  ],
+  "bounded_claim": "At Formal Conjectures PR #4578 commit a3b9c2fef2e5c6dbe1652642c7429abdfbd21c5b, the exact Erdős 521 declaration is statement-equivalent to the Claim at lean-proofs commit 4f915a323443bfb1709a6805a013812016dca88a, and Lean 4.31.0 with Mathlib fabf563a7c95a166b8d7b6efca11c8b4dc9d911f accepts Erdos521.erdos_521_negative with only propext, Classical.choice, and Quot.sound."
+}

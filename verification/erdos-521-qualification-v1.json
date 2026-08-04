@@ -1,0 +1,32 @@
+{
+  "schema": "formal-conjectures.verification-method.v1",
+  "profile": "formal-erdos-521-qualification-v1",
+  "implementation": {
+    "path": "reproductions/erdos-521/verify.py",
+    "sha256": "sha256:54d364647465b5acefcf3ea118e5e5aa5e8a3c16b13b9fd8ed2aa85a50992de9"
+  },
+  "inputs": {
+    "formal_conjectures_commit": "a3b9c2fef2e5c6dbe1652642c7429abdfbd21c5b",
+    "formal_conjectures_blob": "b1b346fc31d9332afcd1681630b85196e5cd289a",
+    "lean_proofs_commit": "4f915a323443bfb1709a6805a013812016dca88a",
+    "lean_proofs_subtree": "1ce5783dcf0c167eb521996dafa48a7b50a44a57",
+    "lean_toolchain": "leanprover/lean4:v4.31.0",
+    "mathlib_commit": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "source_observation_sha256": "sha256:513b38117418a0fba1e35f31191258457682d10eee218e0cc40365ed353b8c0b",
+    "statement_bridge_sha256": "sha256:06d0dda57bb071cd3ffff738a05186336dd71b826689264fd46d3cc79bc7c745"
+  },
+  "checks": [
+    "Require the exact Formal Conjectures file blob and SHA-256 at the PR head commit.",
+    "Require the exact lean-proofs commit and Erdős 521 subtree with no local drift.",
+    "Reject sorry, admit, axiom declarations, or unsafe declarations in every retained Lean file.",
+    "Compile only the stable Research.Erdos521 entry point in the pinned Lean and Mathlib environment.",
+    "Require the terminal theorem axiom set to be exactly propext, Classical.choice, and Quot.sound.",
+    "Compile the statement bridge and require the same axiom set for fair-coin equality, Claim equivalence, and the negative theorem."
+  ],
+  "does_not_establish": [
+    "Official Erdős Problems resolution or an upstream Formal Conjectures merge.",
+    "Novelty, priority, external mathematical review, or independent replication.",
+    "The alternative {0,1}-coefficient interpretation or multiplicity-sensitive root counts.",
+    "General Vela productivity, adoption, or statement-fidelity performance."
+  ]
+}

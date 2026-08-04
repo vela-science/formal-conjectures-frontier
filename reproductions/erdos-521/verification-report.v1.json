@@ -1,0 +1,61 @@
+{
+  "formal_conjectures": {
+    "commit": "a3b9c2fef2e5c6dbe1652642c7429abdfbd21c5b",
+    "file_sha256": "sha256:d165750c9a5168f432f945f57cc9e58daf4d656e489c79c9744e55aec422b9e3",
+    "git_blob": "b1b346fc31d9332afcd1681630b85196e5cd289a",
+    "path": "FormalConjectures/ErdosProblems/521.lean"
+  },
+  "ok": true,
+  "proof": {
+    "axiom_reports": [
+      [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    ],
+    "build_status": "pass",
+    "commit": "4f915a323443bfb1709a6805a013812016dca88a",
+    "file_count": 154,
+    "lean_file_count": 151,
+    "lean_toolchain": "leanprover/lean4:v4.31.0",
+    "mathlib_commit": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "placeholder_hits": [],
+    "subtree": "1ce5783dcf0c167eb521996dafa48a7b50a44a57",
+    "terminal_module": "Research.Erdos521",
+    "terminal_theorem": "Erdos521.erdos_521_negative : ¬ Erdos521.Claim"
+  },
+  "schema": "formal-conjectures.erdos-521-verification.v1",
+  "shared_dependencies": [
+    "Same operator and machine as the producer-side inspection.",
+    "Same pinned lean-proofs corpus, Lean kernel, and Mathlib revision.",
+    "Formal Conjectures source is an open pull-request commit, not an upstream merge."
+  ],
+  "source_observation": {
+    "path": "reproductions/erdos-521/source-observation.md",
+    "sha256": "sha256:513b38117418a0fba1e35f31191258457682d10eee218e0cc40365ed353b8c0b"
+  },
+  "statement_bridge": {
+    "axiom_reports": [
+      [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    ],
+    "claim_equivalence": "FormalConjecturesErdos521.Claim ↔ Erdos521.Claim",
+    "negative_theorem": "FormalConjecturesErdos521.negative",
+    "path": "reproductions/erdos-521/StatementBridge.lean",
+    "sha256": "sha256:06d0dda57bb071cd3ffff738a05186336dd71b826689264fd46d3cc79bc7c745"
+  }
+}
