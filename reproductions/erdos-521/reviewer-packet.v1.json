@@ -1,0 +1,142 @@
+{
+  "schema": "formal-conjectures.reviewer-packet.v1",
+  "packet_id": "erdos-521-formal-proof-link",
+  "generated_at": "2026-08-04T23:07:03Z",
+  "purpose": "Give a Formal Conjectures maintainer exact source-fidelity and full dependency-closure evidence for the Erdős 521 formal_proof link in PR 4578.",
+  "disposition": {
+    "kind": "upstream_existing_pull_request",
+    "native_owner": "google-deepmind/formal-conjectures",
+    "pull_request": "https://github.com/google-deepmind/formal-conjectures/pull/4578",
+    "proof_placement": "retain_external",
+    "reason": "Formal Conjectures owns the statement and proof-link metadata; the 154-file, 1017855-byte proof subtree remains in its native proof repository."
+  },
+  "triage": {
+    "what_is_ready": "The exact PR statement is equivalent to the pinned external Claim, and the negative theorem builds with the declared standard Mathlib axiom set.",
+    "dependency_issue_found": "The PR's stated link check reads the linked file only, not its imports. This packet binds and scans the complete 151-Lean-file dependency subtree and builds the stable entry point.",
+    "fidelity_issue_found": "The informal source does not specify root multiplicity. Both formalizations count distinct roots through Polynomial.rootSet; a maintainer must accept or change that interpretation.",
+    "largest_remaining_risk": "There is no external mathematical review, the official source remains open, and the solved classification is still a native maintainer decision.",
+    "requested_action": "Review the four explicit maintainer decisions; if they pass, merge the statement and pinned external link without copying the proof corpus."
+  },
+  "source": {
+    "owner": "Erdős Problems",
+    "problem_url": "https://www.erdosproblems.com/521",
+    "status_at_observation": "OPEN",
+    "discussion_status_at_observation": "A claimed solution has been posted in the comments.",
+    "observation_path": "reproductions/erdos-521/source-observation.md",
+    "observation_sha256": "sha256:513b38117418a0fba1e35f31191258457682d10eee218e0cc40365ed353b8c0b",
+    "statement_interpretation": "Independent uniform {-1,1} coefficients and distinct real roots."
+  },
+  "formal_conjectures": {
+    "repository": "https://github.com/google-deepmind/formal-conjectures.git",
+    "pull_request": 4578,
+    "observed_at": "2026-08-04T23:07:03Z",
+    "observed_state": "open_ready_for_review",
+    "review_decision": "review_required",
+    "commit": "a3b9c2fef2e5c6dbe1652642c7429abdfbd21c5b",
+    "path": "FormalConjectures/ErdosProblems/521.lean",
+    "git_blob": "b1b346fc31d9332afcd1681630b85196e5cd289a",
+    "file_sha256": "sha256:d165750c9a5168f432f945f57cc9e58daf4d656e489c79c9744e55aec422b9e3",
+    "declaration": "Erdos521.erdos_521",
+    "statement": "answer(False) ↔ Erdos521.Claim",
+    "category": "research solved",
+    "import_footprint": [
+      "FormalConjecturesUtil"
+    ],
+    "formal_proof_link": "https://github.com/williamjblair/lean-proofs/blob/4f915a323443bfb1709a6805a013812016dca88a/starfleet/erdos-521/Research/LateFourthFinal.lean"
+  },
+  "external_proof": {
+    "repository": "https://github.com/williamjblair/lean-proofs.git",
+    "credited_author": "Star Fleet Math (Colin Snyder)",
+    "commit": "4f915a323443bfb1709a6805a013812016dca88a",
+    "subtree": "1ce5783dcf0c167eb521996dafa48a7b50a44a57",
+    "file_count": 154,
+    "lean_file_count": 151,
+    "byte_count": 1017855,
+    "stable_entry_path": "starfleet/erdos-521/Research/Erdos521.lean",
+    "stable_entry_import": "Research.LateFourthFinal",
+    "terminal_path": "starfleet/erdos-521/Research/LateFourthFinal.lean",
+    "terminal_sha256": "sha256:67273dbbf2ba4ee594919e985626627cc605934a7450aee585724ea5fcaa5688",
+    "terminal_imports": [
+      "Research.LateFourthSummation",
+      "Research.SharpIidAnalyticGate",
+      "Mathlib.Tactic"
+    ],
+    "terminal_theorem": "Erdos521.erdos_521_negative : ¬ Erdos521.Claim",
+    "lean_toolchain": "leanprover/lean4:v4.31.0",
+    "mathlib_commit": "fabf563a7c95a166b8d7b6efca11c8b4dc9d911f",
+    "max_heartbeats": 2000000,
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "placeholder_hits": []
+  },
+  "statement_bridge": {
+    "path": "reproductions/erdos-521/StatementBridge.lean",
+    "sha256": "sha256:06d0dda57bb071cd3ffff738a05186336dd71b826689264fd46d3cc79bc7c745",
+    "imports": [
+      "Research.Erdos521",
+      "Research.FairPrefix"
+    ],
+    "proved": [
+      "The scaled sum of two Dirac measures equals the proof corpus Bernoulli(1/2) measure on Bool.",
+      "The induced infinite-product Rademacher measures are equal.",
+      "The sign, Littlewood polynomial, distinct-root count, and almost-sure limit Claims are equal.",
+      "The external negative theorem therefore refutes the exact Formal Conjectures Claim."
+    ],
+    "does_not_decide": "Whether distinct-root counting is the intended interpretation of the informal phrase number of real roots."
+  },
+  "verification": {
+    "profile": "formal-erdos-521-qualification-v1",
+    "implementation": "verification/erdos-521-qualification-v1.json",
+    "script": "reproductions/erdos-521/verify.py",
+    "script_sha256": "sha256:54d364647465b5acefcf3ea118e5e5aa5e8a3c16b13b9fd8ed2aa85a50992de9",
+    "report": "reproductions/erdos-521/verification-report.v1.json",
+    "report_sha256": "sha256:74ba919ec22b99a003497528ce3a9dfb94d5d498f1e13ad934b5d31bffdeb4b2",
+    "checks": [
+      "Require the exact Formal Conjectures blob.",
+      "Require the exact proof repository commit and complete subtree with no worktree drift.",
+      "Scan all 151 Lean files for sorry, admit, axiom, and unsafe rather than checking only the linked terminal file.",
+      "Build the stable Research.Erdos521 entry point.",
+      "Compile the terminal theorem and statement bridge.",
+      "Reject sorryAx and require exactly propext, Classical.choice, and Quot.sound."
+    ],
+    "outcome": "pass"
+  },
+  "frontier": {
+    "repository": "https://github.com/vela-science/formal-conjectures-frontier.git",
+    "commit": "92d4274c657ac5152b311a9d79bfc31d15659dbf",
+    "repository_root": "sha256:d1f9e188a5071f8f8b36b32cac54b440edd928f6ed815cbc5b358781f3b7c169",
+    "claim_id": "vcl_a183a1e5d9f461d8ec5fa35b1e75a25c67f75b7278d30ebf83af8e9c53ab48ea",
+    "claim_root": "sha256:8c569917f57fcc3d0c16a84092a8732da9e3d4df45623c39e45f60483f9bc448",
+    "standing": "accepted",
+    "verification_id": "vvr_579130c4b713c073",
+    "decision_event_id": "vev_57e929bead5143e7",
+    "authority_effect_of_packet": "none"
+  },
+  "maintainer_decisions": [
+    "Accept or revise the distinct-root interpretation of R_n.",
+    "Decide whether research solved is appropriate before the Erdős Problems source changes status.",
+    "Confirm that the attribution to prior solvers and Star Fleet Math is sufficient.",
+    "Accept or reject the pinned external proof link while leaving the proof corpus in its native repository and toolchain."
+  ],
+  "ai_assistance": {
+    "packet_preparation": "OpenAI Codex assembled this packet from the exact retained source, proof, verification, and Vela records under the repository owner's active task.",
+    "upstream_authorship": "PR 4578 is human-owned and states that the linked proof is Star Fleet Math's work, not the PR author's work.",
+    "proof_production": "This packet does not independently characterize how Star Fleet Math produced the proof and makes no authorship or discovery claim beyond the PR's attribution."
+  },
+  "nonclaims": [
+    "This packet is not Formal Conjectures approval or merge state.",
+    "This packet does not change the official Erdős Problems status.",
+    "This packet does not establish novelty, priority, or external mathematical review.",
+    "This packet does not establish the {0,1}-coefficient interpretation or multiplicity-sensitive root counting.",
+    "This packet is not independent of the shared operator, machine, source, proof bytes, Lean kernel, or Mathlib.",
+    "This packet does not establish general reviewer-efficiency, Vela productivity, or adoption."
+  ],
+  "reproduction": {
+    "command": "python3 reproductions/erdos-521/verify-reviewer-packet.py --formal-repo <formal-conjectures> --proof-repo <lean-proofs>",
+    "expected_verification_report_sha256": "sha256:74ba919ec22b99a003497528ce3a9dfb94d5d498f1e13ad934b5d31bffdeb4b2",
+    "expected_frontier_repository_root": "sha256:d1f9e188a5071f8f8b36b32cac54b440edd928f6ed815cbc5b358781f3b7c169"
+  }
+}

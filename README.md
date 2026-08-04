@@ -57,3 +57,17 @@ approval step and prints the exact roots required by the Submission.
 Each accepted Claim records the fully qualified declaration and its exact
 axiom set. A clean kernel check does not establish statement fidelity or
 mathematical significance; those remain explicit review questions.
+
+## Frontier-to-commons foundry
+
+- [`reproductions/erdos-521/commons-disposition.md`](reproductions/erdos-521/commons-disposition.md)
+  records the second explicit extraction disposition: upstream the exact
+  statement and pinned `formal_proof` link through existing Formal Conjectures
+  PR 4578 while leaving the 151-file proof closure in its native repository.
+- [`reproductions/erdos-521/reviewer-packet.v1.json`](reproductions/erdos-521/reviewer-packet.v1.json)
+  is the first reviewer-ready packet. It closes the PR's linked-file-only
+  dependency check across the full proof subtree and makes the distinct-root
+  interpretation an explicit maintainer decision.
+
+These are read artifacts over existing accepted evidence. They create no
+Claim, Verification, Decision, upstream review state, or authority effect.
