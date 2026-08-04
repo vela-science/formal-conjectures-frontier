@@ -23,6 +23,12 @@ when that network-isolation boundary is unavailable. A Linux runner must add
 and qualify an equivalent native isolation profile before claiming replay
 support.
 
+The optional source-local package experiment is pinned in
+`lean-replay-contract.consumer.v1.json`. It verifies one generic replay-contract
+root shared with an Erdős consumer. It does not replace or mutate the retained
+`replay.py` implementation bound by `capsule.json`, and it earns no package
+release or scientific claim.
+
 The replay:
 
 1. verifies every retained Proposal, Claim, signed Submission, Verification,
