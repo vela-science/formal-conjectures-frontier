@@ -13,10 +13,17 @@ Agents may:
 - use the frozen packet and its exact source, environment, and authority limits
 - run only the named verifier
 - retain one signed, bounded Submission binding the exact packet and verifier
+- execute one exact repository-authority Decision when the human authority has
+  explicitly authorized that Decision or the named campaign in the active
+  Codex task, provided the agent uses the standard authority provider, binds
+  the current Decision Inbox entry root, records the human-facing reason, and
+  replays the repository before continuing
 
 Agents may not:
 
-- invoke repository-authority decisions or use authority credentials
+- invoke a repository-authority Decision without explicit human authorization,
+  infer authorization from verifier success, bypass the standard authority
+  provider, or expose repository-authority credentials
 - treat a kernel pass, Git commit, Submission, or model answer as acceptance
 - change the frozen statement, package, dependencies, or authority limits after
   starting
