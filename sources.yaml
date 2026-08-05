@@ -32,8 +32,8 @@ sources:
     source_id: source:openai-ten-proofs
     kind: formal_library
     repo: openai/ten-proofs
-    commit: 29362184c2b698c1b279bc85b3957ee813646c63
-    tree: 730bf2c6a13dbb96606024c5fd681a48633fb393
+    commit: 94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6
+    tree: 174289e4d4958cb0509874e6e53400e098213de7
     url: https://github.com/openai/ten-proofs
     note: >-
       A comparator corpus. Repository presence and publisher review establish
