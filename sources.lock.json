@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-08-06T04:41:53+00:00",
+  "sources": {
+    "formal_conjectures": {
+      "kind": "formal_statement_registry",
+      "pages_commit": "4c3577432c87a34761963b04c20aba2ac7e2efd2",
+      "pages_commit_resolved": "2026-08-05T21:22:46Z",
+      "repo": "google-deepmind/formal-conjectures",
+      "sha256": "sha256:6ef2a9dd09159d74b1cf2dff244aae6e83f547c7983303f2bd50450508e3e6e9",
+      "url": "https://google-deepmind.github.io/formal-conjectures/data/conjectures.json"
+    },
+    "openai_ten_proofs": {
+      "commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6",
+      "kind": "formal_library",
+      "repo": "openai/ten-proofs",
+      "tree": "174289e4d4958cb0509874e6e53400e098213de7",
+      "unlocked": "no content locator: the url is the repository landing page, not bytes, and this frontier retains no snapshot. The pin is the commit and tree above, both read from the GitHub API at generation time",
+      "url": "https://github.com/openai/ten-proofs"
+    }
+  }
+}
