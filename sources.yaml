@@ -52,7 +52,7 @@ sources:
     # Frontier, and it now lives in the lock: this entry locks a sha256 and no
     # commit, because there is no commit the bytes can be re-fetched from.
     pages_commit: 4c3577432c87a34761963b04c20aba2ac7e2efd2
-    pages_commit_resolved: 2026-08-05T21:22:46Z
+    pages_commit_resolved: "2026-08-05T21:22:46Z"
     url: https://google-deepmind.github.io/formal-conjectures/data/conjectures.json
 
   openai_ten_proofs:
