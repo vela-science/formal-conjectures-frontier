@@ -48,7 +48,7 @@ vela verification import . <verification.json> --as verifier:<name> --json
 vela review list . --json
 vela show . <object_id> --json
 vela why . <claim_id> --json
-vela check . --json
+vela replay . --json
 ```
 
 Use only the first ranked Target unless the canonical ranking facts change.

@@ -1,0 +1,23 @@
+# Canonical bytes must survive a round trip through Git unchanged. `vela replay`
+# re-derives every root from the checked-out bytes, so a checkout filter,
+# keyword expansion, working-tree encoding, or semantic merge driver that
+# rewrote them would turn a clean clone into a failed verification. A local
+# .git/info/attributes still outranks this file; this is a repository contract,
+# not an enforcement mechanism.
+#
+# `vela init` scaffolds a leading `* text=auto eol=lf`. It is omitted here
+# because this repository already has history: a global normalization rule takes
+# effect on the next checkout across every tracked file, not only the ones named
+# below, and the resulting diff would swamp whatever change it arrived with.
+#
+# The machine-written surfaces are `-text` rather than the scaffold's
+# `text eol=lf`. records/ holds content-addressed blobs whose filename is their
+# own digest, and end-of-line normalization is a byte rewrite: it would strip
+# the six CRLF pairs inside records/artifacts/sha256/3a1f083e…b26c, a gzip
+# stream, and the file would no longer hash to its own name. Git auto-detects
+# these as binary today, but an explicit `text` overrides that detection.
+.vela/** -filter -ident -working-tree-encoding -merge -text
+records/** -filter -ident -working-tree-encoding -merge -text
+artifacts/** -filter -ident -working-tree-encoding -merge -text
+frontier.toml -filter -ident -working-tree-encoding -merge diff text eol=lf
+targets.json -filter -ident -working-tree-encoding -merge diff text eol=lf

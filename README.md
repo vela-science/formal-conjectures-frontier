@@ -27,7 +27,7 @@ preserved, but they are not active product surfaces.
 
 ```bash
 vela status . --json
-vela check . --json
+vela replay . --json
 ```
 
 There is currently no offered Target, so this repository has no `targets.json`.

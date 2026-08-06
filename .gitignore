@@ -1,5 +1,6 @@
 # A Vela frontier commits the record, not producer-local derivation scratch.
-# Authority: .vela/events/ (signed log). Pins: vela.lock. Read-entry: frontier.json.
+# Authority: .vela/authority/ (events, records, keysets, policies).
+# Manifest: .vela/repository.json. Origin: .vela/origin.json.
 # Public records and proof review projections remain clone-visible.
 
 # Producer-local scratch (not replayable truth).
