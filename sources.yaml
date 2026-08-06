@@ -15,9 +15,22 @@
 # hash in it is computed by the generator from bytes it fetched or read; none is
 # ever hand-written, because a hash nobody computed is worse than no hash at
 # all. Regenerate it with:
-#     python3 scripts/write_sources_lock.py
-# The generator is byte-identical across the Frontiers that carry it, so one
-# reader consumes every Frontier's lock.
+#     uvx --from "git+https://github.com/vela-science/vela@73d278b0020b1699fcf80749104db19860d1bec2#subdirectory=packages/vela-source-manifest" vela-source-lock
+# and check the committed one, without the network, with `--check`.
+#
+# The generator is the shared `vela-source-manifest` package, which lives at
+# `packages/vela-source-manifest` in the vela repository. It used to be a copy
+# of that resolver carried here in `scripts/`, one per Frontier: four copies of
+# one resolver are four things that can drift apart while every lock still
+# looks consistent. The package also ships the two schemas that define the
+# shape of this file and of the lock, so a reader in any language can consume
+# the definition rather than restate it.
+#
+# Nothing in this repository is a Python project, so there is no manifest to
+# declare the dependency in, and none was created to hold a single line: the
+# invocation above is the declaration. It pins a git rev rather than a released
+# version because the package is not on PyPI yet; the rev is immutable, so the
+# invocation resolves the same bytes from anywhere, with no checkout beside it.
 
 sources:
   formal_conjectures:
