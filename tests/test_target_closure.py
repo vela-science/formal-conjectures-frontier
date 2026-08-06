@@ -62,6 +62,24 @@ class TargetClosureTests(unittest.TestCase):
             "sha256:4fe6e7d6dd361ec4ebe70cb9aba2d4570da27a0a4b10fe0f42f59cbf14b92200",
         )
 
+    def test_a_claim_this_repository_does_not_carry_is_rejected(self) -> None:
+        """The membership check replaced one that failed when the Claim was
+        accepted. That one read as a Standing check and was really a clock, so
+        it went red the moment a separate authorized Decision did what the
+        closure's own contract said it would. This pins what the replacement is
+        for: the closure must still name a Claim this repository holds, on
+        either list, so a dangling or mistyped id cannot pass."""
+        relative = ".vela/repository.json"
+        repository = self.read(relative)
+        repository["accepted_claims"] = [
+            row for row in repository["accepted_claims"]
+            if not row["claim_id"].startswith("vcl_1b3e297c")
+        ]
+        repository["pending_claims"] = []
+        self.write(relative, repository)
+        with self.assertRaisesRegex(TargetClosureError, "does not carry"):
+            validate(self.frontier)
+
     def test_malformed_completion_contract_is_rejected(self) -> None:
         relative = "targets/closures/formal-retain-erdos-424-correction.json"
         closure = self.read(relative)

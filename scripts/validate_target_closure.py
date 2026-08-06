@@ -228,13 +228,24 @@ def validate(
         raise TargetClosureError("completion contract binds another archive")
     if contract.get("local_standing_effect") != "none":
         raise TargetClosureError("foreign retention claims local Standing effect")
-    accepted_ids = {
+    # The Claim must be one this repository actually carries, on either list.
+    #
+    # This used to fail when the Claim appeared in accepted_claims, which read as
+    # a Standing check but was really a clock. The closure confers no Standing —
+    # the contract field just above is what establishes that — and its own
+    # contract says acceptance may follow "until a separate authorized human
+    # Decision". When that Decision came, the check called the protocol working
+    # as designed a closure defect. The closure's `repository_root` names the
+    # moment it describes; membership now is a different question, and asking it
+    # here made a passing repository go red on an act it had authorized.
+    known_ids = {
         row.get("claim_id")
-        for row in repository.get("accepted_claims", [])
+        for key in ("accepted_claims", "pending_claims")
+        for row in repository.get(key, [])
         if isinstance(row, dict)
     }
-    if claim_id in accepted_ids:
-        raise TargetClosureError("foreign reference entered local accepted Standing")
+    if claim_id not in known_ids:
+        raise TargetClosureError("foreign reference names a Claim this repository does not carry")
     return {
         "schema": "formal-conjectures.target-closure-check.v1",
         "ok": True,
@@ -364,18 +375,19 @@ def validate_lean_proof(
     ):
         raise TargetClosureError("Lean completion contract claims scientific authority")
 
-    accepted_ids = {
+    # Same correction as the retention closure above: this required the Claim to
+    # be pending *now*, which the contract asserted two lines earlier would not
+    # stay true. A later authorized Decision accepting it is the protocol
+    # working, not the closure reaching for authority the contract fields
+    # already forbid it.
+    known_ids = {
         row.get("claim_id")
-        for row in repository.get("accepted_claims", [])
+        for key in ("accepted_claims", "pending_claims")
+        for row in repository.get(key, [])
         if isinstance(row, dict)
     }
-    pending_ids = {
-        row.get("claim_id")
-        for row in repository.get("pending_claims", [])
-        if isinstance(row, dict)
-    }
-    if claim_id in accepted_ids or claim_id not in pending_ids:
-        raise TargetClosureError("Lean closure does not preserve pending review")
+    if claim_id not in known_ids:
+        raise TargetClosureError("Lean closure names a Claim this repository does not carry")
     if submission.get("claim", {}).get("assertion") != (
         (claim.get("assertion") or {}).get("text")
     ):
