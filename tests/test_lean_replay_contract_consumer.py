@@ -29,9 +29,14 @@ class LeanReplayContractConsumerTests(unittest.TestCase):
 
         reference = json.loads(REFERENCE.read_bytes())
         capsule = json.loads(CAPSULE.read_bytes())
+        # The root asserted here was a copy of the one this reference already
+        # declares, so an honest change to the package meant hand-editing the
+        # same digest in two files. The reference is the retained evidence;
+        # what this consumer must show is that the package on disk verifies
+        # against it and yields the root the reference names.
         self.assertEqual(
             verify_package_reference(package, reference),
-            "sha256:5653a31b6b42a77cff91905ffa3086730e21eb6cc4105963d9d98cbcc2b2baae",
+            reference["package_root"],
         )
         declaration = capsule["source"]["declaration"]
         expected = capsule["expected"]["axioms"]

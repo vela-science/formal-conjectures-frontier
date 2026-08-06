@@ -27,7 +27,10 @@ jobs:
           repository: vela-science/vela
           ref: 051b4d5123dad53aaf49e1123cef61f433551fbf
           path: .contract-source/vela
-      - name: Verify the exact package root as the Formal consumer
+      # The whole suite, not the one file that used to run here. Every test is
+      # stdlib unittest, so discovery is the entire dependency: a new test file
+      # under tests/ is gated the moment it lands, without an edit here.
+      - name: Frontier test suite
         env:
           VELA_LEAN_REPLAY_CONTRACT: ${{ github.workspace }}/.contract-source/vela/research/lean-replay-contract
-        run: python3 tests/test_lean_replay_contract_consumer.py
+        run: python3 -m unittest discover -s tests -v

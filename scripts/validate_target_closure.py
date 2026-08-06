@@ -102,24 +102,20 @@ def bound_json(
 
 
 def evidence_by_kind(closure: dict[str, Any]) -> dict[str, dict[str, Any]]:
-    rows = closure.get("evidence")
-    if not isinstance(rows, list):
-        raise TargetClosureError("Target closure evidence is not a list")
-    by_kind: dict[str, dict[str, Any]] = {}
-    for row in rows:
-        if not isinstance(row, dict) or not isinstance(row.get("kind"), str):
-            raise TargetClosureError("Target closure contains malformed evidence")
-        kind = row["kind"]
-        if kind in by_kind:
-            raise TargetClosureError(f"duplicate Target closure evidence kind: {kind}")
-        by_kind[kind] = row
-    required = {"claim", "proposal", "submission", "verification", "artifact"}
-    if set(by_kind) != required:
-        raise TargetClosureError(
-            "Target closure evidence kinds differ: "
-            f"expected {sorted(required)}, observed {sorted(by_kind)}"
-        )
-    return by_kind
+    """The five kinds a fully closed Target carries, and nothing else.
+
+    The reading itself is `evidence_by_kind_for` below — this had its own copy
+    of that body, identical down to the error strings, differing only in that
+    the set of kinds was inlined rather than passed. Two copies of a validator
+    is how one of them quietly stops matching the other.
+
+    The set stays here because it is the specification: a Target is closed when
+    a Claim, its Proposal, the Submission, the Verification and the Artifact are
+    all present, and no other combination is closure.
+    """
+    return evidence_by_kind_for(
+        closure, {"claim", "proposal", "submission", "verification", "artifact"}
+    )
 
 
 def load_evidence(
